@@ -1,0 +1,712 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5C0315651A8209200051E65C /* default_avatar.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C0315641A8209200051E65C /* default_avatar.png */; };
+		5C03156F1A8366B60051E65C /* Conversation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C03156E1A8366B60051E65C /* Conversation.m */; };
+		5C0315721A8366C50051E65C /* Message.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C0315711A8366C50051E65C /* Message.m */; };
+		5C0315751A836C500051E65C /* ConversationStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C0315741A836C500051E65C /* ConversationStore.m */; };
+		5C2956CF1A80BED400BF1E9C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C2956CE1A80BED400BF1E9C /* main.m */; };
+		5C2956D21A80BED400BF1E9C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C2956D11A80BED400BF1E9C /* AppDelegate.m */; };
+		5C2956D51A80BED400BF1E9C /* RecentConversationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C2956D41A80BED400BF1E9C /* RecentConversationViewController.m */; };
+		5C2956D81A80BED400BF1E9C /* ContactsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C2956D71A80BED400BF1E9C /* ContactsViewController.m */; };
+		5C2956DB1A80BED400BF1E9C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C2956D91A80BED400BF1E9C /* Main.storyboard */; };
+		5C2956DD1A80BED400BF1E9C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C2956DC1A80BED400BF1E9C /* Images.xcassets */; };
+		5C2956E01A80BED400BF1E9C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C2956DE1A80BED400BF1E9C /* LaunchScreen.xib */; };
+		5C2956EC1A80BED400BF1E9C /* FreeChatTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C2956EB1A80BED400BF1E9C /* FreeChatTests.m */; };
+		5C2957161A8119FB00BF1E9C /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C2957151A8119FB00BF1E9C /* SettingsViewController.m */; };
+		5C29571A1A811B2700BF1E9C /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C2957181A811B2700BF1E9C /* LoginViewController.m */; };
+		5C29571F1A811B6D00BF1E9C /* SignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C29571D1A811B6D00BF1E9C /* SignupViewController.m */; };
+		5C2957241A811F9F00BF1E9C /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C2957231A811F9F00BF1E9C /* ChatViewController.m */; };
+		5C2957271A811FFB00BF1E9C /* ConversationDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C2957261A811FFB00BF1E9C /* ConversationDetailViewController.m */; };
+		5C29572B1A81221200BF1E9C /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C29572A1A81221200BF1E9C /* MainViewController.m */; };
+		5C2957491A81E33300BF1E9C /* AVOSCloud.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C29573A1A81E31B00BF1E9C /* AVOSCloud.framework */; };
+		5C29574A1A81E33300BF1E9C /* AVOSCloudIM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C2957421A81E31B00BF1E9C /* AVOSCloudIM.framework */; };
+		5C29574C1A81E3E200BF1E9C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C29574B1A81E3E200BF1E9C /* SystemConfiguration.framework */; };
+		5C29574E1A81E3EB00BF1E9C /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C29574D1A81E3EB00BF1E9C /* MobileCoreServices.framework */; };
+		5C2957501A81E3F300BF1E9C /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C29574F1A81E3F300BF1E9C /* CoreTelephony.framework */; };
+		5C2957521A81E3FF00BF1E9C /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C2957511A81E3FF00BF1E9C /* CoreLocation.framework */; };
+		5C2957541A81E40F00BF1E9C /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C2957531A81E40F00BF1E9C /* libicucore.dylib */; };
+		5C29575D1A81EFC200BF1E9C /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C29575C1A81EFC200BF1E9C /* libz.dylib */; };
+		5C29575F1A81EFCA00BF1E9C /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C29575E1A81EFCA00BF1E9C /* libsqlite3.dylib */; };
+		5C2957611A81EFDA00BF1E9C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C2957601A81EFDA00BF1E9C /* UIKit.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5C2956E61A80BED400BF1E9C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5C2956C11A80BED400BF1E9C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5C2956C81A80BED400BF1E9C;
+			remoteInfo = FreeChat;
+		};
+		5C2957391A81E31B00BF1E9C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5C29572F1A81E31B00BF1E9C /* AVOS.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8C8419861A5A791300C5C6C4;
+			remoteInfo = AVOSCloud;
+		};
+		5C29573B1A81E31B00BF1E9C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5C29572F1A81E31B00BF1E9C /* AVOS.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8C8419911A5A791300C5C6C4;
+			remoteInfo = AVOSCloudTests;
+		};
+		5C29573D1A81E31B00BF1E9C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5C29572F1A81E31B00BF1E9C /* AVOS.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8C8419A51A5A794600C5C6C4;
+			remoteInfo = AVOSCloudSNS;
+		};
+		5C29573F1A81E31B00BF1E9C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5C29572F1A81E31B00BF1E9C /* AVOS.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8C8419AF1A5A794600C5C6C4;
+			remoteInfo = AVOSCloudSNSTests;
+		};
+		5C2957411A81E31B00BF1E9C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5C29572F1A81E31B00BF1E9C /* AVOS.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8C8419C31A5A796000C5C6C4;
+			remoteInfo = AVOSCloudIM;
+		};
+		5C2957431A81E31B00BF1E9C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5C29572F1A81E31B00BF1E9C /* AVOS.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8C8419CD1A5A796000C5C6C4;
+			remoteInfo = AVOSCloudIMTests;
+		};
+		5C2957451A81E32800BF1E9C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5C29572F1A81E31B00BF1E9C /* AVOS.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8C8419851A5A791300C5C6C4;
+			remoteInfo = AVOSCloud;
+		};
+		5C2957471A81E32800BF1E9C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5C29572F1A81E31B00BF1E9C /* AVOS.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8C8419C21A5A796000C5C6C4;
+			remoteInfo = AVOSCloudIM;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		5C0315641A8209200051E65C /* default_avatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = default_avatar.png; path = images/default_avatar.png; sourceTree = "<group>"; };
+		5C03156D1A8366B60051E65C /* Conversation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Conversation.h; sourceTree = "<group>"; };
+		5C03156E1A8366B60051E65C /* Conversation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Conversation.m; sourceTree = "<group>"; };
+		5C0315701A8366C50051E65C /* Message.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Message.h; sourceTree = "<group>"; };
+		5C0315711A8366C50051E65C /* Message.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Message.m; sourceTree = "<group>"; };
+		5C0315731A836C500051E65C /* ConversationStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConversationStore.h; sourceTree = "<group>"; };
+		5C0315741A836C500051E65C /* ConversationStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConversationStore.m; sourceTree = "<group>"; };
+		5C2956C91A80BED400BF1E9C /* FreeChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FreeChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5C2956CD1A80BED400BF1E9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5C2956CE1A80BED400BF1E9C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		5C2956D01A80BED400BF1E9C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		5C2956D11A80BED400BF1E9C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		5C2956D31A80BED400BF1E9C /* RecentConversationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecentConversationViewController.h; sourceTree = "<group>"; };
+		5C2956D41A80BED400BF1E9C /* RecentConversationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecentConversationViewController.m; sourceTree = "<group>"; };
+		5C2956D61A80BED400BF1E9C /* ContactsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ContactsViewController.h; sourceTree = "<group>"; };
+		5C2956D71A80BED400BF1E9C /* ContactsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContactsViewController.m; sourceTree = "<group>"; };
+		5C2956DA1A80BED400BF1E9C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5C2956DC1A80BED400BF1E9C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		5C2956DF1A80BED400BF1E9C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		5C2956E51A80BED400BF1E9C /* FreeChatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FreeChatTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5C2956EA1A80BED400BF1E9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5C2956EB1A80BED400BF1E9C /* FreeChatTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FreeChatTests.m; sourceTree = "<group>"; };
+		5C2957141A8119FB00BF1E9C /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		5C2957151A8119FB00BF1E9C /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		5C2957171A811B2700BF1E9C /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		5C2957181A811B2700BF1E9C /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		5C29571C1A811B6D00BF1E9C /* SignupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignupViewController.h; sourceTree = "<group>"; };
+		5C29571D1A811B6D00BF1E9C /* SignupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignupViewController.m; sourceTree = "<group>"; };
+		5C2957221A811F9F00BF1E9C /* ChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatViewController.h; sourceTree = "<group>"; };
+		5C2957231A811F9F00BF1E9C /* ChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatViewController.m; sourceTree = "<group>"; };
+		5C2957251A811FFB00BF1E9C /* ConversationDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConversationDetailViewController.h; sourceTree = "<group>"; };
+		5C2957261A811FFB00BF1E9C /* ConversationDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConversationDetailViewController.m; sourceTree = "<group>"; };
+		5C2957291A81221200BF1E9C /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		5C29572A1A81221200BF1E9C /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		5C29572F1A81E31B00BF1E9C /* AVOS.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AVOS.xcodeproj; path = "../../Meiwei/leancloud/iOS-sdk/AVOS/AVOS.xcodeproj"; sourceTree = "<group>"; };
+		5C29574B1A81E3E200BF1E9C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		5C29574D1A81E3EB00BF1E9C /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		5C29574F1A81E3F300BF1E9C /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		5C2957511A81E3FF00BF1E9C /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		5C2957531A81E40F00BF1E9C /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
+		5C29575C1A81EFC200BF1E9C /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		5C29575E1A81EFCA00BF1E9C /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		5C2957601A81EFDA00BF1E9C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5C2956C61A80BED400BF1E9C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5C2957611A81EFDA00BF1E9C /* UIKit.framework in Frameworks */,
+				5C29575F1A81EFCA00BF1E9C /* libsqlite3.dylib in Frameworks */,
+				5C29575D1A81EFC200BF1E9C /* libz.dylib in Frameworks */,
+				5C2957541A81E40F00BF1E9C /* libicucore.dylib in Frameworks */,
+				5C2957521A81E3FF00BF1E9C /* CoreLocation.framework in Frameworks */,
+				5C2957501A81E3F300BF1E9C /* CoreTelephony.framework in Frameworks */,
+				5C29574E1A81E3EB00BF1E9C /* MobileCoreServices.framework in Frameworks */,
+				5C29574C1A81E3E200BF1E9C /* SystemConfiguration.framework in Frameworks */,
+				5C2957491A81E33300BF1E9C /* AVOSCloud.framework in Frameworks */,
+				5C29574A1A81E33300BF1E9C /* AVOSCloudIM.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5C2956E21A80BED400BF1E9C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5C0315761A8378D70051E65C /* utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = utils;
+			sourceTree = "<group>";
+		};
+		5C2956C01A80BED400BF1E9C = {
+			isa = PBXGroup;
+			children = (
+				5C2957601A81EFDA00BF1E9C /* UIKit.framework */,
+				5C29575E1A81EFCA00BF1E9C /* libsqlite3.dylib */,
+				5C29575C1A81EFC200BF1E9C /* libz.dylib */,
+				5C29575A1A81ECB800BF1E9C /* frameworks */,
+				5C29572F1A81E31B00BF1E9C /* AVOS.xcodeproj */,
+				5C2956CB1A80BED400BF1E9C /* FreeChat */,
+				5C2956E81A80BED400BF1E9C /* FreeChatTests */,
+				5C2956CA1A80BED400BF1E9C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5C2956CA1A80BED400BF1E9C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5C2956C91A80BED400BF1E9C /* FreeChat.app */,
+				5C2956E51A80BED400BF1E9C /* FreeChatTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5C2956CB1A80BED400BF1E9C /* FreeChat */ = {
+			isa = PBXGroup;
+			children = (
+				5C0315761A8378D70051E65C /* utils */,
+				5C5DC3101A8207FD00E87E79 /* images */,
+				5C29572E1A81C50B00BF1E9C /* model */,
+				5C2957211A811B7500BF1E9C /* controller */,
+				5C2956D01A80BED400BF1E9C /* AppDelegate.h */,
+				5C2956D11A80BED400BF1E9C /* AppDelegate.m */,
+				5C2956D91A80BED400BF1E9C /* Main.storyboard */,
+				5C2956DC1A80BED400BF1E9C /* Images.xcassets */,
+				5C2956DE1A80BED400BF1E9C /* LaunchScreen.xib */,
+				5C2956CC1A80BED400BF1E9C /* Supporting Files */,
+			);
+			path = FreeChat;
+			sourceTree = "<group>";
+		};
+		5C2956CC1A80BED400BF1E9C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5C2956CD1A80BED400BF1E9C /* Info.plist */,
+				5C2956CE1A80BED400BF1E9C /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5C2956E81A80BED400BF1E9C /* FreeChatTests */ = {
+			isa = PBXGroup;
+			children = (
+				5C2956EB1A80BED400BF1E9C /* FreeChatTests.m */,
+				5C2956E91A80BED400BF1E9C /* Supporting Files */,
+			);
+			path = FreeChatTests;
+			sourceTree = "<group>";
+		};
+		5C2956E91A80BED400BF1E9C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5C2956EA1A80BED400BF1E9C /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5C2957211A811B7500BF1E9C /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				5C2956D31A80BED400BF1E9C /* RecentConversationViewController.h */,
+				5C2956D41A80BED400BF1E9C /* RecentConversationViewController.m */,
+				5C2956D61A80BED400BF1E9C /* ContactsViewController.h */,
+				5C2956D71A80BED400BF1E9C /* ContactsViewController.m */,
+				5C2957141A8119FB00BF1E9C /* SettingsViewController.h */,
+				5C2957151A8119FB00BF1E9C /* SettingsViewController.m */,
+				5C2957171A811B2700BF1E9C /* LoginViewController.h */,
+				5C2957181A811B2700BF1E9C /* LoginViewController.m */,
+				5C29571C1A811B6D00BF1E9C /* SignupViewController.h */,
+				5C29571D1A811B6D00BF1E9C /* SignupViewController.m */,
+				5C2957221A811F9F00BF1E9C /* ChatViewController.h */,
+				5C2957231A811F9F00BF1E9C /* ChatViewController.m */,
+				5C2957251A811FFB00BF1E9C /* ConversationDetailViewController.h */,
+				5C2957261A811FFB00BF1E9C /* ConversationDetailViewController.m */,
+				5C2957291A81221200BF1E9C /* MainViewController.h */,
+				5C29572A1A81221200BF1E9C /* MainViewController.m */,
+			);
+			name = controller;
+			sourceTree = "<group>";
+		};
+		5C29572E1A81C50B00BF1E9C /* model */ = {
+			isa = PBXGroup;
+			children = (
+				5C03156D1A8366B60051E65C /* Conversation.h */,
+				5C03156E1A8366B60051E65C /* Conversation.m */,
+				5C0315701A8366C50051E65C /* Message.h */,
+				5C0315711A8366C50051E65C /* Message.m */,
+				5C0315731A836C500051E65C /* ConversationStore.h */,
+				5C0315741A836C500051E65C /* ConversationStore.m */,
+			);
+			name = model;
+			sourceTree = "<group>";
+		};
+		5C2957301A81E31B00BF1E9C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5C29573A1A81E31B00BF1E9C /* AVOSCloud.framework */,
+				5C29573C1A81E31B00BF1E9C /* AVOSCloudTests.xctest */,
+				5C29573E1A81E31B00BF1E9C /* AVOSCloudSNS.framework */,
+				5C2957401A81E31B00BF1E9C /* AVOSCloudSNSTests.xctest */,
+				5C2957421A81E31B00BF1E9C /* AVOSCloudIM.framework */,
+				5C2957441A81E31B00BF1E9C /* AVOSCloudIMTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5C29575A1A81ECB800BF1E9C /* frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5C2957531A81E40F00BF1E9C /* libicucore.dylib */,
+				5C2957511A81E3FF00BF1E9C /* CoreLocation.framework */,
+				5C29574F1A81E3F300BF1E9C /* CoreTelephony.framework */,
+				5C29574D1A81E3EB00BF1E9C /* MobileCoreServices.framework */,
+				5C29574B1A81E3E200BF1E9C /* SystemConfiguration.framework */,
+			);
+			name = frameworks;
+			sourceTree = "<group>";
+		};
+		5C5DC3101A8207FD00E87E79 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				5C0315641A8209200051E65C /* default_avatar.png */,
+			);
+			name = images;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5C2956C81A80BED400BF1E9C /* FreeChat */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5C2956EF1A80BED400BF1E9C /* Build configuration list for PBXNativeTarget "FreeChat" */;
+			buildPhases = (
+				5C2956C51A80BED400BF1E9C /* Sources */,
+				5C2956C61A80BED400BF1E9C /* Frameworks */,
+				5C2956C71A80BED400BF1E9C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5C2957461A81E32800BF1E9C /* PBXTargetDependency */,
+				5C2957481A81E32800BF1E9C /* PBXTargetDependency */,
+			);
+			name = FreeChat;
+			productName = FreeChat;
+			productReference = 5C2956C91A80BED400BF1E9C /* FreeChat.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5C2956E41A80BED400BF1E9C /* FreeChatTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5C2956F21A80BED400BF1E9C /* Build configuration list for PBXNativeTarget "FreeChatTests" */;
+			buildPhases = (
+				5C2956E11A80BED400BF1E9C /* Sources */,
+				5C2956E21A80BED400BF1E9C /* Frameworks */,
+				5C2956E31A80BED400BF1E9C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5C2956E71A80BED400BF1E9C /* PBXTargetDependency */,
+			);
+			name = FreeChatTests;
+			productName = FreeChatTests;
+			productReference = 5C2956E51A80BED400BF1E9C /* FreeChatTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5C2956C11A80BED400BF1E9C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Feng Junwen";
+				TargetAttributes = {
+					5C2956C81A80BED400BF1E9C = {
+						CreatedOnToolsVersion = 6.1;
+						DevelopmentTeam = Y6X8P44TM5;
+					};
+					5C2956E41A80BED400BF1E9C = {
+						CreatedOnToolsVersion = 6.1;
+						TestTargetID = 5C2956C81A80BED400BF1E9C;
+					};
+				};
+			};
+			buildConfigurationList = 5C2956C41A80BED400BF1E9C /* Build configuration list for PBXProject "FreeChat" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5C2956C01A80BED400BF1E9C;
+			productRefGroup = 5C2956CA1A80BED400BF1E9C /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 5C2957301A81E31B00BF1E9C /* Products */;
+					ProjectRef = 5C29572F1A81E31B00BF1E9C /* AVOS.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				5C2956C81A80BED400BF1E9C /* FreeChat */,
+				5C2956E41A80BED400BF1E9C /* FreeChatTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		5C29573A1A81E31B00BF1E9C /* AVOSCloud.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = AVOSCloud.framework;
+			remoteRef = 5C2957391A81E31B00BF1E9C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5C29573C1A81E31B00BF1E9C /* AVOSCloudTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = AVOSCloudTests.xctest;
+			remoteRef = 5C29573B1A81E31B00BF1E9C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5C29573E1A81E31B00BF1E9C /* AVOSCloudSNS.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = AVOSCloudSNS.framework;
+			remoteRef = 5C29573D1A81E31B00BF1E9C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5C2957401A81E31B00BF1E9C /* AVOSCloudSNSTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = AVOSCloudSNSTests.xctest;
+			remoteRef = 5C29573F1A81E31B00BF1E9C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5C2957421A81E31B00BF1E9C /* AVOSCloudIM.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = AVOSCloudIM.framework;
+			remoteRef = 5C2957411A81E31B00BF1E9C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5C2957441A81E31B00BF1E9C /* AVOSCloudIMTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = AVOSCloudIMTests.xctest;
+			remoteRef = 5C2957431A81E31B00BF1E9C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5C2956C71A80BED400BF1E9C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5C0315651A8209200051E65C /* default_avatar.png in Resources */,
+				5C2956DB1A80BED400BF1E9C /* Main.storyboard in Resources */,
+				5C2956E01A80BED400BF1E9C /* LaunchScreen.xib in Resources */,
+				5C2956DD1A80BED400BF1E9C /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5C2956E31A80BED400BF1E9C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5C2956C51A80BED400BF1E9C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5C0315751A836C500051E65C /* ConversationStore.m in Sources */,
+				5C2956D81A80BED400BF1E9C /* ContactsViewController.m in Sources */,
+				5C0315721A8366C50051E65C /* Message.m in Sources */,
+				5C2956D21A80BED400BF1E9C /* AppDelegate.m in Sources */,
+				5C29571A1A811B2700BF1E9C /* LoginViewController.m in Sources */,
+				5C29572B1A81221200BF1E9C /* MainViewController.m in Sources */,
+				5C03156F1A8366B60051E65C /* Conversation.m in Sources */,
+				5C2957161A8119FB00BF1E9C /* SettingsViewController.m in Sources */,
+				5C2957271A811FFB00BF1E9C /* ConversationDetailViewController.m in Sources */,
+				5C2956D51A80BED400BF1E9C /* RecentConversationViewController.m in Sources */,
+				5C29571F1A811B6D00BF1E9C /* SignupViewController.m in Sources */,
+				5C2957241A811F9F00BF1E9C /* ChatViewController.m in Sources */,
+				5C2956CF1A80BED400BF1E9C /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5C2956E11A80BED400BF1E9C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5C2956EC1A80BED400BF1E9C /* FreeChatTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5C2956E71A80BED400BF1E9C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5C2956C81A80BED400BF1E9C /* FreeChat */;
+			targetProxy = 5C2956E61A80BED400BF1E9C /* PBXContainerItemProxy */;
+		};
+		5C2957461A81E32800BF1E9C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = AVOSCloud;
+			targetProxy = 5C2957451A81E32800BF1E9C /* PBXContainerItemProxy */;
+		};
+		5C2957481A81E32800BF1E9C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = AVOSCloudIM;
+			targetProxy = 5C2957471A81E32800BF1E9C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		5C2956D91A80BED400BF1E9C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5C2956DA1A80BED400BF1E9C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		5C2956DE1A80BED400BF1E9C /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5C2956DF1A80BED400BF1E9C /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5C2956ED1A80BED400BF1E9C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		5C2956EE1A80BED400BF1E9C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5C2956F01A80BED400BF1E9C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
+				INFOPLIST_FILE = FreeChat/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		5C2956F11A80BED400BF1E9C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
+				INFOPLIST_FILE = FreeChat/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		5C2956F31A80BED400BF1E9C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = FreeChatTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FreeChat.app/FreeChat";
+			};
+			name = Debug;
+		};
+		5C2956F41A80BED400BF1E9C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = FreeChatTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FreeChat.app/FreeChat";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5C2956C41A80BED400BF1E9C /* Build configuration list for PBXProject "FreeChat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5C2956ED1A80BED400BF1E9C /* Debug */,
+				5C2956EE1A80BED400BF1E9C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5C2956EF1A80BED400BF1E9C /* Build configuration list for PBXNativeTarget "FreeChat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5C2956F01A80BED400BF1E9C /* Debug */,
+				5C2956F11A80BED400BF1E9C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5C2956F21A80BED400BF1E9C /* Build configuration list for PBXNativeTarget "FreeChatTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5C2956F31A80BED400BF1E9C /* Debug */,
+				5C2956F41A80BED400BF1E9C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5C2956C11A80BED400BF1E9C /* Project object */;
+}
