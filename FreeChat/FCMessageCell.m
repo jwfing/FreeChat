@@ -14,6 +14,7 @@
 #import "UIButton+AFNetworking.h"
 #import "UUImageAvatarBrowser.h"
 #import "NSDate+Utils.h"
+#import "AVUserStore.h"
 
 @interface FCMessageCell () <UUAVAudioPlayerDelegate> {
     AVAudioPlayer *player;
@@ -169,15 +170,17 @@
     self.labelTime.frame = messageFrame.timeF;
     
     // 2、设置头像
-    NSString *userAvatarUrl = @"http://tp4.sinaimg.cn/1750070171/180/40009602334/1";
-    NSString *userName = @"Test";
+    UserProfile *userProfile = [[AVUserStore sharedInstance] getUserProfile:message.clientId];
+    NSString *userAvatarUrl = userProfile.avatarUrl;
+    NSString *userName = userProfile.nickname;
     headImageBackView.frame = messageFrame.iconF;
     self.btnHeadImage.frame = CGRectMake(2, 2, ChatIconWH-4, ChatIconWH-4);
-    if (message.ioType == AVIMMessageIOTypeOut) {
-        [self.btnHeadImage setBackgroundImageForState:UIControlStateNormal withURL:[NSURL URLWithString:userAvatarUrl]];
-    }else{
-        [self.btnHeadImage setBackgroundImageForState:UIControlStateNormal withURL:[NSURL URLWithString:userAvatarUrl]];
-    }
+    [self.btnHeadImage setBackgroundImageForState:UIControlStateNormal withURL:[NSURL URLWithString:userAvatarUrl] placeholderImage:[UIImage imageNamed:@"default_avatar"]];
+//    if (message.ioType == AVIMMessageIOTypeOut) {
+//        [self.btnHeadImage setBackgroundImageForState:UIControlStateNormal withURL:[NSURL URLWithString:userAvatarUrl]];
+//    }else{
+//        [self.btnHeadImage setBackgroundImageForState:UIControlStateNormal withURL:[NSURL URLWithString:userAvatarUrl]];
+//    }
     
     // 3、设置下标
     self.labelNum.text = userName;

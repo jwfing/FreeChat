@@ -113,6 +113,9 @@ NSString * kConversationCellIdentifier = @"ConversationIdentifier";
 #pragma IMEventObserver
 - (void)newMessageArrived:(Message*)message conversation:(AVIMConversation*)conversation {
     ConversationStore *store = [ConversationStore sharedInstance];
+    if(message.eventType == EventKicked) {
+        [store quitConversation:conversation];
+    }
     NSArray *recentConvs = [store recentConversations];
     [_recentConversations removeAllObjects];
     [_recentConversations addObjectsFromArray:recentConvs];

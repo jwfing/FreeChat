@@ -28,6 +28,7 @@
 -(void)mute:(BOOL)on conversation:(AVIMConversation*)conversation;
 -(void)changeName:(NSString*)newName conversation:(AVIMConversation*)conversation;
 -(void)exitConversation:(AVIMConversation*)conversation;
+-(void)switch2NewConversation:(AVIMConversation*)conversation;
 
 @end
 

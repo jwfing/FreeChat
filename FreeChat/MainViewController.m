@@ -13,6 +13,7 @@
 #import "RecentConversationViewController.h"
 #import "ContactsViewController.h"
 #import "SettingsViewController.h"
+#import "AVUserStore.h"
 
 @interface MainViewController () {
 //    AVIMClient *_imClient;
@@ -127,6 +128,10 @@
  @return None.
  */
 - (void)conversation:(AVIMConversation *)conversation membersAdded:(NSArray *)clientIds byClientId:(NSString *)clientId {
+    if ([clientId compare:[[AVUser currentUser] objectId]] == NSOrderedSame) {
+        // A 邀请 B 加入对话，LeanCloud 云端也会给 A 发送成员增加通知。这时候 clientId 等于 A 的 userId。
+    }
+
     ConversationStore *store = [ConversationStore sharedInstance];
     [store newConversationEvent:EventMemberAdd conversation:conversation from:clientId to:clientIds];
 }
@@ -139,6 +144,10 @@
  @return None.
  */
 - (void)conversation:(AVIMConversation *)conversation membersRemoved:(NSArray *)clientIds byClientId:(NSString *)clientId {
+    if ([clientId compare:[[AVUser currentUser] objectId]] == NSOrderedSame) {
+        // A 将 B 踢出对话，LeanCloud 云端也会给 A 发送通知。这时候 clientId 等于 A 的 userId。
+    }
+
     ConversationStore *store = [ConversationStore sharedInstance];
     [store newConversationEvent:EventMemberRemove conversation:conversation from:clientId to:clientIds];
 }
@@ -150,6 +159,11 @@
  @return None.
  */
 - (void)conversation:(AVIMConversation *)conversation invitedByClientId:(NSString *)clientId {
+    if ([clientId compare:[[AVUser currentUser] objectId]] == NSOrderedSame) {
+        // A 邀请 B 加入对话，LeanCloud 云端也会给 A 发送邀请通知。这时候 clientId 等于 A 的 userId。
+        // 这种消息无需处理。
+        return;
+    }
     ConversationStore *store = [ConversationStore sharedInstance];
     [store newConversationEvent:EventInvited conversation:conversation from:clientId to:nil];
 }

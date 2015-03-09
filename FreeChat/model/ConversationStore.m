@@ -9,6 +9,7 @@
 #import "ConversationStore.h"
 #import "SQLiteMessagePersister.h"
 #import "RemoteMessagePersisiter.h"
+#import "AVUserStore.h"
 
 #define kDecodeKey_Conversations                  @"conversations"
 #define kDecodeKey_Conversation_UnreadMapping     @"conversation_msg_mapping"
@@ -44,6 +45,9 @@
 }
 
 -(void)reviveFromLocal:(AVUser*)user {
+    [_conversations removeAllObjects];
+    [_conversationUnreadMsgMapping removeAllObjects];
+
     [[SQLiteMessagePersister sharedInstance] open:user];
 
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
@@ -65,7 +69,12 @@
             AVIMConversation *tmp = nil;
             for (int i = 0; i < objects.count; i++) {
                 tmp = [objects objectAtIndex:i];
-                [_conversations addObject:tmp];
+                if (![_conversations containsObject:tmp]) {
+                    [_conversations addObject:tmp];
+                    [[AVUserStore sharedInstance] fetchInfos:tmp.members callback:^(NSArray *objects, NSError *error) {
+                        ;
+                    }];
+                }
             }
         }
     }];
@@ -130,6 +139,32 @@
     return result;
 }
 
+-(void)fillWithUserInfo:(NSArray*)messages invokeCallback:(ArrayResultBlock)block error:(NSError*)error {
+    NSMutableArray *userClients = [[NSMutableArray alloc] init];
+    NSMutableSet *userSet = [[NSMutableSet alloc] init];
+    for (int i = 0; i < messages.count; i++) {
+        Message *msg = messages[i];
+        if (msg.clients) {
+            for (NSString *tmp in msg.clients) {
+                if (![userSet member:tmp]) {
+                    [userSet addObject:tmp];
+                    [userClients addObject:tmp];
+                }
+            }
+        }
+        if (msg.byClient && ![userSet member:msg.byClient]) {
+            [userSet addObject:msg.byClient];
+            [userClients addObject:msg.byClient];
+        }
+    }
+    AVUserStore *userStore = [AVUserStore sharedInstance];
+    [userStore fetchInfos:userClients callback:^(NSArray *objects, NSError *error) {
+        if (block) {
+            block(messages, error);
+        }
+    }];
+};
+
 - (void)queryMoreMessages:(AVIMConversation*)conversation from:(NSString*)msgId timestamp:(int64_t)ts limit:(int)limit callback:(ArrayResultBlock)callback {
     [[SQLiteMessagePersister sharedInstance] pullMessagesForConversation:conversation preceded:msgId timestamp:ts limit:limit callback:^(NSArray *objects, NSError *error) {
         if ([objects count] < 1) {
@@ -137,9 +172,7 @@
                 for (int i = 0; i < [objects count]; i++) {
                     [[SQLiteMessagePersister sharedInstance] pushMessage:objects[i]];
                 }
-                if (callback) {
-                    callback(objects, error);
-                }
+                [self fillWithUserInfo:objects invokeCallback:callback error:error];
             }];
         } else {
             int lackNumber = limit - [objects count];
@@ -152,14 +185,10 @@
                     }
                     NSMutableArray *result = [[NSMutableArray alloc] initWithArray:newObjects];
                     [result addObjectsFromArray:objects];
-                    if (callback) {
-                        callback(result, nil);
-                    }
+                    [self fillWithUserInfo:result invokeCallback:callback error:nil];
                 }];
             } else {
-                if (callback) {
-                    callback(objects, error);
-                }
+                [self fillWithUserInfo:objects invokeCallback:callback error:error];
             }
         }
     }];
@@ -188,7 +217,7 @@
 }
 
 - (void)messageDelivered:(AVIMMessage*)message conversation:(AVIMConversation*)conv {
-    ;
+    // 无需特别处理
 }
 
 // 对话中新的事件发生
@@ -216,32 +245,38 @@
 }
 
 - (void)fireNewMessage:(Message*)message conversation:(AVIMConversation*)conv{
-    [self changeConversationToHead:conv];
-    NSNumber *unreadCount = [_conversationUnreadMsgMapping objectForKey:conv.conversationId];
-    if (unreadCount) {
-        unreadCount = [NSNumber numberWithInt:(unreadCount.intValue + 1)];
-    } else {
-        unreadCount = [NSNumber numberWithInt:1];
+    NSMutableArray *userClients = [[NSMutableArray alloc] initWithObjects:message.byClient, nil];
+    if (message.clients) {
+        [userClients addObjectsFromArray:message.clients];
     }
-    [_conversationUnreadMsgMapping setObject:unreadCount forKey:conv.conversationId];
-    
-    SQLiteMessagePersister *persister = [SQLiteMessagePersister sharedInstance];
-    [persister pushMessage:message];
-
-    NSMutableArray *observerChain = [_observerMapping objectForKey:@"*"];
-    if (observerChain) {
-        for (int i = 0; i < [observerChain count]; i++) {
-            id<IMEventObserver> observer = [observerChain objectAtIndex:i];
-            [observer newMessageArrived:message conversation:conv];
+    [[AVUserStore sharedInstance] fetchInfos:userClients callback:^(NSArray *objects, NSError *error) {
+        [self changeConversationToHead:conv];
+        NSNumber *unreadCount = [_conversationUnreadMsgMapping objectForKey:conv.conversationId];
+        if (unreadCount) {
+            unreadCount = [NSNumber numberWithInt:(unreadCount.intValue + 1)];
+        } else {
+            unreadCount = [NSNumber numberWithInt:1];
         }
-    }
-    observerChain = [_observerMapping objectForKey:[conv conversationId]];
-    if (observerChain) {
-        for (int i = 0; i < [observerChain count]; i++) {
-            id<IMEventObserver> observer = [observerChain objectAtIndex:i];
-            [observer newMessageArrived:message conversation:conv];
+        [_conversationUnreadMsgMapping setObject:unreadCount forKey:conv.conversationId];
+        
+        SQLiteMessagePersister *persister = [SQLiteMessagePersister sharedInstance];
+        [persister pushMessage:message];
+        
+        NSMutableArray *observerChain = [_observerMapping objectForKey:@"*"];
+        if (observerChain) {
+            for (int i = 0; i < [observerChain count]; i++) {
+                id<IMEventObserver> observer = [observerChain objectAtIndex:i];
+                [observer newMessageArrived:message conversation:conv];
+            }
         }
-    }
+        observerChain = [_observerMapping objectForKey:[conv conversationId]];
+        if (observerChain) {
+            for (int i = 0; i < [observerChain count]; i++) {
+                id<IMEventObserver> observer = [observerChain objectAtIndex:i];
+                [observer newMessageArrived:message conversation:conv];
+            }
+        }
+    }];
 }
 
 - (int)conversationUnreadCount:(NSString*)conversationId {

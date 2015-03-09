@@ -278,6 +278,9 @@ NSString *kExitCellIdentifier = @"ChatDetailExitCellIdentifier";
                                             [MessageDisplayer displayError:error];
                                         } else {
                                             [self.navigationController popViewControllerAnimated:YES];
+                                            if (self.delegate && [self.delegate respondsToSelector:@selector(switch2NewConversation:)]) {
+                                                [self.delegate switch2NewConversation:conversation];
+                                            }
                                         }
                                     }];
     }

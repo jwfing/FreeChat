@@ -7,6 +7,7 @@
 //
 
 #import "ConversationUtils.h"
+#import "AVUserStore.h"
 
 @implementation ConversationUtils
 
@@ -16,10 +17,13 @@
     if (memberCount < 1) {
         return conversation.conversationId;
     }
+    UserProfile *profile = nil;
+    AVUserStore *store = [AVUserStore sharedInstance];
     for (int i = 0; i < memberCount; i++) {
         NSString *tmpUserId = conversation.members[i];
-        if ([tmpUserId length] > 0 && [tmpUserId compare:currentUser.objectId] != NSOrderedSame) {
-            return tmpUserId;
+        profile = [store getUserProfile:tmpUserId];
+        if (profile.nickname.length > 0 && [tmpUserId compare:currentUser.objectId] != NSOrderedSame) {
+            return profile.nickname;
         }
     }
     return nil;

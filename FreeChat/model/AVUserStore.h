@@ -14,5 +14,6 @@
 +(instancetype)sharedInstance;
 
 - (void)fetchInfos:(NSArray*)userIds callback:(ArrayResultBlock)block;
+- (UserProfile*)getUserProfile:(NSString*)userId;
 
 @end

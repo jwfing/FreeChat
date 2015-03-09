@@ -36,6 +36,14 @@
 }
 
 - (void)fetchInfos:(NSArray*)userIds callback:(ArrayResultBlock)block {
+    if (!userIds || userIds.count < 1) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (block) {
+                block(nil, nil);
+            }
+        });
+        return;
+    }
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         int userCount = [userIds count];
         NSMutableArray *result = [[NSMutableArray alloc] initWithCapacity:userCount];
@@ -57,6 +65,11 @@
             block(result, nil);
         }
     });
+}
+
+- (UserProfile*)getUserProfile:(NSString*)userId {
+    UserProfile *profile = [_users objectForKey:userId];
+    return profile;
 }
 
 @end

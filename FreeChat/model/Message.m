@@ -7,6 +7,7 @@
 //
 
 #import "Message.h"
+#import "AVUserStore.h"
 
 #define kCoderKey_EventType @"eventType"
 #define kCoderKey_ConvId    @"conversationId"
@@ -65,31 +66,35 @@
 
 + (NSString*)getNotificationContent:(Message*)message {
     NSString *notificationText = nil;
+    AVUserStore *store = [AVUserStore sharedInstance];
+    UserProfile *objectProfile = [store getUserProfile:message.byClient];
     int memberCount = message.clients.count;
     switch (message.eventType) {
         case EventInvited:
-            notificationText = [NSString stringWithFormat:@"%@ 邀请你加入", message.byClient];
+            notificationText = [NSString stringWithFormat:@"%@ 邀请你加入", objectProfile.nickname];
             break;
         case EventKicked:
-            notificationText = [NSString stringWithFormat:@"%@ 剔除了你", message.byClient];
+            notificationText = [NSString stringWithFormat:@"%@ 剔除了你", objectProfile.nickname];
             break;
         case EventMemberAdd:
-            notificationText = [NSString stringWithFormat:@"%@ 邀请 ", message.byClient];
+            notificationText = [NSString stringWithFormat:@"%@ 邀请 ", objectProfile.nickname];
             for (int i = 0; i < memberCount; i++) {
+                UserProfile *tmp = [store getUserProfile:message.clients[i]];
                 if (i == memberCount - 1) {
-                    notificationText = [notificationText stringByAppendingString:[NSString stringWithFormat:@"%@ 加入", message.clients[i]]];
+                    notificationText = [notificationText stringByAppendingString:[NSString stringWithFormat:@"%@ 加入", tmp.nickname]];
                 } else {
-                    notificationText = [notificationText stringByAppendingString:[NSString stringWithFormat:@"%@,", message.clients[i]]];
+                    notificationText = [notificationText stringByAppendingString:[NSString stringWithFormat:@"%@,", tmp.nickname]];
                 }
             }
             break;
         case EventMemberRemove:
-            notificationText = [NSString stringWithFormat:@"%@ 剔除了 ", message.byClient];
+            notificationText = [NSString stringWithFormat:@"%@ 剔除了 ", objectProfile.nickname];
             for (int i = 0; i < memberCount; i++) {
+                UserProfile *tmp = [store getUserProfile:message.clients[i]];
                 if (i == memberCount - 1) {
-                    notificationText = [notificationText stringByAppendingString:[NSString stringWithFormat:@"%@", message.clients[i]]];
+                    notificationText = [notificationText stringByAppendingString:[NSString stringWithFormat:@"%@", tmp.nickname]];
                 } else {
-                    notificationText = [notificationText stringByAppendingString:[NSString stringWithFormat:@"%@,", message.clients[i]]];
+                    notificationText = [notificationText stringByAppendingString:[NSString stringWithFormat:@"%@,", tmp.nickname]];
                 }
             }
             break;

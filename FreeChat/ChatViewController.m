@@ -10,6 +10,7 @@
 #import "ConversationDetailViewController.h"
 #import "MessageDisplayer.h"
 #import "FCMessageCell.h"
+#import "AVUserStore.h"
 
 #define INPUTVIEW_HEIGHT 40
 
@@ -31,9 +32,10 @@ UUInputFunctionViewDelegate, FCMessageCellDelegate, ConversationOperationDelegat
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.title = @"ChatRoom";
+    [self.view setBackgroundColor:[UIColor whiteColor]];
+
     CGSize frameSize = self.view.frame.size;
-    CGSize navSize = self.navigationController.navigationBar.frame.size;
-    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, frameSize.width, frameSize.height - navSize.height) style:UITableViewStylePlain];
+    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, frameSize.width, frameSize.height - 40) style:UITableViewStylePlain];
     _tableView.delegate = self;
     _tableView.dataSource = self;
     _tableView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
@@ -49,6 +51,14 @@ UUInputFunctionViewDelegate, FCMessageCellDelegate, ConversationOperationDelegat
     
     _messages = [[NSMutableArray alloc] initWithCapacity:100];
     _quitConversation = false;
+
+    ConversationStore *store = [ConversationStore sharedInstance];
+    [store queryMoreMessages:self.conversation from:@"" timestamp:[[NSDate date] timeIntervalSince1970]*1000 limit:20 callback:^(NSArray *objects, NSError *error) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [_messages addObjectsFromArray:objects];
+            [_tableView reloadData];
+        });
+    }];
 }
 
 - (void)initNavigationButton
@@ -69,11 +79,6 @@ UUInputFunctionViewDelegate, FCMessageCellDelegate, ConversationOperationDelegat
 
     ConversationStore *store = [ConversationStore sharedInstance];
     [store addEventObserver:self forConversation:self.conversation.conversationId];
-    [store queryMoreMessages:self.conversation from:@"" timestamp:[[NSDate date] timeIntervalSince1970]*1000 limit:20 callback:^(NSArray *objects, NSError *error) {
-        [_messages addObjectsFromArray:objects];
-        [_tableView reloadData];
-    }];
-
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -166,9 +171,17 @@ UUInputFunctionViewDelegate, FCMessageCellDelegate, ConversationOperationDelegat
 }
 
 #pragma IMEventObserver
-- (void)newMessageArrived:(Message*)message conversation:(AVIMConversation*)conversation {
-    [_messages addObject:message];
-    [_tableView reloadData];
+- (void)newMessageArrived:(Message*)message conversation:(AVIMConversation*)conv {
+    if (message.eventType == EventKicked) {
+        UserProfile *profile = [[AVUserStore sharedInstance] getUserProfile:message.byClient];
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil message:[NSString stringWithFormat:@"%@ 剔除了你", profile.nickname] delegate:nil cancelButtonTitle:@"知道了" otherButtonTitles:nil, nil];
+        [alertView show];
+        [self exitConversation:conv];
+        return;
+    } else {
+        [_messages addObject:message];
+        [_tableView reloadData];
+    }
 }
 
 - (void)messageDelivered:(Message*)message conversation:(AVIMConversation*)conversation {
@@ -251,6 +264,13 @@ UUInputFunctionViewDelegate, FCMessageCellDelegate, ConversationOperationDelegat
 -(void)exitConversation:(AVIMConversation*)conversation {
     _quitConversation = true;
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+-(void)switch2NewConversation:(AVIMConversation *)newConversation{
+    [self.navigationController popViewControllerAnimated:YES];
+    ChatViewController *newVC = [[ChatViewController alloc] init];
+    newVC.conversation = newConversation;
+    [self.navigationController pushViewController:newVC animated:YES];
 }
 
 @end
