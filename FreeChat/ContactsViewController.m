@@ -36,7 +36,7 @@ NSString * kContactCellIdentifier = @"ContactIdentifier";
         _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, frameSize.width, frameSize.height - navSize.height) style:UITableViewStylePlain];
         _tableView.allowsMultipleSelection = YES;
     } else {
-        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, navSize.height + 24, frameSize.width, frameSize.height - navSize.height) style:UITableViewStyleGrouped];
+        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, navSize.height + 24, frameSize.width, frameSize.height - navSize.height) style:UITableViewStylePlain];
         _tableView.allowsMultipleSelection = NO;
     }
     _tableView.delegate = self;
@@ -195,5 +195,36 @@ NSString * kContactCellIdentifier = @"ContactIdentifier";
     return 44.0f;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    if (ActionNone == self.action) {
+        if (0 == section) {
+            return 0.0f;
+        } else {
+            return 30.0f;
+        }
+    } else {
+        return 0.0f;
+    }
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    return 0.0f;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    if (ActionNone != self.action) {
+        return nil;
+    }
+    if (0 == section) {
+        return nil;
+    }
+    UILabel *headerLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 30)];
+    [headerLabel setText:@"联系人"];
+    [headerLabel setBackgroundColor:[UIColor lightGrayColor]];
+    [headerLabel setTextColor:[UIColor whiteColor]];
+    [headerLabel setFont:[UIFont systemFontOfSize:16.0f]];
+    [headerLabel setTextAlignment:NSTextAlignmentLeft];
+    return headerLabel;
+}
 
 @end
