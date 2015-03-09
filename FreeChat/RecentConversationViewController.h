@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ConversationStore.h"
 
 @interface RecentConversationViewController : UIViewController
+<UITableViewDataSource, UITableViewDelegate, IMEventObserver>
 
 
 @end

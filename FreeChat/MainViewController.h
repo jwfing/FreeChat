@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AVOSCloudIM/AVOSCloudIM.h"
 
-@interface MainViewController : UITabBarController
+@interface MainViewController : UITabBarController <AVIMClientDelegate, UITabBarControllerDelegate>
 
 @end

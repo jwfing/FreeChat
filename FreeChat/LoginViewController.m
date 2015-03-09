@@ -8,6 +8,9 @@
 
 #import "LoginViewController.h"
 #import "AVOSCloud/AVOSCloud.h"
+#import "AVOSCloudIM/AVOSCloudIM.h"
+#import "MainViewController.h"
+#import "ConversationStore.h"
 
 @interface LoginViewController () {
     UITextField *_username;
@@ -49,15 +52,34 @@
     self.navigationController.navigationBarHidden = YES;
     
     if ([AVUser currentUser] != nil) {
-        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        UIViewController *mainView = [storyboard instantiateViewControllerWithIdentifier:@"MainViewIdentifier"];
-        [self.navigationController pushViewController:mainView animated:YES];
+        [self pushToMainViewController];
     }
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)pushToMainViewController {
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    MainViewController *mainView = [storyboard instantiateViewControllerWithIdentifier:@"MainViewIdentifier"];
+
+    AVUser* currentUser = [AVUser currentUser];
+    AVIMClient *imClient = [[AVIMClient alloc] init];
+    imClient.delegate = mainView;
+    NSLog(@"open AVIMClient");
+    [imClient openWithClientId:[currentUser objectId] callback:^(BOOL succeeded, NSError *error){
+        if (error) {
+            UIAlertView *view = [[UIAlertView alloc] initWithTitle:@"聊天不可用！" message:[error description] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            [view show];
+        } else {
+            ConversationStore *store = [ConversationStore sharedInstance];
+            store.imClient = imClient;
+            [store reviveFromLocal:currentUser];
+            [self.navigationController pushViewController:mainView animated:YES];
+        }
+    }];
 }
 
 - (void)signinClicked:(id)sender {
@@ -68,9 +90,7 @@
                                             UIAlertView *view = [[UIAlertView alloc] initWithTitle:@"Error" message:[error description] delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
                                             [view show];
                                         } else {
-                                            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-                                            UIViewController *mainView = [storyboard instantiateViewControllerWithIdentifier:@"MainViewIdentifier"];
-                                            [self.navigationController pushViewController:mainView animated:YES];
+                                            [self pushToMainViewController];
                                         }
                                     }];
 }

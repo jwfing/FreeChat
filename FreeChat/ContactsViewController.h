@@ -7,9 +7,21 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AVOSCloudIM/AVOSCloudIM.h"
+#import "ConversationStore.h"
 
-@interface ContactsViewController : UIViewController
+typedef int ConversationActionType;
+enum : ConversationActionType {
+    ActionNone = 0,
+    AddNewMembers = 1 << 0,
+    KickoffMembers = 1 << 1,
+};
 
+@interface ContactsViewController : UIViewController<UITableViewDataSource, UITableViewDelegate>
+
+@property (nonatomic) ConversationActionType action;
+@property (nonatomic, strong) NSArray *specificUsers;
+@property (nonatomic, weak) id<ConversationOperationDelegate> delegate;
 
 @end
 

@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ConversationStore.h"
+#import "UUInputFunctionView.h"
 
 @interface ChatViewController : UIViewController
+
+@property (nonatomic, strong) AVIMConversation *conversation;
 
 @end

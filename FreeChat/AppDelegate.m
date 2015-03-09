@@ -10,6 +10,7 @@
 #import "LoginViewController.h"
 #import "MainViewController.h"
 #import "AVOSCloud/AVOSCloud.h"
+#import "ConversationStore.h"
 
 #define SYSTEM_VERSION [[[UIDevice currentDevice] systemVersion] floatValue]
 
@@ -24,6 +25,10 @@
     // Override point for customization after application launch.
     [AVOSCloud setApplicationId:@"xqbqp3jr39p1mfptkswia72icqkk6i2ic3vi4q1tbpu7ce8b"
                       clientKey:@"cfs0hpk9ai3f8kiwua7atnri8hrleodvipjy0dofj70ebbno"];
+    [AVOSCloud setVerbosePolicy:kAVVerboseShow];
+    [AVLogger addLoggerDomain:AVLoggerDomainIM];
+    [AVLogger addLoggerDomain:AVLoggerDomainCURL];
+    [AVLogger setLoggerLevelMask:AVLoggerLevelAll];
     return YES;
 }
 
@@ -35,6 +40,7 @@
 - (void)applicationDidEnterBackground:(UIApplication *)application {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    [[ConversationStore sharedInstance] dump2Local:[AVUser currentUser]];
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {

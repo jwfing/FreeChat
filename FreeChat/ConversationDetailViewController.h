@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AVOSCloudIM/AVOSCloudIM.h"
+#import "ConversationStore.h"
 
 @interface ConversationDetailViewController : UIViewController
+
+@property (nonatomic, strong) AVIMConversation *conversation;
+@property (nonatomic, weak) id<ConversationOperationDelegate> delegate;
 
 @end
