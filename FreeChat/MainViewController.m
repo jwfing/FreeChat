@@ -29,8 +29,7 @@
     self.navigationItem.leftBarButtonItem=nil;
     self.navigationItem.hidesBackButton = YES;
     self.delegate = self;
-    self.title = @"messages";
-
+    self.title = @"最新消息";
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -58,11 +57,11 @@
 #pragma UITabBarControllerDelegate
 - (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController {
     if ([viewController isKindOfClass:[RecentConversationViewController class]]) {
-        self.title = @"messages";
+        self.title = @"最新消息";
     } else if ([viewController isKindOfClass:[ContactsViewController class]]) {
-        self.title = @"contacts";
+        self.title = @"联系人";
     } else if ([viewController isKindOfClass:[SettingsViewController class]]) {
-        self.title = @"setting";
+        self.title = @"设置";
     }
 }
 #pragma AVIMClientDelegate

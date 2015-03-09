@@ -50,7 +50,7 @@ UUInputFunctionViewDelegate, FCMessageCellDelegate, ConversationOperationDelegat
 
     
     _messages = [[NSMutableArray alloc] initWithCapacity:100];
-    _quitConversation = false;
+    _quitConversation = NO;
 
     ConversationStore *store = [ConversationStore sharedInstance];
     [store queryMoreMessages:self.conversation from:@"" timestamp:[[NSDate date] timeIntervalSince1970]*1000 limit:20 callback:^(NSArray *objects, NSError *error) {
@@ -262,7 +262,7 @@ UUInputFunctionViewDelegate, FCMessageCellDelegate, ConversationOperationDelegat
 
 #pragma ConversationOperationDelegate
 -(void)exitConversation:(AVIMConversation*)conversation {
-    _quitConversation = true;
+    _quitConversation = YES;
     [self.navigationController popViewControllerAnimated:YES];
 }
 
