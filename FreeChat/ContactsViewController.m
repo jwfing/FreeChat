@@ -13,6 +13,7 @@
 #import "ChatViewController.h"
 #import "Constrains.h"
 #import "ConversationListViewController.h"
+#import "MJRefresh.h"
 
 NSString * kContactCellIdentifier = @"ContactIdentifier";
 
@@ -20,7 +21,12 @@ NSString * kContactCellIdentifier = @"ContactIdentifier";
     UITableView *_tableView;
     NSMutableArray *_allUsers;
     NSMutableArray *_pickedUsers;
+    MJRefreshFooterView *_refreshFooter;
 }
+
+@property (nonatomic, strong)NSMutableArray *allUsers;
+@property (nonatomic, strong)UITableView *tableView;
+@property (nonatomic, strong)MJRefreshFooterView *refreshFooter;
 
 @end
 
@@ -33,7 +39,7 @@ NSString * kContactCellIdentifier = @"ContactIdentifier";
     CGSize navSize = self.navigationController.navigationBar.frame.size;
 
     if (self.action != ActionNone) {
-        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, frameSize.width, frameSize.height - navSize.height) style:UITableViewStylePlain];
+        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, frameSize.width, frameSize.height) style:UITableViewStylePlain];
         _tableView.allowsMultipleSelection = YES;
     } else {
         _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, navSize.height + 24, frameSize.width, frameSize.height - navSize.height) style:UITableViewStylePlain];
@@ -46,6 +52,36 @@ NSString * kContactCellIdentifier = @"ContactIdentifier";
     
     _allUsers = [[NSMutableArray alloc] initWithCapacity:100];
     _pickedUsers = [[NSMutableArray alloc] initWithCapacity:100];
+    if (self.specificUsers) {
+        _allUsers = [NSMutableArray arrayWithArray:self.specificUsers];
+    } else {
+        AVQuery *query = [AVUser query];
+        [query addDescendingOrder:@"createdAt"];
+        [query whereKey:@"objectId" notEqualTo:[AVUser currentUser].objectId];
+        query.limit = 100;
+        [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+            [_allUsers addObjectsFromArray:objects];
+            [_tableView reloadData];
+        }];
+        _refreshFooter = [MJRefreshFooterView footer];
+        _refreshFooter.scrollView = _tableView;
+        __weak typeof(self) ws = self;
+        _refreshFooter.beginRefreshingBlock = ^(MJRefreshBaseView *refreshView) {
+            AVQuery *query = [AVUser query];
+            [query addDescendingOrder:@"createdAt"];
+            [query whereKey:@"objectId" notEqualTo:[AVUser currentUser].objectId];
+            query.limit = 100;
+            query.skip = [ws.allUsers count];
+            [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+                [ws.allUsers addObjectsFromArray:objects];
+                [ws.tableView reloadData];
+                [ws.refreshFooter endRefreshing];
+            }];
+        };
+    }
+    if (self.action != ActionNone) {
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"确定" style:UIBarButtonItemStylePlain target:self action:@selector(pressedButtonOK:)];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -53,22 +89,8 @@ NSString * kContactCellIdentifier = @"ContactIdentifier";
     // Dispose of any resources that can be recreated.
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    if (self.specificUsers) {
-        _allUsers = [NSMutableArray arrayWithArray:self.specificUsers];
-    } else {
-        AVQuery *query = [AVUser query];
-        [query addDescendingOrder:@"createdAt"];
-        [query whereKey:@"objectId" notEqualTo:[AVUser currentUser].objectId];
-        [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-            [_allUsers removeAllObjects];
-            [_allUsers addObjectsFromArray:objects];
-            [_tableView reloadData];
-        }];
-    }
-    if (self.action != ActionNone) {
-        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"确定" style:UIBarButtonItemStylePlain target:self action:@selector(pressedButtonOK:)];
-    }
+- (void)dealloc {
+    [_refreshFooter free];
 }
 
 -(void)pressedButtonOK:(id)sender {
@@ -219,7 +241,7 @@ NSString * kContactCellIdentifier = @"ContactIdentifier";
         return nil;
     }
     UILabel *headerLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 30)];
-    [headerLabel setText:@"联系人"];
+    [headerLabel setText:@" 用户列表"];
     [headerLabel setBackgroundColor:[UIColor lightGrayColor]];
     [headerLabel setTextColor:[UIColor whiteColor]];
     [headerLabel setFont:[UIFont systemFontOfSize:16.0f]];

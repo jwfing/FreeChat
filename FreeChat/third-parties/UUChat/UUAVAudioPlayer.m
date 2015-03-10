@@ -8,6 +8,7 @@
 
 #import "UUAVAudioPlayer.h"
 #import <AVFoundation/AVFoundation.h>
+#import "AVOSCloud/AVOSCloud.h"
 
 
 @interface UUAVAudioPlayer ()<AVAudioPlayerDelegate>
@@ -28,32 +29,33 @@
     return sharedInstance;
 }
 
++(NSString*)dataCachePath {
+    NSString *root = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+    NSString *cacheDir = [root stringByAppendingPathComponent:@"cacheMsgData"];
+    if (![[NSFileManager defaultManager] fileExistsAtPath:cacheDir]) {
+        [[NSFileManager defaultManager] createDirectoryAtPath:cacheDir
+                                  withIntermediateDirectories:YES
+                                                   attributes:nil
+                                                        error:NULL];
+    }
+    return cacheDir;
+}
+
 -(void)playSongWithUrl:(NSString *)songUrl
 {
-    dispatch_async(dispatch_queue_create("dfsfe", NULL), ^{
+    __weak typeof(self) ws = self;
+    NSURL *url = [NSURL URLWithString:songUrl];
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
         
-        [self.delegate UUAVAudioPlayerBeiginLoadVoice];
-        
-        NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:songUrl]];
-        
+        NSString *cacheFile = [[UUAVAudioPlayer dataCachePath] stringByAppendingPathComponent:url.path];
+        if (![[NSFileManager defaultManager] fileExistsAtPath:cacheFile isDirectory:NO]) {
+            NSData *data = [NSData dataWithContentsOfURL:url];
+            [data writeToFile:cacheFile atomically:YES];
+        }
         dispatch_async(dispatch_get_main_queue(), ^{
-            if (player) {
-                [self.delegate UUAVAudioPlayerDidFinishPlay];
-                [player stop];
-                player.delegate = nil;
-                player = nil;
-            }
-            [[NSNotificationCenter defaultCenter]postNotificationName:@"VoicePlayHasInterrupt" object:nil];
-            NSError *playerError;
-            player = [[AVAudioPlayer alloc]initWithData:data error:&playerError];
-            player.volume = 1.0f;
-            if (player == nil){
-                NSLog(@"ERror creating player: %@", [playerError description]);
-            }
-            [[AVAudioSession sharedInstance] setCategory: AVAudioSessionCategorySoloAmbient error: nil];
-            player.delegate = self;
-            [player play];
-            [self.delegate UUAVAudioPlayerBeiginPlay];
+            NSData *songData = [NSData dataWithContentsOfFile:cacheFile];
+            [ws playSongWithData:songData];
         });
     });
 }
@@ -69,7 +71,10 @@
     }
     [[NSNotificationCenter defaultCenter]postNotificationName:@"VoicePlayHasInterrupt" object:nil];
     NSError *playerError;
-    player = [[AVAudioPlayer alloc]initWithData:songData error:&playerError];
+    player = [[AVAudioPlayer alloc]initWithData:songData fileTypeHint:@"mp3" error:&playerError];
+    if (nil == player) {
+        NSLog(@"failed to init AudioPlayer. error: %@", playerError.description);
+    }
     player.volume = 1.0f;
     [[AVAudioSession sharedInstance] setCategory: AVAudioSessionCategorySoloAmbient error: nil];
     player.delegate = self;

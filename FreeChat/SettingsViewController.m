@@ -29,16 +29,19 @@
     CGSize frameSize = self.view.frame.size;
     CGSize navSize = self.navigationController.navigationBar.frame.size;
     NSLog(@"frame width=%f, frame height=%f", frameSize.width, frameSize.height);
-    _username = [[UILabel alloc] initWithFrame:CGRectMake(20, navSize.height + 44, frameSize.width - 40, 20)];
+    _username = [[UILabel alloc] initWithFrame:CGRectMake(20, navSize.height + 214, frameSize.width - 40, 20)];
     [_username setFont:[UIFont systemFontOfSize:18.0]];
     [_username setTextAlignment:NSTextAlignmentCenter];
     
-    _avatarView = [[UIImageView alloc] initWithFrame:CGRectMake((frameSize.width - 150)/2, navSize.height + 74, 150, 150)];
+    _avatarView = [[UIImageView alloc] initWithFrame:CGRectMake((frameSize.width - 150)/2, navSize.height + 44, 150, 150)];
+    _avatarView.layer.masksToBounds = YES;
+    _avatarView.layer.cornerRadius = 150 / 2;
     [_avatarView setUserInteractionEnabled:YES];
     [_avatarView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(changeUserAvatar)]];
 
     _logoutButton = [[UIButton alloc] initWithFrame:CGRectMake(20, frameSize.height - navSize.height - 64, frameSize.width - 40, 30)];
-    [_logoutButton setTitle:@"Logout" forState:UIControlStateNormal];
+    [_logoutButton setTitle:@"退出登录" forState:UIControlStateNormal];
+//    [_logoutButton setBackgroundColor:[UIColor lightGrayColor]];
     [_logoutButton setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
     [_logoutButton addTarget:self action:@selector(logout:) forControlEvents:UIControlEventTouchUpInside];
 
@@ -55,7 +58,7 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     AVUser *currentUser = [AVUser currentUser];
-    [_username setText:[NSString stringWithFormat:@"currentUser: %@",[currentUser username]]];
+    [_username setText:[NSString stringWithFormat:@"当前用户: %@",[currentUser username]]];
     NSString *avatarUrl = currentUser.avatarUrl;
     if ([avatarUrl length] > 0) {
         [_avatarView setImageWithURL:[NSURL URLWithString:avatarUrl] placeholderImage:[UIImage imageNamed:@"default_avatar"]];

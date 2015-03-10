@@ -131,7 +131,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="设置" image="second" id="63i-gV-KNo"/>
+                    <tabBarItem key="tabBarItem" title="设置" image="setting.png" id="63i-gV-KNo"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1ZQ-E3-oq9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -161,5 +161,6 @@
     <resources>
         <image name="first" width="30" height="30"/>
         <image name="second" width="30" height="30"/>
+        <image name="setting.png" width="29" height="29"/>
     </resources>
 </document>

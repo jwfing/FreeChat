@@ -52,6 +52,12 @@ NSString *kExitCellIdentifier = @"ChatDetailExitCellIdentifier";
         self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"踢人" style:UIBarButtonItemStylePlain target:self action:@selector(pressedButtonKickoff:)];
         ;
     }
+    [[AVUserStore sharedInstance] fetchInfos:self.conversation.members callback:^(NSArray *objects, NSError *error) {
+        _memberProfiles = [[NSMutableArray alloc] initWithArray:objects];
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            [self.tableView reloadData];
+        });
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -62,20 +68,10 @@ NSString *kExitCellIdentifier = @"ChatDetailExitCellIdentifier";
 - (BOOL)createByCurrentUser {
     NSString *currentUser = [[AVUser currentUser] objectId];
     if ([currentUser compare:self.conversation.creator] == NSOrderedSame) {
-        return true;
+        return YES;
     } else {
-        return false;
+        return NO;
     }
-}
-
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    [[AVUserStore sharedInstance] fetchInfos:self.conversation.members callback:^(NSArray *objects, NSError *error) {
-        _memberProfiles = [[NSMutableArray alloc] initWithArray:objects];
-        dispatch_sync(dispatch_get_main_queue(), ^{
-            [self.tableView reloadData];
-        });
-    }];
 }
 
 /*
@@ -152,15 +148,7 @@ NSString *kExitCellIdentifier = @"ChatDetailExitCellIdentifier";
             tmpUsernameLabel = usernameArray[i - index * 4];
             if (i < _memberProfiles.count) {
                 tmpProfile = _memberProfiles[i];
-                if ([tmpProfile.avatarUrl length] < 1) {
-                    if (i % 2 == 0) {
-                        [tmpAvatarView setImage:[UIImage imageNamed:@"default_avatar_mal"]];
-                    } else {
-                        [tmpAvatarView setImage:[UIImage imageNamed:@"default_avatar"]];
-                    }
-                } else {
-                    [tmpAvatarView setImageWithURL:[NSURL URLWithString:tmpProfile.avatarUrl]];
-                }
+                [tmpAvatarView setImageWithURL:[NSURL URLWithString:tmpProfile.avatarUrl] placeholderImage:[UIImage imageNamed:@"default_avatar"]];
                 [tmpUsernameLabel setText:tmpProfile.nickname];
                 [tmpAvatarView setHidden:NO];
                 [tmpAvatarView setUserInteractionEnabled:NO];
@@ -257,6 +245,9 @@ NSString *kExitCellIdentifier = @"ChatDetailExitCellIdentifier";
 #pragma ConversationOperationDelegate
 -(void)addMembers:(NSArray*)clients conversation:(AVIMConversation*)conversation {
     __block UITableView *tab = self.tableView;
+    if (clients.count < 1) {
+        return;
+    }
     if([self isMultiPartiesConversation]) {
         [self.conversation addMembersWithClientIds:clients callback:^(BOOL succeeded, NSError *error) {
             if (succeeded) {
@@ -288,6 +279,9 @@ NSString *kExitCellIdentifier = @"ChatDetailExitCellIdentifier";
 
 -(void)kickoffMembers:(NSArray*)clients conversation:(AVIMConversation*)conversation {
     __block UITableView *tab = self.tableView;
+    if (clients.count < 1) {
+        return;
+    }
     [self.conversation removeMembersWithClientIds:clients callback:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
             [tab reloadData];

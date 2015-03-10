@@ -98,14 +98,14 @@
 
 - (void)btnContentClick{
     //play audio
-    if (![self.messageFrame.message isKindOfClass:[AVIMTypedMessage class]]) {
+    if (![self.messageFrame.message.imMessage isKindOfClass:[AVIMTypedMessage class]]) {
         [self.btnContent becomeFirstResponder];
         UIMenuController *menu = [UIMenuController sharedMenuController];
         [menu setTargetRect:self.btnContent.frame inView:self.btnContent.superview];
         [menu setMenuVisible:YES animated:YES];
     } else {
         UIMenuController *menu = nil;
-        AVIMTypedMessage *typedMessage = (AVIMTypedMessage*)self.messageFrame.message;
+        AVIMTypedMessage *typedMessage = (AVIMTypedMessage*)self.messageFrame.message.imMessage;
         switch (typedMessage.mediaType) {
             case kAVIMMessageMediaTypeText:
                 [self.btnContent becomeFirstResponder];

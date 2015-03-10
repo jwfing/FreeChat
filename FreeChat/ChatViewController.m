@@ -11,6 +11,7 @@
 #import "MessageDisplayer.h"
 #import "FCMessageCell.h"
 #import "AVUserStore.h"
+#import "MJRefresh.h"
 
 #define INPUTVIEW_HEIGHT 40
 
@@ -20,7 +21,12 @@ UUInputFunctionViewDelegate, FCMessageCellDelegate, ConversationOperationDelegat
     UUInputFunctionView *_inputView;
     NSMutableArray *_messages;
     BOOL _quitConversation;
+    MJRefreshHeaderView *_refreshHead;
 }
+
+@property (nonatomic, strong) NSMutableArray *messages;
+@property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, strong) MJRefreshHeaderView *refreshHead;
 
 @end
 
@@ -40,25 +46,57 @@ UUInputFunctionViewDelegate, FCMessageCellDelegate, ConversationOperationDelegat
     _tableView.dataSource = self;
     _tableView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    [_tableView setUserInteractionEnabled:YES];
     [self.view addSubview:_tableView];
     
-    _inputView = [[UUInputFunctionView alloc]initWithSuperVC:self];
+    _inputView = [[UUInputFunctionView alloc] initWithSuperVC:self];
     _inputView.delegate = self;
     [self.view addSubview:_inputView];
 
-    [self initNavigationButton];
-
-    
     _messages = [[NSMutableArray alloc] initWithCapacity:100];
     _quitConversation = NO;
 
+    [self initNavigationButton];
+    
+    [self addRefreshViews];
+    
     ConversationStore *store = [ConversationStore sharedInstance];
-    [store queryMoreMessages:self.conversation from:@"" timestamp:[[NSDate date] timeIntervalSince1970]*1000 limit:20 callback:^(NSArray *objects, NSError *error) {
+    [store queryMoreMessages:self.conversation from:@"" timestamp:[[NSDate date] timeIntervalSince1970]*1000 limit:15 callback:^(NSArray *objects, NSError *error) {
         dispatch_async(dispatch_get_main_queue(), ^{
             [_messages addObjectsFromArray:objects];
             [_tableView reloadData];
+            if (_messages.count > 1) {
+                [_tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:_messages.count - 1 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:NO];
+            }
         });
     }];
+}
+
+- (void)addRefreshViews {
+    __weak typeof(self) weakSelf = self;
+    _refreshHead = [MJRefreshHeaderView header];
+    _refreshHead.scrollView = _tableView;
+    _refreshHead.beginRefreshingBlock = ^(MJRefreshBaseView *refreshView) {
+        NSString *lastestMessageId = @"";
+        long long ts = [[NSDate date] timeIntervalSince1970] * 1000;
+        if (weakSelf.messages.count > 0) {
+            ts = [[weakSelf.messages objectAtIndex:0] sentTimestamp];
+            lastestMessageId = [((Message*)weakSelf.messages[0]).imMessage messageId];
+        }
+        ConversationStore *store = [ConversationStore sharedInstance];
+        [store queryMoreMessages:weakSelf.conversation from:lastestMessageId timestamp:ts limit:15 callback:^(NSArray *objects, NSError *error) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                for (int i = objects.count - 1; i >= 0; i--) {
+                    [weakSelf.messages insertObject:objects[i] atIndex:0];
+                }
+                [weakSelf.tableView reloadData];
+                if (weakSelf.messages.count > 0) {
+                    [weakSelf.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:NO];
+                }
+                [weakSelf.refreshHead endRefreshing];
+            });
+        }];
+    };
 }
 
 - (void)initNavigationButton
@@ -76,6 +114,7 @@ UUInputFunctionViewDelegate, FCMessageCellDelegate, ConversationOperationDelegat
     
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(keyboardChange:) name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(keyboardChange:) name:UIKeyboardWillHideNotification object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(tableViewScrollToBottom) name:UIKeyboardDidShowNotification object:nil];
 
     ConversationStore *store = [ConversationStore sharedInstance];
     [store addEventObserver:self forConversation:self.conversation.conversationId];
@@ -93,6 +132,10 @@ UUInputFunctionViewDelegate, FCMessageCellDelegate, ConversationOperationDelegat
     [[NSNotificationCenter defaultCenter]removeObserver:self];
 }
 
+-(void)dealloc {
+    [_refreshHead free];
+}
+
 /*
 #pragma mark - Navigation
 
@@ -102,6 +145,15 @@ UUInputFunctionViewDelegate, FCMessageCellDelegate, ConversationOperationDelegat
     // Pass the selected object to the new view controller.
 }
 */
+
+- (void)tableViewScrollToBottom
+{
+    if (_messages.count==0)
+        return;
+    
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:_messages.count-1 inSection:0];
+    [_tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionBottom animated:YES];
+}
 
 -(void)keyboardChange:(NSNotification *)notification
 {
@@ -117,9 +169,11 @@ UUInputFunctionViewDelegate, FCMessageCellDelegate, ConversationOperationDelegat
     [UIView beginAnimations:nil context:nil];
     [UIView setAnimationDuration:animationDuration];
     [UIView setAnimationCurve:animationCurve];
-    
+
     if (notification.name == UIKeyboardWillShowNotification) {
-        self.view.frame = CGRectOffset(self.view.frame, 0, -keyboardEndFrame.size.height);
+        if (self.view.frame.origin.y >= 0.0f) {
+            self.view.frame = CGRectOffset(self.view.frame, 0, -keyboardEndFrame.size.height);
+        }
     }else{
         self.view.frame = CGRectOffset(self.view.frame, 0, keyboardEndFrame.size.height);
     }
@@ -197,6 +251,7 @@ UUInputFunctionViewDelegate, FCMessageCellDelegate, ConversationOperationDelegat
             if (error) {
                 [MessageDisplayer displayError:error];
             } else {
+                [[ConversationStore sharedInstance] newMessageSent:avMessage conversation:self.conversation];
                 Message *msg = [[Message alloc] initWithAVIMMessage:avMessage];
                 [_messages addObject:msg];
                 [_tableView reloadData];
@@ -219,6 +274,7 @@ UUInputFunctionViewDelegate, FCMessageCellDelegate, ConversationOperationDelegat
             if (error) {
                 [MessageDisplayer displayError:error];
             } else {
+                [[ConversationStore sharedInstance] newMessageSent:avMessage conversation:self.conversation];
                 Message *msg = [[Message alloc] initWithAVIMMessage:avMessage];
                 [_messages addObject:msg];
                 [_tableView reloadData];
@@ -241,6 +297,7 @@ UUInputFunctionViewDelegate, FCMessageCellDelegate, ConversationOperationDelegat
             if (error) {
                 [MessageDisplayer displayError:error];
             } else {
+                [[ConversationStore sharedInstance] newMessageSent:avMessage conversation:self.conversation];
                 Message *msg = [[Message alloc] initWithAVIMMessage:avMessage];
                 [_messages addObject:msg];
                 [_tableView reloadData];
@@ -255,10 +312,10 @@ UUInputFunctionViewDelegate, FCMessageCellDelegate, ConversationOperationDelegat
     [alert show];
 }
 
-- (void)cellContentDidClick:(FCMessageCell *)cell image:(UIImage *)contentImage {
-    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Tip" message:@"MessageContentClick !!!" delegate:nil cancelButtonTitle:@"sure" otherButtonTitles:nil];
-    [alert show];
-}
+//- (void)cellContentDidClick:(FCMessageCell *)cell image:(UIImage *)contentImage {
+//    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Tip" message:@"MessageContentClick !!!" delegate:nil cancelButtonTitle:@"sure" otherButtonTitles:nil];
+//    [alert show];
+//}
 
 #pragma ConversationOperationDelegate
 -(void)exitConversation:(AVIMConversation*)conversation {

@@ -10,12 +10,14 @@
 #import "ConversationStore.h"
 #import "ConversationUtils.h"
 #import "ChatViewController.h"
+#import "ContactsViewController.h"
+#import "MessageDisplayer.h"
 
 #define kConversationCellIdentifier @"ConversationCellIdentifier"
 
-@interface ConversationListViewController () <UITableViewDataSource, UITableViewDelegate> {
+@interface ConversationListViewController () <UITableViewDataSource, UITableViewDelegate, ConversationOperationDelegate> {
     UITableView *_tableView;
-    NSArray *_conversations;
+    NSMutableArray *_conversations;
 }
 
 @end
@@ -36,9 +38,10 @@
     [query whereKey:kAVIMKeyMember containedIn:@[[AVUser currentUser].objectId]];
     [query whereKey:AVIMAttr(@"type") equalTo:[NSNumber numberWithInt:kConversationType_Group]];
     [query findConversationsWithCallback:^(NSArray *objects, NSError *error) {
-        _conversations = [NSArray arrayWithArray:objects];
+        _conversations = [NSMutableArray arrayWithArray:objects];
         [_tableView reloadData];
     }];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"新建" style:UIBarButtonItemStylePlain target:self action:@selector(pressedButtonCreate:)];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -55,6 +58,39 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+-(void)pressedButtonCreate:(id)sender {
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    ContactsViewController *contactsController = [storyboard instantiateViewControllerWithIdentifier:@"ContactsViewIdentifier"];
+    contactsController.action = AddNewMembers;
+    contactsController.delegate = self;
+    [self.navigationController pushViewController:contactsController animated:YES];
+}
+
+#pragma ConversationOperationDelegate
+-(void)addMembers:(NSArray*)clients conversation:(AVIMConversation*)conversation {
+    if (clients.count < 1) {
+        return;
+    }
+    NSString *currentUserId = [[AVUser currentUser] objectId];
+    NSMutableArray *convMembers = [NSMutableArray arrayWithArray:clients];
+    if (![clients containsObject:currentUserId]) {
+        [convMembers addObject:currentUserId];
+    }
+    AVIMClient *imClient = [[ConversationStore sharedInstance] imClient];
+    [imClient createConversationWithName:nil
+                               clientIds:convMembers
+                              attributes:@{@"type":[NSNumber numberWithInt:kConversationType_Group]}
+                                 options:AVIMConversationOptionNone
+                                callback:^(AVIMConversation *conversation, NSError *error) {
+                                    if (error) {
+                                        [MessageDisplayer displayError:error];
+                                    } else {
+                                        [_conversations insertObject:conversation atIndex:0];
+                                        [_tableView reloadData];
+                                    }
+                                }];
+}
 
 #pragma UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
