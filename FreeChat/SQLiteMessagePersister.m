@@ -119,7 +119,7 @@
 - (NSString *)dbPathWithUserId:(NSString*)userId {
     NSString *cachePath = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) objectAtIndex:0];
     NSString *result = [cachePath stringByAppendingPathComponent:[NSString stringWithFormat:@"msgcache_%@.sql",userId]];
-    [[NSFileManager defaultManager] removeItemAtPath:result error:NULL];
+//    [[NSFileManager defaultManager] removeItemAtPath:result error:NULL];
     return result;
 }
 
