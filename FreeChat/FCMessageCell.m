@@ -176,11 +176,6 @@
     headImageBackView.frame = messageFrame.iconF;
     self.btnHeadImage.frame = CGRectMake(2, 2, ChatIconWH-4, ChatIconWH-4);
     [self.btnHeadImage setBackgroundImageForState:UIControlStateNormal withURL:[NSURL URLWithString:userAvatarUrl] placeholderImage:[UIImage imageNamed:@"default_avatar"]];
-//    if (message.ioType == AVIMMessageIOTypeOut) {
-//        [self.btnHeadImage setBackgroundImageForState:UIControlStateNormal withURL:[NSURL URLWithString:userAvatarUrl]];
-//    }else{
-//        [self.btnHeadImage setBackgroundImageForState:UIControlStateNormal withURL:[NSURL URLWithString:userAvatarUrl]];
-//    }
     
     // 3、设置下标
     self.labelNum.text = userName;
@@ -224,7 +219,7 @@
                 break;
             case kAVIMMessageMediaTypeAudio:
                 self.btnContent.voiceBackView.hidden = NO;
-                self.btnContent.second.text = [NSString stringWithFormat:@"%f's Voice",((AVIMAudioMessage*)message).duration];
+                self.btnContent.second.text = [NSString stringWithFormat:@"%.1f's ",((AVIMAudioMessage*)message).duration];
                 voiceURL = ((AVIMAudioMessage*)message).file.url;
                 break;
                 

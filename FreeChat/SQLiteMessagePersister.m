@@ -58,6 +58,7 @@
 - (void)open:(AVUser *)user {
     _dbQueue=[FMDatabaseQueue databaseQueueWithPath:[self dbPathWithUserId:user.objectId]];
     [_dbQueue inDatabase:^(FMDatabase *db) {
+        db.logsErrors = NO;
         [db executeUpdate:CREATE_MSG_TABLE_SQL];
         [db executeUpdate:CREATE_MSG_UNIQUE_INDEX_SQL];
     }];
@@ -69,6 +70,7 @@
 
 - (void)pushMessage:(Message*)message {
     [_dbQueue inDatabase:^(FMDatabase *db) {
+        db.logsErrors = NO;
         NSString *msgId = [message.imMessage messageId];
         if ([msgId length] < 1) {
             msgId = FAKE_MSG_ID;
@@ -81,9 +83,9 @@
                                           [NSNumber numberWithInt:message.eventType],
                                           message.byClient, msgClientsData]];
         if (!result) {
-            NSLog(@"failed to insert message to sqlite");
+            //NSLog(@"failed to insert message to sqlite");
         } else {
-            NSLog(@"cache message. id=%@, convId=%@, ts=%lli", message.imMessage.messageId, message.convId, message.sentTimestamp);
+            //NSLog(@"cache message. id=%@, convId=%@, ts=%lli", message.imMessage.messageId, message.convId, message.sentTimestamp);
         }
     }];
 }

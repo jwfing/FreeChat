@@ -185,7 +185,11 @@ NSString *kExitCellIdentifier = @"ChatDetailExitCellIdentifier";
         if (enableChangeName && (index == memberCellCount + 1)) {
             [result.textLabel setTextAlignment:NSTextAlignmentLeft];
             [result.textLabel setTextColor:[UIColor blackColor]];
-            [result.textLabel setText:[NSString stringWithFormat:@"群聊名称: %@",self.conversation.name]];
+            if (self.conversation.name) {
+                [result.textLabel setText:[NSString stringWithFormat:@"群聊名称: %@",self.conversation.name]];
+            } else {
+                [result.textLabel setText:@"群聊名称: 暂无"];
+            }
             result.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
         } else {
             [result.textLabel setTextAlignment:NSTextAlignmentCenter];

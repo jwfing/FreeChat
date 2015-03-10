@@ -198,6 +198,7 @@ NSString * kContactCellIdentifier = @"ContactIdentifier";
             [self openConversation:conversation];
         }
     }];
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
 }
 
 - (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
