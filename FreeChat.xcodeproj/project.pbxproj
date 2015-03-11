@@ -75,8 +75,6 @@
 		5C2957241A811F9F00BF1E9C /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C2957231A811F9F00BF1E9C /* ChatViewController.m */; };
 		5C2957271A811FFB00BF1E9C /* ConversationDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C2957261A811FFB00BF1E9C /* ConversationDetailViewController.m */; };
 		5C29572B1A81221200BF1E9C /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C29572A1A81221200BF1E9C /* MainViewController.m */; };
-		5C2957491A81E33300BF1E9C /* AVOSCloud.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C29573A1A81E31B00BF1E9C /* AVOSCloud.framework */; };
-		5C29574A1A81E33300BF1E9C /* AVOSCloudIM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C2957421A81E31B00BF1E9C /* AVOSCloudIM.framework */; };
 		5C29574C1A81E3E200BF1E9C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C29574B1A81E3E200BF1E9C /* SystemConfiguration.framework */; };
 		5C29574E1A81E3EB00BF1E9C /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C29574D1A81E3EB00BF1E9C /* MobileCoreServices.framework */; };
 		5C2957501A81E3F300BF1E9C /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C29574F1A81E3F300BF1E9C /* CoreTelephony.framework */; };
@@ -87,6 +85,9 @@
 		5C2957611A81EFDA00BF1E9C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C2957601A81EFDA00BF1E9C /* UIKit.framework */; };
 		5C60E4E11A8A65BA00EE61E0 /* Constrains.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C60E4E01A8A65BA00EE61E0 /* Constrains.m */; };
 		5C60E4F11A8B2CF900EE61E0 /* group@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C60E4F01A8B2CF800EE61E0 /* group@2x.png */; };
+		5CA634641AB006E30094F784 /* AVOSCloud.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CA634611AB006E30094F784 /* AVOSCloud.framework */; };
+		5CA634651AB006E30094F784 /* AVOSCloudIM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CA634621AB006E30094F784 /* AVOSCloudIM.framework */; };
+		5CA634661AB006E30094F784 /* AVOSCloudSNS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CA634631AB006E30094F784 /* AVOSCloudSNS.framework */; };
 		5CA95ADC1AAE8B1D004BCDFB /* setting@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5CA95ADB1AAE8B1D004BCDFB /* setting@2x.png */; };
 		5CA95AE81AAE8D97004BCDFB /* MJRefresh.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5CA95ADE1AAE8D97004BCDFB /* MJRefresh.bundle */; };
 		5CA95AE91AAE8D97004BCDFB /* MJRefreshBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CA95AE11AAE8D97004BCDFB /* MJRefreshBaseView.m */; };
@@ -115,62 +116,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = 5C2956C81A80BED400BF1E9C;
 			remoteInfo = FreeChat;
-		};
-		5C2957391A81E31B00BF1E9C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5C29572F1A81E31B00BF1E9C /* AVOS.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 8C8419861A5A791300C5C6C4;
-			remoteInfo = AVOSCloud;
-		};
-		5C29573B1A81E31B00BF1E9C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5C29572F1A81E31B00BF1E9C /* AVOS.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 8C8419911A5A791300C5C6C4;
-			remoteInfo = AVOSCloudTests;
-		};
-		5C29573D1A81E31B00BF1E9C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5C29572F1A81E31B00BF1E9C /* AVOS.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 8C8419A51A5A794600C5C6C4;
-			remoteInfo = AVOSCloudSNS;
-		};
-		5C29573F1A81E31B00BF1E9C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5C29572F1A81E31B00BF1E9C /* AVOS.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 8C8419AF1A5A794600C5C6C4;
-			remoteInfo = AVOSCloudSNSTests;
-		};
-		5C2957411A81E31B00BF1E9C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5C29572F1A81E31B00BF1E9C /* AVOS.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 8C8419C31A5A796000C5C6C4;
-			remoteInfo = AVOSCloudIM;
-		};
-		5C2957431A81E31B00BF1E9C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5C29572F1A81E31B00BF1E9C /* AVOS.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 8C8419CD1A5A796000C5C6C4;
-			remoteInfo = AVOSCloudIMTests;
-		};
-		5C2957451A81E32800BF1E9C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5C29572F1A81E31B00BF1E9C /* AVOS.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 8C8419851A5A791300C5C6C4;
-			remoteInfo = AVOSCloud;
-		};
-		5C2957471A81E32800BF1E9C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5C29572F1A81E31B00BF1E9C /* AVOS.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 8C8419C21A5A796000C5C6C4;
-			remoteInfo = AVOSCloudIM;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -295,7 +240,6 @@
 		5C2957261A811FFB00BF1E9C /* ConversationDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConversationDetailViewController.m; sourceTree = "<group>"; };
 		5C2957291A81221200BF1E9C /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		5C29572A1A81221200BF1E9C /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
-		5C29572F1A81E31B00BF1E9C /* AVOS.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AVOS.xcodeproj; path = "../../Meiwei/leancloud/iOS-sdk/AVOS/AVOS.xcodeproj"; sourceTree = "<group>"; };
 		5C29574B1A81E3E200BF1E9C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		5C29574D1A81E3EB00BF1E9C /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		5C29574F1A81E3F300BF1E9C /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
@@ -307,6 +251,9 @@
 		5C60E4DF1A8A65BA00EE61E0 /* Constrains.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constrains.h; sourceTree = "<group>"; };
 		5C60E4E01A8A65BA00EE61E0 /* Constrains.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constrains.m; sourceTree = "<group>"; };
 		5C60E4F01A8B2CF800EE61E0 /* group@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "group@2x.png"; path = "images/group@2x.png"; sourceTree = "<group>"; };
+		5CA634611AB006E30094F784 /* AVOSCloud.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AVOSCloud.framework; sourceTree = "<group>"; };
+		5CA634621AB006E30094F784 /* AVOSCloudIM.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AVOSCloudIM.framework; sourceTree = "<group>"; };
+		5CA634631AB006E30094F784 /* AVOSCloudSNS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AVOSCloudSNS.framework; sourceTree = "<group>"; };
 		5CA95ADB1AAE8B1D004BCDFB /* setting@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "setting@2x.png"; path = "images/setting@2x.png"; sourceTree = "<group>"; };
 		5CA95ADE1AAE8D97004BCDFB /* MJRefresh.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = MJRefresh.bundle; path = "third-parties/MJRefresh/MJRefresh.bundle"; sourceTree = "<group>"; };
 		5CA95ADF1AAE8D97004BCDFB /* MJRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MJRefresh.h; path = "third-parties/MJRefresh/MJRefresh.h"; sourceTree = "<group>"; };
@@ -357,12 +304,13 @@
 				5C29575F1A81EFCA00BF1E9C /* libsqlite3.dylib in Frameworks */,
 				5C29575D1A81EFC200BF1E9C /* libz.dylib in Frameworks */,
 				5C2957541A81E40F00BF1E9C /* libicucore.dylib in Frameworks */,
+				5CA634661AB006E30094F784 /* AVOSCloudSNS.framework in Frameworks */,
+				5CA634641AB006E30094F784 /* AVOSCloud.framework in Frameworks */,
 				5C2957521A81E3FF00BF1E9C /* CoreLocation.framework in Frameworks */,
 				5C2957501A81E3F300BF1E9C /* CoreTelephony.framework in Frameworks */,
 				5C29574E1A81E3EB00BF1E9C /* MobileCoreServices.framework in Frameworks */,
 				5C29574C1A81E3E200BF1E9C /* SystemConfiguration.framework in Frameworks */,
-				5C2957491A81E33300BF1E9C /* AVOSCloud.framework in Frameworks */,
-				5C29574A1A81E33300BF1E9C /* AVOSCloudIM.framework in Frameworks */,
+				5CA634651AB006E30094F784 /* AVOSCloudIM.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -493,7 +441,6 @@
 				5C1871B21AA4656A00272788 /* CoreGraphics.framework */,
 				5C18718C1AA45B7C00272788 /* libmp3lame.a */,
 				5C29575A1A81ECB800BF1E9C /* frameworks */,
-				5C29572F1A81E31B00BF1E9C /* AVOS.xcodeproj */,
 				5C2956CB1A80BED400BF1E9C /* FreeChat */,
 				5C2956E81A80BED400BF1E9C /* FreeChatTests */,
 				5C2956CA1A80BED400BF1E9C /* Products */,
@@ -603,22 +550,12 @@
 			name = model;
 			sourceTree = "<group>";
 		};
-		5C2957301A81E31B00BF1E9C /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				5C29573A1A81E31B00BF1E9C /* AVOSCloud.framework */,
-				5C29573C1A81E31B00BF1E9C /* AVOSCloudTests.xctest */,
-				5C29573E1A81E31B00BF1E9C /* AVOSCloudSNS.framework */,
-				5C2957401A81E31B00BF1E9C /* AVOSCloudSNSTests.xctest */,
-				5C2957421A81E31B00BF1E9C /* AVOSCloudIM.framework */,
-				5C2957441A81E31B00BF1E9C /* AVOSCloudIMTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		5C29575A1A81ECB800BF1E9C /* frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5CA634611AB006E30094F784 /* AVOSCloud.framework */,
+				5CA634621AB006E30094F784 /* AVOSCloudIM.framework */,
+				5CA634631AB006E30094F784 /* AVOSCloudSNS.framework */,
 				5C29575E1A81EFCA00BF1E9C /* libsqlite3.dylib */,
 				5C29575C1A81EFC200BF1E9C /* libz.dylib */,
 				5C2957601A81EFDA00BF1E9C /* UIKit.framework */,
@@ -722,8 +659,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				5C2957461A81E32800BF1E9C /* PBXTargetDependency */,
-				5C2957481A81E32800BF1E9C /* PBXTargetDependency */,
 			);
 			name = FreeChat;
 			productName = FreeChat;
@@ -778,12 +713,6 @@
 			mainGroup = 5C2956C01A80BED400BF1E9C;
 			productRefGroup = 5C2956CA1A80BED400BF1E9C /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 5C2957301A81E31B00BF1E9C /* Products */;
-					ProjectRef = 5C29572F1A81E31B00BF1E9C /* AVOS.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				5C2956C81A80BED400BF1E9C /* FreeChat */,
@@ -791,51 +720,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		5C29573A1A81E31B00BF1E9C /* AVOSCloud.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = AVOSCloud.framework;
-			remoteRef = 5C2957391A81E31B00BF1E9C /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		5C29573C1A81E31B00BF1E9C /* AVOSCloudTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = AVOSCloudTests.xctest;
-			remoteRef = 5C29573B1A81E31B00BF1E9C /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		5C29573E1A81E31B00BF1E9C /* AVOSCloudSNS.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = AVOSCloudSNS.framework;
-			remoteRef = 5C29573D1A81E31B00BF1E9C /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		5C2957401A81E31B00BF1E9C /* AVOSCloudSNSTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = AVOSCloudSNSTests.xctest;
-			remoteRef = 5C29573F1A81E31B00BF1E9C /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		5C2957421A81E31B00BF1E9C /* AVOSCloudIM.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = AVOSCloudIM.framework;
-			remoteRef = 5C2957411A81E31B00BF1E9C /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		5C2957441A81E31B00BF1E9C /* AVOSCloudIMTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = AVOSCloudIMTests.xctest;
-			remoteRef = 5C2957431A81E31B00BF1E9C /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		5C2956C71A80BED400BF1E9C /* Resources */ = {
@@ -964,16 +848,6 @@
 			target = 5C2956C81A80BED400BF1E9C /* FreeChat */;
 			targetProxy = 5C2956E61A80BED400BF1E9C /* PBXContainerItemProxy */;
 		};
-		5C2957461A81E32800BF1E9C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = AVOSCloud;
-			targetProxy = 5C2957451A81E32800BF1E9C /* PBXContainerItemProxy */;
-		};
-		5C2957481A81E32800BF1E9C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = AVOSCloudIM;
-			targetProxy = 5C2957471A81E32800BF1E9C /* PBXContainerItemProxy */;
-		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -1077,6 +951,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
 				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
 				INFOPLIST_FILE = FreeChat/Info.plist;
@@ -1095,6 +973,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
 				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
 				INFOPLIST_FILE = FreeChat/Info.plist;
