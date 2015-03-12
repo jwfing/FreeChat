@@ -161,6 +161,6 @@
     <resources>
         <image name="first" width="30" height="30"/>
         <image name="second" width="30" height="30"/>
-        <image name="setting.png" width="29" height="29"/>
+        <image name="setting.png" width="25" height="25"/>
     </resources>
 </document>

@@ -15,6 +15,7 @@
 
 @optional
 - (void)pushMessage:(Message*)message;
+
 - (void)pullMessagesForConversation:(AVIMConversation*)conversation preceded:(NSString*)lastMessageId timestamp:(int64_t)timestamp limit:(int)limit callback:(ArrayResultBlock)block;
 
 @end
