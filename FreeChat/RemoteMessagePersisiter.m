@@ -19,7 +19,7 @@
 }
 
 - (void)pullMessagesForConversation:(AVIMConversation*)conversation preceded:(NSString*)lastMessageId timestamp:(int64_t)timestamp limit:(int)limit callback:(ArrayResultBlock)block {
-    [conversation queryHistoricalMessagesBeforeId:lastMessageId timestamp:timestamp limit:limit callback:^(NSArray *objects, NSError *error) {
+    [conversation queryMessagesBeforeId:lastMessageId timestamp:timestamp limit:limit callback:^(NSArray *objects, NSError *error) {
         NSMutableArray *result = [[NSMutableArray alloc] initWithCapacity:[objects count]];
         int objectCount = [objects count];
         for (int i = 0; i < objectCount; i++) {

@@ -118,8 +118,8 @@ enum : AVIMMessageSendOption {
  @param callback 查询结果回调
  @return None.
  */
-- (void)queryHistoricalMessagesBeforeId:(NSString *)messageId
-                              timestamp:(int64_t)timestamp
-                                  limit:(NSUInteger)limit
-                               callback:(AVIMArrayResultBlock)callback;
+- (void)queryMessagesBeforeId:(NSString *)messageId
+                    timestamp:(int64_t)timestamp
+                        limit:(NSUInteger)limit
+                     callback:(AVIMArrayResultBlock)callback;
 @end
