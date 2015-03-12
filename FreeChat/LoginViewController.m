@@ -35,8 +35,8 @@
     [_password setPlaceholder:@"password"];
     UIButton *signUp = [[UIButton alloc] initWithFrame:CGRectMake(frameSize.width - 140, 140, 60, 20)];
     UIButton *signIn = [[UIButton alloc] initWithFrame:CGRectMake(frameSize.width - 70, 140, 60, 20)];
-    [signUp setTitle:@"SignUp" forState:UIControlStateNormal];
-    [signIn setTitle:@"SignIn" forState:UIControlStateNormal];
+    [signUp setTitle:@"注册" forState:UIControlStateNormal];
+    [signIn setTitle:@"登录" forState:UIControlStateNormal];
     [signUp setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
     [signIn setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
     [signUp addTarget:self action:@selector(signupClicked:) forControlEvents:UIControlEventTouchUpInside];

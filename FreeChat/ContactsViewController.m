@@ -56,7 +56,7 @@ NSString * kContactCellIdentifier = @"ContactIdentifier";
         _allUsers = [NSMutableArray arrayWithArray:self.specificUsers];
     } else {
         AVQuery *query = [AVUser query];
-        [query addDescendingOrder:@"createdAt"];
+        [query addAscendingOrder:@"username"];
         [query whereKey:@"objectId" notEqualTo:[AVUser currentUser].objectId];
         query.limit = 100;
         [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
@@ -68,7 +68,7 @@ NSString * kContactCellIdentifier = @"ContactIdentifier";
         __weak typeof(self) ws = self;
         _refreshFooter.beginRefreshingBlock = ^(MJRefreshBaseView *refreshView) {
             AVQuery *query = [AVUser query];
-            [query addDescendingOrder:@"createdAt"];
+            [query addAscendingOrder:@"username"];
             [query whereKey:@"objectId" notEqualTo:[AVUser currentUser].objectId];
             query.limit = 100;
             query.skip = [ws.allUsers count];

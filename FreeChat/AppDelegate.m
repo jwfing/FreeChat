@@ -29,6 +29,16 @@
 //    [AVLogger addLoggerDomain:AVLoggerDomainIM];
 //    [AVLogger addLoggerDomain:AVLoggerDomainCURL];
 //    [AVLogger setLoggerLevelMask:AVLoggerLevelAll];
+    double version = [[UIDevice currentDevice].systemVersion doubleValue];
+    if (version < 8.0) {
+        [application registerForRemoteNotificationTypes:
+         UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeSound];
+    } else {
+        UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert | UIUserNotificationTypeBadge | UIUserNotificationTypeSound
+                                                                                 categories:nil];
+        [application registerUserNotificationSettings:settings];
+        [application registerForRemoteNotifications];
+    }
     return YES;
 }
 
@@ -53,6 +63,12 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (void)application:(UIApplication *)app didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+    AVInstallation *currentInstallation = [AVInstallation currentInstallation];
+    [currentInstallation setDeviceTokenFromData:deviceToken];
+    [currentInstallation saveInBackground];
 }
 
 @end
