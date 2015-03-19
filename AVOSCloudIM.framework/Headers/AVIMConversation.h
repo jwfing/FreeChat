@@ -26,6 +26,7 @@ enum : AVIMMessageSendOption {
 @property(nonatomic, strong, readonly)NSString *name;           // 对话名字
 @property(nonatomic, strong, readonly)NSArray *members;         // 对话参与者列表
 @property(nonatomic, readonly)BOOL muted;         // 静音状态
+@property(nonatomic, readonly)BOOL transient; // 是否为临时会话（开放群组）
 @property(nonatomic, strong, readonly)NSDictionary *attributes; // 自定义属性
 @property(nonatomic, weak, readonly)AVIMClient *imClient;         // 所属的 AVIM
 
@@ -34,6 +35,13 @@ enum : AVIMMessageSendOption {
  @return 新的 AVIMConversationUpdateBuilder 实例.
  */
 - (AVIMConversationUpdateBuilder *)newUpdateBuilder;
+
+/*!
+ 拉取服务器最新数据。
+ @param callback － 结果回调
+ @return None.
+ */
+- (void)fetchWithCallback:(AVIMBooleanResultBlock)callback;
 
 /*!
  发送更新。
@@ -91,6 +99,13 @@ enum : AVIMMessageSendOption {
                           callback:(AVIMBooleanResultBlock)callback;
 
 /*!
+ 查询成员人数（开放群组即为在线人数）。
+ @param callback － 结果回调
+ @return None.
+ */
+- (void)countMembersWithCallback:(AVIMIntegerResultBlock)callback;
+
+/*!
  往对话中发送消息。
  @param message － 消息对象
  @param callback － 结果回调
@@ -114,7 +129,7 @@ enum : AVIMMessageSendOption {
  查询历史消息。
  @param messageId 此消息以前的消息
  @param timestamp 此时间以前的消息
- @param limit 返回结果数量
+ @param limit 返回结果数量，0为默认值，默认值为20，最大1000
  @param callback 查询结果回调
  @return None.
  */

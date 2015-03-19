@@ -17,13 +17,15 @@
 
 extern NSString *AVOSCloudIMErrorDomain;
 
-extern NSInteger const kAVIMErrorInvalidCommand;
-extern NSInteger const kAVIMErrorInvalidArguments;
-extern NSInteger const kAVIMErrorConversationNotFound;
-extern NSInteger const kAVIMErrorTimeout;
-extern NSInteger const kAVIMErrorConnectionLost;
-extern NSInteger const kAVIMErrorInvalidData;
+extern NSInteger const kAVIMErrorInvalidCommand;  //非法的请求命令
+extern NSInteger const kAVIMErrorInvalidArguments;  //非法参数
+extern NSInteger const kAVIMErrorConversationNotFound;  //会话未找到
+extern NSInteger const kAVIMErrorTimeout;  //请求超时
+extern NSInteger const kAVIMErrorConnectionLost;  //连接断开
+extern NSInteger const kAVIMErrorInvalidData;  //非法数据
+extern NSInteger const kAVIMErrorMessageTooLong;  //消息内容太长
 
 typedef void (^AVIMBooleanResultBlock)(BOOL succeeded, NSError *error);
+typedef void (^AVIMIntegerResultBlock)(NSInteger number, NSError *error);
 typedef void (^AVIMArrayResultBlock)(NSArray *objects, NSError *error);
 typedef void (^AVIMConversationResultBlock)(AVIMConversation *conversation, NSError *error);

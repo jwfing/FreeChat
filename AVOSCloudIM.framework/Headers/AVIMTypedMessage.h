@@ -41,37 +41,5 @@ enum : AVIMMessageMediaType {
  子类调用此方法进行注册，一般可在子类的 [+(void)load] 方法里面调用
  */
 + (void)registerSubclass;
-///*!
-// 创建富媒体消息（譬如图片、视频、音频、文件等），需要先把富媒体数据保存到网络。
-// @param text － 消息文本.
-// @param mediaType － 媒体类型
-// @param attachmentUrl － 图片、视频、音频、文件等的网络 url
-// */
-//+ (instancetype)messageWithText:(NSString *)text
-//                      mediaType:(AVIMMessageMediaType)mediaType
-//                  attachmentUrl:(NSString *)attachmentUrl;
-//
-///*!
-// 创建富媒体消息（譬如图片、视频、音频、文件等，需要先把富媒体数据保存到网络），可补充额外数据。
-// @param text － 消息文本.
-// @param mediaType － 媒体类型
-// @param attachmentUrl － 图片、视频、音频、文件等的网络 url
-// @param attributes － 开发者可以附加的任何数据
-// */
-//+ (instancetype)messageWithText:(NSString *)text
-//                      mediaType:(AVIMMessageMediaType)mediaType
-//                  attachmentUrl:(NSString *)attachmentUrl
-//                     attributes:(NSDictionary *)attributes;
-//
-///*!
-// 使用本地数据，创建富媒体消息（譬如图片、视频、音频、文件等）。
-// @param text － 消息文本.
-// @param mediaType － 媒体类型
-// @param data － 图片、视频、音频、文件等的数据
-// */
-//+ (instancetype)messageWithText:(NSString *)text
-//                      mediaType:(AVIMMessageMediaType)mediaType
-//                       filePath:(NSString *)filePath;
-
 
 @end

@@ -86,53 +86,6 @@ enum : AVIMConversationOption {
  */
 - (AVIMConversationQuery *)conversationQuery;
 
-///*!
-// 查询历史对话。
-// @param name 名称包含name
-// @param conditions key/value，表示attributes中key满足条件value，条件如下
-//                   value是字符串 -- key like value
-//                   value是数值或布尔值 -- key == value
-// @param skip 跳过前面的结果数量
-// @param limit 返回结果数量
-// @param callback 查询结果回调
-// @return None.
-// */
-//- (void)queryConversationWithName:(NSString *)name
-//                    andConditions:(NSDictionary *)conditions
-//                             skip:(NSUInteger)skip
-//                            limit:(NSUInteger)limit
-//                         callback:(AVIMArrayResultBlock)callback;
-//
-///*!
-// 根据对话的参与者来查询对话
-// @param clientIds 参与者id列表
-// @param skip 跳过前面的结果数量
-// @param limit 返回结果数量
-// @param callback 查询结果回调
-// @return None.
-// */
-//- (void)queryConversationsWithClientIds:(NSArray *)clientIds
-//                                   skip:(NSUInteger)skip
-//                                  limit:(NSUInteger)limit
-//                               callback:(AVIMArrayResultBlock)callback;
-//
-///*!
-// 根据对话 id 查询对话。
-// @param conversationId － 现有对话的 id
-// @param callback 查询结果回调
-// @return None.
-// */
-//- (void)queryConversationById:(NSString*)conversationId
-//                     callback:(AVIMConversationResultBlock)callback;
-//
-///*!
-// 根据对话 id 数组查询对话。
-// @param conversationIds － 对话id数组
-// @param callback 查询结果回调
-// @return None.
-// */
-//- (void)queryConversationByIds:(NSArray *)conversationIds
-//                      callback:(AVIMArrayResultBlock)callback;
 @end
 
 @protocol AVIMClientDelegate <NSObject>

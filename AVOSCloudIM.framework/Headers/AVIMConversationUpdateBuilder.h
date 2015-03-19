@@ -34,7 +34,7 @@
 
 /*!
  设置 attributes 中 key 对应的值为 object
- @param object 设置的对象
+ @param object 设置的对象，传 [NSNull null] 将在服务器端删除对应的 key
  @param key 设置的 key 值
  */
 - (void)setObject:(id)object forKey:(NSString *)key;
