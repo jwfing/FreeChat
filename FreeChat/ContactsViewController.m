@@ -42,7 +42,7 @@ NSString * kContactCellIdentifier = @"ContactIdentifier";
         _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, frameSize.width, frameSize.height) style:UITableViewStylePlain];
         _tableView.allowsMultipleSelection = YES;
     } else {
-        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, navSize.height + 24, frameSize.width, frameSize.height - navSize.height) style:UITableViewStylePlain];
+        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, navSize.height + 24, frameSize.width, frameSize.height - navSize.height - 49) style:UITableViewStylePlain];
         _tableView.allowsMultipleSelection = NO;
     }
     _tableView.delegate = self;
@@ -140,6 +140,7 @@ NSString * kContactCellIdentifier = @"ContactIdentifier";
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kContactCellIdentifier];
     }
+    cell.accessoryType = UITableViewCellAccessoryNone;
     AVUser *user = [_allUsers objectAtIndex:[indexPath row]];
     [cell.textLabel setText:[user username]];
     return cell;

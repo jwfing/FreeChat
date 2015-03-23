@@ -40,8 +40,7 @@ UUInputFunctionViewDelegate, FCMessageCellDelegate, ConversationOperationDelegat
     self.title = @"ChatRoom";
     [self.view setBackgroundColor:[UIColor whiteColor]];
 
-    CGSize frameSize = self.view.frame.size;
-    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, frameSize.width, frameSize.height - 40) style:UITableViewStylePlain];
+    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, [[UIScreen mainScreen] bounds].size.width, [[UIScreen mainScreen] bounds].size.height - 40) style:UITableViewStylePlain];
     _tableView.delegate = self;
     _tableView.dataSource = self;
     _tableView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
@@ -172,10 +171,14 @@ UUInputFunctionViewDelegate, FCMessageCellDelegate, ConversationOperationDelegat
 
     if (notification.name == UIKeyboardWillShowNotification) {
         if (self.view.frame.origin.y >= 0.0f) {
-            self.view.frame = CGRectOffset(self.view.frame, 0, -keyboardEndFrame.size.height);
+            self.view.frame = CGRectOffset(self.view.frame, 0, -252);
+            NSLog(@"move up %f px", keyboardEndFrame.size.height);
         }
     }else{
-        self.view.frame = CGRectOffset(self.view.frame, 0, keyboardEndFrame.size.height);
+        if (self.view.frame.origin.y < 0.0f) {
+            self.view.frame = CGRectOffset(self.view.frame, 0, 252);
+            NSLog(@"move down %f px", keyboardEndFrame.size.height);
+        }
     }
 
     [UIView commitAnimations];
