@@ -83,6 +83,10 @@
 		5C29575D1A81EFC200BF1E9C /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C29575C1A81EFC200BF1E9C /* libz.dylib */; };
 		5C29575F1A81EFCA00BF1E9C /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C29575E1A81EFCA00BF1E9C /* libsqlite3.dylib */; };
 		5C2957611A81EFDA00BF1E9C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C2957601A81EFDA00BF1E9C /* UIKit.framework */; };
+		5C5441B71AC373BC0023360D /* OpenConversationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C5441B61AC373BC0023360D /* OpenConversationViewController.m */; };
+		5C5441B91AC375E20023360D /* openchat@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C5441B81AC375E20023360D /* openchat@2x.png */; };
+		5C5441BC1AC377970023360D /* Contacts@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C5441BA1AC377970023360D /* Contacts@2x.png */; };
+		5C5441BD1AC377970023360D /* Recents@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C5441BB1AC377970023360D /* Recents@2x.png */; };
 		5C60E4E11A8A65BA00EE61E0 /* Constrains.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C60E4E01A8A65BA00EE61E0 /* Constrains.m */; };
 		5C60E4F11A8B2CF900EE61E0 /* group@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C60E4F01A8B2CF800EE61E0 /* group@2x.png */; };
 		5CA634641AB006E30094F784 /* AVOSCloud.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CA634611AB006E30094F784 /* AVOSCloud.framework */; };
@@ -248,6 +252,11 @@
 		5C29575C1A81EFC200BF1E9C /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		5C29575E1A81EFCA00BF1E9C /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		5C2957601A81EFDA00BF1E9C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		5C5441B51AC373BC0023360D /* OpenConversationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenConversationViewController.h; sourceTree = "<group>"; };
+		5C5441B61AC373BC0023360D /* OpenConversationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenConversationViewController.m; sourceTree = "<group>"; };
+		5C5441B81AC375E20023360D /* openchat@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "openchat@2x.png"; path = "images/openchat@2x.png"; sourceTree = "<group>"; };
+		5C5441BA1AC377970023360D /* Contacts@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Contacts@2x.png"; path = "images/Contacts@2x.png"; sourceTree = "<group>"; };
+		5C5441BB1AC377970023360D /* Recents@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Recents@2x.png"; path = "images/Recents@2x.png"; sourceTree = "<group>"; };
 		5C60E4DF1A8A65BA00EE61E0 /* Constrains.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constrains.h; sourceTree = "<group>"; };
 		5C60E4E01A8A65BA00EE61E0 /* Constrains.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constrains.m; sourceTree = "<group>"; };
 		5C60E4F01A8B2CF800EE61E0 /* group@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "group@2x.png"; path = "images/group@2x.png"; sourceTree = "<group>"; };
@@ -526,6 +535,8 @@
 				5CC31D881AA9A7C0001DBA7A /* ChangeNameViewController.m */,
 				5CC31D8B1AA9FB00001DBA7A /* ConversationListViewController.h */,
 				5CC31D8C1AA9FB00001DBA7A /* ConversationListViewController.m */,
+				5C5441B51AC373BC0023360D /* OpenConversationViewController.h */,
+				5C5441B61AC373BC0023360D /* OpenConversationViewController.m */,
 			);
 			name = controller;
 			sourceTree = "<group>";
@@ -571,6 +582,9 @@
 		5C5DC3101A8207FD00E87E79 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				5C5441BA1AC377970023360D /* Contacts@2x.png */,
+				5C5441BB1AC377970023360D /* Recents@2x.png */,
+				5C5441B81AC375E20023360D /* openchat@2x.png */,
 				5CA95ADB1AAE8B1D004BCDFB /* setting@2x.png */,
 				5CDB0A891AA7179E00F13A1F /* default_avatar_mal.png */,
 				5CDB0A8A1AA7179E00F13A1F /* add_member.png */,
@@ -728,6 +742,7 @@
 			files = (
 				5C18720B1AA4698200272788 /* chatfrom_doctor_icon.png in Resources */,
 				5C1872041AA4698200272788 /* chat_ipunt_message.png in Resources */,
+				5C5441BD1AC377970023360D /* Recents@2x.png in Resources */,
 				5C18720C1AA4698200272788 /* chatto_bg_normal.png in Resources */,
 				5C0315651A8209200051E65C /* default_avatar.png in Resources */,
 				5C2956DB1A80BED400BF1E9C /* Main.storyboard in Resources */,
@@ -747,9 +762,11 @@
 				5C1871FF1AA4698200272788 /* chat_animation_white2.png in Resources */,
 				5CDB0A8B1AA7179E00F13A1F /* default_avatar_mal.png in Resources */,
 				5C1872071AA4698200272788 /* chat_send_message.png in Resources */,
+				5C5441B91AC375E20023360D /* openchat@2x.png in Resources */,
 				5C1872001AA4698200272788 /* chat_animation_white3.png in Resources */,
 				5C2956DD1A80BED400BF1E9C /* Images.xcassets in Resources */,
 				5C18720A1AA4698200272788 /* chatfrom_bg_normal.png in Resources */,
+				5C5441BC1AC377970023360D /* Contacts@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -785,6 +802,7 @@
 				5CDB0A851AA6D6DD00F13A1F /* RemoteMessagePersisiter.m in Sources */,
 				5CDB0A7B1AA6162B00F13A1F /* FMDatabaseAdditions.m in Sources */,
 				5C1872231AA46A7200272788 /* ConversationMuteView.m in Sources */,
+				5C5441B71AC373BC0023360D /* OpenConversationViewController.m in Sources */,
 				5CDB0A7D1AA6162B00F13A1F /* FMDatabaseQueue.m in Sources */,
 				5C29571A1A811B2700BF1E9C /* LoginViewController.m in Sources */,
 				5C1871CC1AA466A700272788 /* AFHTTPSessionManager.m in Sources */,
