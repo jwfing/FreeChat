@@ -136,7 +136,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TBH-cb-RBZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="178" y="742"/>
+            <point key="canvasLocation" x="-233" y="1086"/>
         </scene>
         <!--设置-->
         <scene sceneID="uVl-U4-kSb">
@@ -155,7 +155,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1ZQ-E3-oq9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="759" y="1501"/>
+            <point key="canvasLocation" x="389" y="1086"/>
         </scene>
         <!--Main View Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -182,7 +182,7 @@
     <resources>
         <image name="Contacts.png" width="25" height="25"/>
         <image name="Recents.png" width="25" height="25"/>
-        <image name="openchat.png" width="25" height="25"/>
+        <image name="openchat.png" width="21" height="25"/>
         <image name="setting.png" width="25" height="25"/>
     </resources>
 </document>
