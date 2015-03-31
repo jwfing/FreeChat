@@ -117,10 +117,25 @@ UUInputFunctionViewDelegate, FCMessageCellDelegate, ConversationOperationDelegat
 
     ConversationStore *store = [ConversationStore sharedInstance];
     [store addEventObserver:self forConversation:self.conversation.conversationId];
+    if (self.conversation.transient) {
+        [self.conversation joinWithCallback:^(BOOL succeeded, NSError *error) {
+            if (error) {
+                NSLog(@"failed to join transient conversation.");
+            };
+        }];
+    }
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
+
+    if (self.conversation.transient) {
+        [self.conversation quitWithCallback:^(BOOL succeeded, NSError *error) {
+            if (error) {
+                NSLog(@"failed to quit transient conversation.");
+            }
+        }];
+    }
     ConversationStore *store = [ConversationStore sharedInstance];
     if (_quitConversation) {
         [store quitConversation:self.conversation];
