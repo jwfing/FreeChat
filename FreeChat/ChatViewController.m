@@ -121,7 +121,9 @@ UUInputFunctionViewDelegate, FCMessageCellDelegate, ConversationOperationDelegat
         [self.conversation joinWithCallback:^(BOOL succeeded, NSError *error) {
             if (error) {
                 NSLog(@"failed to join transient conversation.");
-            };
+            } else {
+                NSLog(@"join transient conversation. id=%@", self.conversation.conversationId);
+            }
         }];
     }
 }
@@ -133,6 +135,8 @@ UUInputFunctionViewDelegate, FCMessageCellDelegate, ConversationOperationDelegat
         [self.conversation quitWithCallback:^(BOOL succeeded, NSError *error) {
             if (error) {
                 NSLog(@"failed to quit transient conversation.");
+            } else {
+                NSLog(@"quit transient conversation. id=%@", self.conversation.conversationId);
             }
         }];
     }

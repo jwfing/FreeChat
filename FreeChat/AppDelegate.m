@@ -25,10 +25,15 @@
     // Override point for customization after application launch.
     [AVOSCloud setApplicationId:@"xqbqp3jr39p1mfptkswia72icqkk6i2ic3vi4q1tbpu7ce8b"
                       clientKey:@"cfs0hpk9ai3f8kiwua7atnri8hrleodvipjy0dofj70ebbno"];
-//    [AVOSCloud setVerbosePolicy:kAVVerboseShow];
-//    [AVLogger addLoggerDomain:AVLoggerDomainIM];
-//    [AVLogger addLoggerDomain:AVLoggerDomainCURL];
-//    [AVLogger setLoggerLevelMask:AVLoggerLevelAll];
+    [AVAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+
+#ifdef DEBUG
+    [AVOSCloud setVerbosePolicy:kAVVerboseShow];
+    [AVLogger addLoggerDomain:AVLoggerDomainIM];
+    [AVLogger addLoggerDomain:AVLoggerDomainCURL];
+    [AVLogger setLoggerLevelMask:AVLoggerLevelAll];
+#endif
+
     double version = [[UIDevice currentDevice].systemVersion doubleValue];
     if (version < 8.0) {
         [application registerForRemoteNotificationTypes:
@@ -69,6 +74,13 @@
     AVInstallation *currentInstallation = [AVInstallation currentInstallation];
     [currentInstallation setDeviceTokenFromData:deviceToken];
     [currentInstallation saveInBackground];
+}
+
+-(void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo{
+    //可选 通过统计功能追踪通过提醒打开应用的行为
+    if (application.applicationState != UIApplicationStateActive) {
+        [AVAnalytics trackAppOpenedWithRemoteNotificationPayload:userInfo];
+    }
 }
 
 @end

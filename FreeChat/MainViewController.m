@@ -178,6 +178,10 @@
  @return None.
  */
 - (void)conversation:(AVIMConversation *)conversation kickedByClientId:(NSString *)clientId {
+    if ([clientId compare:[[AVUser currentUser] objectId]] == NSOrderedSame) {
+        // 自己退出的场合，忽略这一事件
+        return;
+    }
     ConversationStore *store = [ConversationStore sharedInstance];
     [store newConversationEvent:EventKicked conversation:conversation from:clientId to:nil];
 }
