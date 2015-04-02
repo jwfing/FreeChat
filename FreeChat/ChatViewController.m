@@ -286,10 +286,10 @@ UUInputFunctionViewDelegate, FCMessageCellDelegate, ConversationOperationDelegat
 - (void)UUInputFunctionView:(UUInputFunctionView *)funcView sendPicture:(UIImage *)image {
     if (image) {
         NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
-        NSString *filePath = [[paths objectAtIndex:0] stringByAppendingPathComponent:@"Image.png"];
+        NSString *filePath = [[paths objectAtIndex:0] stringByAppendingPathComponent:@"Image.jpg"];
         NSFileManager *fileManager = [NSFileManager defaultManager];
         [fileManager removeItemAtPath:filePath error:NULL];
-        [UIImagePNGRepresentation(image) writeToFile:filePath atomically:YES];
+        [UIImageJPEGRepresentation(image, 0.6) writeToFile:filePath atomically:YES];
         
         AVIMImageMessage *avMessage = [AVIMImageMessage messageWithText:nil attachedFilePath:filePath attributes:nil];
         [self.conversation sendMessage:avMessage callback:^(BOOL succeeded, NSError *error) {
