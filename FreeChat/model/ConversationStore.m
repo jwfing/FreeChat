@@ -47,9 +47,9 @@
 -(void)reviveFromLocal:(AVUser*)user {
     [_conversations removeAllObjects];
     [_conversationUnreadMsgMapping removeAllObjects];
-
+    
     [[SQLiteMessagePersister sharedInstance] open:user];
-
+    
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
     NSString *originArchiverPath = [[paths objectAtIndex:0] stringByAppendingPathComponent:[NSString stringWithFormat:@"%@_conversation.dat", user.objectId]];
     NSData *encodedData = [[NSData alloc] initWithContentsOfFile:originArchiverPath];
@@ -90,7 +90,7 @@
     NSString *originArchiverPath = [[paths objectAtIndex:0] stringByAppendingPathComponent:[NSString stringWithFormat:@"%@_conversation.dat", user.objectId]];
     NSFileManager *fileManager = [NSFileManager defaultManager];
     BOOL result = [fileManager removeItemAtPath:filePath error:NULL];
-
+    
     NSArray *conversations = [_conversations objectsAtIndexes:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, [_conversations count])]];
     NSMutableArray *conversationIds = [[NSMutableArray alloc] initWithCapacity:conversations.count];
     for (int i = 0; i < [_conversations count]; i++) {
@@ -103,7 +103,7 @@
     [archiver encodeObject:_conversationUnreadMsgMapping forKey:kDecodeKey_Conversation_UnreadMapping];
     [archiver finishEncoding];
     [data writeToFile:filePath atomically:YES];
-
+    
     [fileManager removeItemAtPath:originArchiverPath error:NULL];
     result = [fileManager moveItemAtPath:filePath toPath:originArchiverPath error:NULL];
     if (!result) {

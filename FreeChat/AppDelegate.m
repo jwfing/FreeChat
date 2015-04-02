@@ -26,14 +26,14 @@
     [AVOSCloud setApplicationId:@"xqbqp3jr39p1mfptkswia72icqkk6i2ic3vi4q1tbpu7ce8b"
                       clientKey:@"cfs0hpk9ai3f8kiwua7atnri8hrleodvipjy0dofj70ebbno"];
     [AVAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
-
+    
 #ifdef DEBUG
     [AVOSCloud setVerbosePolicy:kAVVerboseShow];
     [AVLogger addLoggerDomain:AVLoggerDomainIM];
     [AVLogger addLoggerDomain:AVLoggerDomainCURL];
     [AVLogger setLoggerLevelMask:AVLoggerLevelAll];
 #endif
-
+    
     double version = [[UIDevice currentDevice].systemVersion doubleValue];
     if (version < 8.0) {
         [application registerForRemoteNotificationTypes:

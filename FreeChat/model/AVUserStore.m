@@ -43,7 +43,7 @@
             }
             return;
         }
-
+        
         int userCount = [userIds count];
         NSMutableArray *result = [[NSMutableArray alloc] initWithCapacity:userCount];
         for (int i = 0; i < userCount; i++) {
