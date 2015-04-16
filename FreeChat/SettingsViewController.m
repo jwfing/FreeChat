@@ -17,6 +17,7 @@
     UILabel *_username;
     UIImageView *_avatarView;
     UIButton *_logoutButton;
+    BOOL _avatarUpdating;
 }
 
 @end
@@ -65,6 +66,7 @@
     } else {
         [_avatarView setImage:[UIImage imageNamed:@"default_avatar"]];
     }
+    _avatarUpdating = NO;
 }
 /*
 #pragma mark - Navigation
@@ -77,6 +79,9 @@
 */
 
 - (void)logout:(id)sender {
+    if (_avatarUpdating) {
+        return;
+    }
     ConversationStore *store = [ConversationStore sharedInstance];
     [store dump2Local:[AVUser currentUser]];
     [AVUser logOut];
@@ -131,12 +136,14 @@
     UIImage *editImage = [info objectForKey:UIImagePickerControllerEditedImage];
     [self.navigationController dismissViewControllerAnimated:YES completion:^{
         AVUser *currentUser = [AVUser currentUser];
+        _avatarUpdating = YES;
         [currentUser updateAvatarWithImage:editImage callback:^(BOOL succeeded, NSError *error) {
             if (!succeeded) {
                 [MessageDisplayer displayError:error];
             } else {
                 [_avatarView setImage:editImage];
             }
+            _avatarUpdating = NO;
         }];
     }];
 }
