@@ -190,12 +190,14 @@ UUInputFunctionViewDelegate, FCMessageCellDelegate, ConversationOperationDelegat
 
     if (notification.name == UIKeyboardWillShowNotification) {
         if (self.view.frame.origin.y >= 0.0f) {
-            self.view.frame = CGRectOffset(self.view.frame, 0, -252);
+            int verticalOffset = keyboardEndFrame.size.height > 252?keyboardEndFrame.size.height:252;
+            self.view.frame = CGRectOffset(self.view.frame, 0, verticalOffset);
             NSLog(@"move up %f px", keyboardEndFrame.size.height);
         }
     }else{
         if (self.view.frame.origin.y < 0.0f) {
-            self.view.frame = CGRectOffset(self.view.frame, 0, 252);
+            int verticalOffset = keyboardEndFrame.size.height > 252?keyboardEndFrame.size.height:252;
+            self.view.frame = CGRectOffset(self.view.frame, 0, verticalOffset);
             NSLog(@"move down %f px", keyboardEndFrame.size.height);
         }
     }
