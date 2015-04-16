@@ -277,6 +277,7 @@ UUInputFunctionViewDelegate, FCMessageCellDelegate, ConversationOperationDelegat
                 Message *msg = [[Message alloc] initWithAVIMMessage:avMessage];
                 [_messages addObject:msg];
                 [_tableView reloadData];
+                [_tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:self.messages.count-1 inSection:0] atScrollPosition:UITableViewScrollPositionBottom animated:NO];
             }
         }];
     }
@@ -300,6 +301,7 @@ UUInputFunctionViewDelegate, FCMessageCellDelegate, ConversationOperationDelegat
                 Message *msg = [[Message alloc] initWithAVIMMessage:avMessage];
                 [_messages addObject:msg];
                 [_tableView reloadData];
+                [_tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:self.messages.count-1 inSection:0] atScrollPosition:UITableViewScrollPositionBottom animated:NO];
             }
         }];
     }
@@ -323,6 +325,7 @@ UUInputFunctionViewDelegate, FCMessageCellDelegate, ConversationOperationDelegat
                 Message *msg = [[Message alloc] initWithAVIMMessage:avMessage];
                 [_messages addObject:msg];
                 [_tableView reloadData];
+                [_tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:self.messages.count-1 inSection:0] atScrollPosition:UITableViewScrollPositionBottom animated:NO];
             }
         }];
     }
