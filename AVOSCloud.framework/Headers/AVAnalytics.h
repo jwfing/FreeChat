@@ -70,42 +70,42 @@ typedef NS_ENUM(int, AVReportPolicy){
 + (void)setAnalyticsEnabled:(BOOL)value;
 
 
-/** 开启CrashReport收集, 默认是开启状态.
+/** 开启CrashReport收集, 默认是关闭状态.
  
- @param value 设置成NO,就可以关闭CrashReport收集.
+ @param value 设置成 YES,就可以开启CrashReport收集.
  @return void.
  */
-+ (void)setCrashReportEnabled:(BOOL)value;
++ (void)setCrashReportEnabled:(BOOL)value AVDeprecated("使用 AVOSCloudCrashReporting.framework");
 
-/** 开启CrashReport收集, 默认是开启状态.
+/** 开启CrashReport收集, 默认是关闭状态.
  
- @param value 设置成NO,就可以关闭CrashReport收集.
+ @param value 设置成 YES,就可以开启CrashReport收集.
  @param completion 设置完成后回调.
  @return void.
  */
-+ (void)setCrashReportEnabled:(BOOL)value completion:(void (^)(void))completion;
++ (void)setCrashReportEnabled:(BOOL)value completion:(void (^)(void))completion AVDeprecated("使用 AVOSCloudCrashReporting.framework");
 
 /** 开启CrashReport收集, 并且尝试忽略异常.
  @discuss 当异常被捕获后,如果开启了CrashReport功能,异常会被自动捕获,如果开启ignore,会尝试阻止app崩溃, 如果阻止成功,则会提示(UIAlertView)用户程序可能不稳定,请用户选择继续运行还是退出.
  @warning 这不是解决问题的办法,因为App仍然存在不可控因素,而且忽略异常后会造成CPU的占用率提高5%左右. 所以,请尽量找出引起Crash的原因(AVOSCloud后台的错误报告中已经记录了相关信息),并且修复这个问题.
  
- @param value 设置成NO,就可以关闭CrashReport收集.
+ @param value 设置成YES,就可以开启CrashReport收集.
  @param ignore 设置成YES,可以尝试忽略异常.
  */
 
-+ (void)setCrashReportEnabled:(BOOL)value andIgnore:(BOOL)ignore;
++ (void)setCrashReportEnabled:(BOOL)value andIgnore:(BOOL)ignore AVDeprecated("使用 AVOSCloudCrashReporting.framework");
 
 
 /** 开启CrashReport收集, 并且尝试忽略异常.
  @discuss 效果等同于`setCrashReportEnabled:andIgnore:` 但是可以自定义弹出提醒的文字内容.
  
- @param value 设置成NO,就可以关闭CrashReport收集.
+ @param value 设置成 YES,就可以开启 CrashReport 收集.
  @param alertTitle 弹出提醒的标题
  @param alertMsg 弹出提醒的内容
  @param alertQuit `退出`按钮的文字
  @param alertContinue `继续`按钮的文字
  */
-+ (void)setCrashReportEnabled:(BOOL)value withIgnoreAlertTitle:(NSString*)alertTitle andMessage:(NSString*)alertMsg andQuitTitle:(NSString*)alertQuit andContinueTitle:(NSString*)alertContinue;
++ (void)setCrashReportEnabled:(BOOL)value withIgnoreAlertTitle:(NSString*)alertTitle andMessage:(NSString*)alertMsg andQuitTitle:(NSString*)alertQuit andContinueTitle:(NSString*)alertContinue AVDeprecated("使用 AVOSCloudCrashReporting.framework");
 
 
 /** 设置是否打印sdk的log信息,默认不开启

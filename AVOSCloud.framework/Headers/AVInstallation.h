@@ -70,6 +70,9 @@
 /// The device token for the AVInstallation.
 @property (nonatomic, retain) NSString *deviceToken;
 
+/// The device profile for the AVInstallation.
+@property (nonatomic, retain) NSString *deviceProfile;
+
 /// The badge for the AVInstallation.
 @property (nonatomic, assign) NSInteger badge;
 

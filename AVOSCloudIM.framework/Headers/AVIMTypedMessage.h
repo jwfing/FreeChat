@@ -31,9 +31,7 @@ enum : AVIMMessageMediaType {
 @interface AVIMTypedMessage : AVIMMessage
 @property(nonatomic)AVIMMessageMediaType mediaType;           //消息类型，可自定义
 @property(nonatomic, strong)NSString *text;        // 消息文本
-//@property(nonatomic, strong, readonly)NSString *attachmentUrl;  // 附件URL地址
 @property(nonatomic, strong)NSDictionary *attributes;  // 自定义属性
-//@property(nonatomic, strong, readonly)NSDictionary *metaData;  // 自定义属性
 @property(nonatomic, strong, readonly)AVFile *file;  // 附件
 @property(nonatomic, strong, readonly)AVGeoPoint *location;  // 位置
 

@@ -13,6 +13,7 @@
 #define channelsTag     @"channels"
 #define badgeTag        @"badge"
 #define deviceTokenTag  @"deviceToken"
+#define deviceProfileTag  @"deviceProfile"
 #define timeZoneTag     @"timezone"
 #define usernameTag     @"username"
 #define passwordTag     @"password"
@@ -22,6 +23,7 @@
 #define smsCodeTag      @"smsCode"
 #define deviceTypeTag   @"deviceType"
 #define installationIdTag @"installationId"
+#define authDataTag @"authData"
 
 #define enableTag       @"enable"
 

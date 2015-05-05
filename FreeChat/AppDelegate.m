@@ -14,6 +14,10 @@
 
 #define SYSTEM_VERSION [[[UIDevice currentDevice] systemVersion] floatValue]
 
+// 注意：如果您使用了 LeanCloud 美国节点，请保持这一行；
+//      如果您使用 LeanCloud 国内节点，请注释掉这一行。
+#define USE_US_CLUSTER 1
+
 @interface AppDelegate ()
 
 @end
@@ -23,8 +27,16 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+#ifdef USE_US_CLUSTER
+    [AVOSCloud useAVCloudUS];
+    [AVOSCloud setApplicationId:@"l8j5lm8c9f9d2l90213i00wsdhhljbrwrn6g0apptblu7l90"
+                      clientKey:@"b3uyj9cmk84s5t9n6z1rqs9pvf2azofgacy9bfigmiehhheg"];
+    NSLog(@"use us cluster");
+#else
     [AVOSCloud setApplicationId:@"xqbqp3jr39p1mfptkswia72icqkk6i2ic3vi4q1tbpu7ce8b"
                       clientKey:@"cfs0hpk9ai3f8kiwua7atnri8hrleodvipjy0dofj70ebbno"];
+    NSLog(@"use cn cluster");
+#endif
     [AVAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     
 #ifdef DEBUG

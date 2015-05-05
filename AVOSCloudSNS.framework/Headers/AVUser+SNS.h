@@ -12,6 +12,10 @@
 #import <AVOSCloud/AVUser.h>
 #import <AVOSCloudSNS/AVOSCloudSNS.h>
 
+#if !defined(AVDeprecated)
+#  define AVDeprecated(explain) __attribute__((deprecated(explain)))
+#endif
+
 extern NSString *const AVOSCloudSNSPlatformWeiBo;
 extern NSString *const AVOSCloudSNSPlatformQQ;
 extern NSString *const AVOSCloudSNSPlatformWeiXin;
@@ -75,7 +79,7 @@ extern NSString *const AVOSCloudSNSPlatformWeiXin;
  *  @param  block        完成后回调
  *
  */
-+(void)loginWithAuthData:(NSDictionary*)authData block:(AVUserResultBlock)block;
++(void)loginWithAuthData:(NSDictionary*)authData block:(AVUserResultBlock)block AVDeprecated("使用+[loginWithAuthData:platform:block:]");
 
 /**
  *  给用户绑定SNS验证数据
@@ -85,7 +89,7 @@ extern NSString *const AVOSCloudSNSPlatformWeiXin;
  *  @param  block        完成后回调
  *
  */
--(void)addAuthData:(NSDictionary*)authData block:(AVUserResultBlock)block;
+-(void)addAuthData:(NSDictionary*)authData block:(AVUserResultBlock)block AVDeprecated("使用-[addAuthData:platform:block:]");
 
 /**
  *  取消SNS绑定
@@ -94,7 +98,7 @@ extern NSString *const AVOSCloudSNSPlatformWeiXin;
  *  @param  block   完成后回调
  *
  */
--(void)deleteAuthForPlatform:(AVOSCloudSNSType)type block:(AVUserResultBlock)block;
+-(void)deleteAuthForPlatform:(AVOSCloudSNSType)type block:(AVUserResultBlock)block AVDeprecated("使用-[deleteAuthDataForPlatform:block:]");
 @end
 
 #endif
