@@ -259,7 +259,10 @@ UUInputFunctionViewDelegate, FCMessageCellDelegate, ConversationOperationDelegat
         return;
     } else {
         [_messages addObject:message];
-        [_tableView reloadData];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [_tableView reloadData];
+            [_tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:self.messages.count-1 inSection:0] atScrollPosition:UITableViewScrollPositionBottom animated:NO];
+        });
     }
 }
 

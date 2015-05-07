@@ -51,6 +51,10 @@
     [super viewWillAppear:animated];
     self.navigationController.navigationBarHidden = YES;
     
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
     if ([AVUser currentUser] != nil) {
         [self pushToMainViewController];
     }

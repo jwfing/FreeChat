@@ -106,6 +106,36 @@ LeanCloud云端    MainViewController  ConversationStore   ChatViewController(IM
 
 coming soon...
 
+### 国内和美国节点
+
+现在 LeanCloud 是支持美国节点的，FreeChat 也是确认可以在两个节点运行的。注意如下代码片段，即可在国内/美国节点之间进行切换：
+
+```
+file: AppDelegate.m
+
+// 注意：如果您使用了 LeanCloud 美国节点，请保持这一行；
+//      如果您使用 LeanCloud 国内节点，请注释掉这一行。
+#define USE_US_CLUSTER 1
+
+...
+
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    // Override point for customization after application launch.
+#ifdef USE_US_CLUSTER
+    [AVOSCloud useAVCloudUS];
+    [AVOSCloud setApplicationId:@"l8j5lm8c9f9d2l90213i00wsdhhljbrwrn6g0apptblu7l90"
+                      clientKey:@"b3uyj9cmk84s5t9n6z1rqs9pvf2azofgacy9bfigmiehhheg"];
+    NSLog(@"use us cluster");
+#else
+    [AVOSCloud setApplicationId:@"xqbqp3jr39p1mfptkswia72icqkk6i2ic3vi4q1tbpu7ce8b"
+                      clientKey:@"cfs0hpk9ai3f8kiwua7atnri8hrleodvipjy0dofj70ebbno"];
+    NSLog(@"use cn cluster");
+#endif
+
+    ...
+}
+```
+
 ## 第三方库
 
 所有功能都是基于 LeanCloud 平台完成的，所以第一感谢 LeanCloud。在本项目的开发过程中，还用到了如下第三方代码，在此一并表示感谢：
