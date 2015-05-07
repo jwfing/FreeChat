@@ -111,6 +111,7 @@ NSString *kConversationStatusFormat = @"%@(在线: %d 人)";
     dispatch_group_notify(refreshGroup, dispatch_get_main_queue(), ^{
         NSLog(@"end refresh conversation member count.");
         [_refreshHead endRefreshing];
+        [self.conversationTable reloadData];
     });
 }
 
