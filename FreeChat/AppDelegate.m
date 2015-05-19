@@ -11,12 +11,13 @@
 #import "MainViewController.h"
 #import "AVOSCloud/AVOSCloud.h"
 #import "ConversationStore.h"
+#import <AVOSCloudCrashReporting/AVOSCloudCrashReporting.h>
 
 #define SYSTEM_VERSION [[[UIDevice currentDevice] systemVersion] floatValue]
 
 // 注意：如果您使用了 LeanCloud 美国节点，请保持这一行；
 //      如果您使用 LeanCloud 国内节点，请注释掉这一行。
-#define USE_US_CLUSTER 1
+//#define USE_US_CLUSTER 1
 
 @interface AppDelegate ()
 
@@ -27,6 +28,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    [AVOSCloudCrashReporting enable];
 #ifdef USE_US_CLUSTER
     [AVOSCloud useAVCloudUS];
     [AVOSCloud setApplicationId:@"l8j5lm8c9f9d2l90213i00wsdhhljbrwrn6g0apptblu7l90"
