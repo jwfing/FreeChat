@@ -801,7 +801,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "leancloud upload_symbol \\\n-f \"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}\" \\\n-i \"xqbqp3jr39p1mfptkswia72icqkk6i2ic3vi4q1tbpu7ce8b\" \\\n-k \"cfs0hpk9ai3f8kiwua7atnri8hrleodvipjy0dofj70ebbno\"";
+			shellScript = "# 上传符号表的脚本，具体可以参见：https://leancloud.cn/docs/ios_crashreporting_guide.html\n# 这是 LeanCloud 最新的 crash reporting framework 提供的功能，可以在崩溃发生的时候，dump 出详细、准确的堆栈信息\n# 如果您不想使用这个功能，注释掉下面所有的语句即可。\nleancloud upload_symbol \\\n-f \"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}\" \\\n-i \"xqbqp3jr39p1mfptkswia72icqkk6i2ic3vi4q1tbpu7ce8b\" \\\n-k \"cfs0hpk9ai3f8kiwua7atnri8hrleodvipjy0dofj70ebbno\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 
