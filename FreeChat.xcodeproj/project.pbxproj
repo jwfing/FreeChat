@@ -98,6 +98,21 @@
 		5CA95AEA1AAE8D97004BCDFB /* MJRefreshConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CA95AE31AAE8D97004BCDFB /* MJRefreshConst.m */; };
 		5CA95AEB1AAE8D97004BCDFB /* MJRefreshFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CA95AE51AAE8D97004BCDFB /* MJRefreshFooterView.m */; };
 		5CA95AEC1AAE8D97004BCDFB /* MJRefreshHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CA95AE71AAE8D97004BCDFB /* MJRefreshHeaderView.m */; };
+		5CB63F171B0DCF06001081EA /* LCHttpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CB63EFF1B0DCF06001081EA /* LCHttpClient.m */; };
+		5CB63F181B0DCF06001081EA /* LCUserFeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CB63F001B0DCF06001081EA /* LCUserFeedbackViewController.m */; };
+		5CB63F191B0DCF06001081EA /* LCUserFeedback.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CB63F021B0DCF06001081EA /* LCUserFeedback.m */; };
+		5CB63F1A1B0DCF06001081EA /* LCUserFeedbackAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CB63F041B0DCF06001081EA /* LCUserFeedbackAgent.m */; };
+		5CB63F1B1B0DCF06001081EA /* LCUserFeedbackThread.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CB63F051B0DCF06001081EA /* LCUserFeedbackThread.m */; };
+		5CB63F1C1B0DCF06001081EA /* LCUserFeedbackRightCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CB63F0A1B0DCF06001081EA /* LCUserFeedbackRightCell.m */; };
+		5CB63F1D1B0DCF06001081EA /* LCUserFeedbackLeftCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CB63F0C1B0DCF06001081EA /* LCUserFeedbackLeftCell.m */; };
+		5CB63F1E1B0DCF06001081EA /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5CB63F0E1B0DCF06001081EA /* Info.plist */; };
+		5CB63F1F1B0DCF06001081EA /* LCUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CB63F0F1B0DCF06001081EA /* LCUtils.m */; };
+		5CB63F201B0DCF06001081EA /* back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5CB63F111B0DCF06001081EA /* back@2x.png */; };
+		5CB63F211B0DCF06001081EA /* bg_1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5CB63F121B0DCF06001081EA /* bg_1@2x.png */; };
+		5CB63F221B0DCF06001081EA /* bg_2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5CB63F131B0DCF06001081EA /* bg_2@2x.png */; };
+		5CB63F231B0DCF06001081EA /* btn_feedback_new@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5CB63F141B0DCF06001081EA /* btn_feedback_new@2x.png */; };
+		5CB63F241B0DCF06001081EA /* btn_feedback@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5CB63F151B0DCF06001081EA /* btn_feedback@2x.png */; };
+		5CB63F251B0DCF06001081EA /* warning@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5CB63F161B0DCF06001081EA /* warning@2x.png */; };
 		5CC31D7E1AA96692001DBA7A /* AVUser+Avatar.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CC31D7D1AA96692001DBA7A /* AVUser+Avatar.m */; };
 		5CC31D861AA994CD001DBA7A /* ConversationUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CC31D851AA994CD001DBA7A /* ConversationUtils.m */; };
 		5CC31D891AA9A7C0001DBA7A /* ChangeNameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CC31D881AA9A7C0001DBA7A /* ChangeNameViewController.m */; };
@@ -276,6 +291,31 @@
 		5CA95AE51AAE8D97004BCDFB /* MJRefreshFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MJRefreshFooterView.m; path = "third-parties/MJRefresh/MJRefreshFooterView.m"; sourceTree = "<group>"; };
 		5CA95AE61AAE8D97004BCDFB /* MJRefreshHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MJRefreshHeaderView.h; path = "third-parties/MJRefresh/MJRefreshHeaderView.h"; sourceTree = "<group>"; };
 		5CA95AE71AAE8D97004BCDFB /* MJRefreshHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MJRefreshHeaderView.m; path = "third-parties/MJRefresh/MJRefreshHeaderView.m"; sourceTree = "<group>"; };
+		5CB63EFE1B0DCF06001081EA /* LeanCloudFeedback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LeanCloudFeedback.h; path = "third-parties/LeanCloudFeedback/LeanCloudFeedback.h"; sourceTree = "<group>"; };
+		5CB63EFF1B0DCF06001081EA /* LCHttpClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LCHttpClient.m; path = "third-parties/LeanCloudFeedback/LCHttpClient.m"; sourceTree = "<group>"; };
+		5CB63F001B0DCF06001081EA /* LCUserFeedbackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LCUserFeedbackViewController.m; path = "third-parties/LeanCloudFeedback/LCUserFeedbackViewController.m"; sourceTree = "<group>"; };
+		5CB63F011B0DCF06001081EA /* LCUserFeedback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LCUserFeedback.h; path = "third-parties/LeanCloudFeedback/LCUserFeedback.h"; sourceTree = "<group>"; };
+		5CB63F021B0DCF06001081EA /* LCUserFeedback.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LCUserFeedback.m; path = "third-parties/LeanCloudFeedback/LCUserFeedback.m"; sourceTree = "<group>"; };
+		5CB63F031B0DCF06001081EA /* LCHttpClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LCHttpClient.h; path = "third-parties/LeanCloudFeedback/LCHttpClient.h"; sourceTree = "<group>"; };
+		5CB63F041B0DCF06001081EA /* LCUserFeedbackAgent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LCUserFeedbackAgent.m; path = "third-parties/LeanCloudFeedback/LCUserFeedbackAgent.m"; sourceTree = "<group>"; };
+		5CB63F051B0DCF06001081EA /* LCUserFeedbackThread.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LCUserFeedbackThread.m; path = "third-parties/LeanCloudFeedback/LCUserFeedbackThread.m"; sourceTree = "<group>"; };
+		5CB63F061B0DCF06001081EA /* LCUserFeedbackThread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LCUserFeedbackThread.h; path = "third-parties/LeanCloudFeedback/LCUserFeedbackThread.h"; sourceTree = "<group>"; };
+		5CB63F071B0DCF06001081EA /* LCUserFeedbackAgent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LCUserFeedbackAgent.h; path = "third-parties/LeanCloudFeedback/LCUserFeedbackAgent.h"; sourceTree = "<group>"; };
+		5CB63F081B0DCF06001081EA /* LCUserFeedbackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LCUserFeedbackViewController.h; path = "third-parties/LeanCloudFeedback/LCUserFeedbackViewController.h"; sourceTree = "<group>"; };
+		5CB63F091B0DCF06001081EA /* LCUserFeedbackRightCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LCUserFeedbackRightCell.h; path = "third-parties/LeanCloudFeedback/LCUserFeedbackRightCell.h"; sourceTree = "<group>"; };
+		5CB63F0A1B0DCF06001081EA /* LCUserFeedbackRightCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LCUserFeedbackRightCell.m; path = "third-parties/LeanCloudFeedback/LCUserFeedbackRightCell.m"; sourceTree = "<group>"; };
+		5CB63F0B1B0DCF06001081EA /* LCUserFeedbackLeftCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LCUserFeedbackLeftCell.h; path = "third-parties/LeanCloudFeedback/LCUserFeedbackLeftCell.h"; sourceTree = "<group>"; };
+		5CB63F0C1B0DCF06001081EA /* LCUserFeedbackLeftCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LCUserFeedbackLeftCell.m; path = "third-parties/LeanCloudFeedback/LCUserFeedbackLeftCell.m"; sourceTree = "<group>"; };
+		5CB63F0D1B0DCF06001081EA /* LCUserFeedback_Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LCUserFeedback_Internal.h; path = "third-parties/LeanCloudFeedback/LCUserFeedback_Internal.h"; sourceTree = "<group>"; };
+		5CB63F0E1B0DCF06001081EA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = "third-parties/LeanCloudFeedback/Info.plist"; sourceTree = "<group>"; };
+		5CB63F0F1B0DCF06001081EA /* LCUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LCUtils.m; path = "third-parties/LeanCloudFeedback/LCUtils.m"; sourceTree = "<group>"; };
+		5CB63F101B0DCF06001081EA /* LCUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LCUtils.h; path = "third-parties/LeanCloudFeedback/LCUtils.h"; sourceTree = "<group>"; };
+		5CB63F111B0DCF06001081EA /* back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "back@2x.png"; path = "third-parties/LeanCloudFeedback/back@2x.png"; sourceTree = "<group>"; };
+		5CB63F121B0DCF06001081EA /* bg_1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bg_1@2x.png"; path = "third-parties/LeanCloudFeedback/bg_1@2x.png"; sourceTree = "<group>"; };
+		5CB63F131B0DCF06001081EA /* bg_2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bg_2@2x.png"; path = "third-parties/LeanCloudFeedback/bg_2@2x.png"; sourceTree = "<group>"; };
+		5CB63F141B0DCF06001081EA /* btn_feedback_new@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn_feedback_new@2x.png"; path = "third-parties/LeanCloudFeedback/btn_feedback_new@2x.png"; sourceTree = "<group>"; };
+		5CB63F151B0DCF06001081EA /* btn_feedback@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn_feedback@2x.png"; path = "third-parties/LeanCloudFeedback/btn_feedback@2x.png"; sourceTree = "<group>"; };
+		5CB63F161B0DCF06001081EA /* warning@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "warning@2x.png"; path = "third-parties/LeanCloudFeedback/warning@2x.png"; sourceTree = "<group>"; };
 		5CC31D7C1AA96692001DBA7A /* AVUser+Avatar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AVUser+Avatar.h"; sourceTree = "<group>"; };
 		5CC31D7D1AA96692001DBA7A /* AVUser+Avatar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AVUser+Avatar.m"; sourceTree = "<group>"; };
 		5CC31D841AA994CD001DBA7A /* ConversationUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConversationUtils.h; sourceTree = "<group>"; };
@@ -358,6 +398,7 @@
 		5C1871911AA464B600272788 /* third-parties */ = {
 			isa = PBXGroup;
 			children = (
+				5CB63EFD1B0DCEB6001081EA /* LeanCloudFeedback */,
 				5CA95ADD1AAE8D81004BCDFB /* MJRefresh */,
 				5CDB0A691AA6161B00F13A1F /* fmdb */,
 				5C1871B61AA4669100272788 /* UIKit+AFNetworking */,
@@ -651,6 +692,38 @@
 			name = MJRefresh;
 			sourceTree = "<group>";
 		};
+		5CB63EFD1B0DCEB6001081EA /* LeanCloudFeedback */ = {
+			isa = PBXGroup;
+			children = (
+				5CB63EFE1B0DCF06001081EA /* LeanCloudFeedback.h */,
+				5CB63EFF1B0DCF06001081EA /* LCHttpClient.m */,
+				5CB63F001B0DCF06001081EA /* LCUserFeedbackViewController.m */,
+				5CB63F011B0DCF06001081EA /* LCUserFeedback.h */,
+				5CB63F021B0DCF06001081EA /* LCUserFeedback.m */,
+				5CB63F031B0DCF06001081EA /* LCHttpClient.h */,
+				5CB63F041B0DCF06001081EA /* LCUserFeedbackAgent.m */,
+				5CB63F051B0DCF06001081EA /* LCUserFeedbackThread.m */,
+				5CB63F061B0DCF06001081EA /* LCUserFeedbackThread.h */,
+				5CB63F071B0DCF06001081EA /* LCUserFeedbackAgent.h */,
+				5CB63F081B0DCF06001081EA /* LCUserFeedbackViewController.h */,
+				5CB63F091B0DCF06001081EA /* LCUserFeedbackRightCell.h */,
+				5CB63F0A1B0DCF06001081EA /* LCUserFeedbackRightCell.m */,
+				5CB63F0B1B0DCF06001081EA /* LCUserFeedbackLeftCell.h */,
+				5CB63F0C1B0DCF06001081EA /* LCUserFeedbackLeftCell.m */,
+				5CB63F0D1B0DCF06001081EA /* LCUserFeedback_Internal.h */,
+				5CB63F0E1B0DCF06001081EA /* Info.plist */,
+				5CB63F0F1B0DCF06001081EA /* LCUtils.m */,
+				5CB63F101B0DCF06001081EA /* LCUtils.h */,
+				5CB63F111B0DCF06001081EA /* back@2x.png */,
+				5CB63F121B0DCF06001081EA /* bg_1@2x.png */,
+				5CB63F131B0DCF06001081EA /* bg_2@2x.png */,
+				5CB63F141B0DCF06001081EA /* btn_feedback_new@2x.png */,
+				5CB63F151B0DCF06001081EA /* btn_feedback@2x.png */,
+				5CB63F161B0DCF06001081EA /* warning@2x.png */,
+			);
+			name = LeanCloudFeedback;
+			sourceTree = "<group>";
+		};
 		5CDB0A691AA6161B00F13A1F /* fmdb */ = {
 			isa = PBXGroup;
 			children = (
@@ -755,9 +828,13 @@
 				5C5441BD1AC377970023360D /* Recents@2x.png in Resources */,
 				5C18720C1AA4698200272788 /* chatto_bg_normal.png in Resources */,
 				5C0315651A8209200051E65C /* default_avatar.png in Resources */,
+				5CB63F231B0DCF06001081EA /* btn_feedback_new@2x.png in Resources */,
 				5C2956DB1A80BED400BF1E9C /* Main.storyboard in Resources */,
 				5C2956E01A80BED400BF1E9C /* LaunchScreen.xib in Resources */,
+				5CB63F241B0DCF06001081EA /* btn_feedback@2x.png in Resources */,
+				5CB63F201B0DCF06001081EA /* back@2x.png in Resources */,
 				5CA95ADC1AAE8B1D004BCDFB /* setting@2x.png in Resources */,
+				5CB63F251B0DCF06001081EA /* warning@2x.png in Resources */,
 				5C1872031AA4698200272788 /* chat_animation3.png in Resources */,
 				5C1872051AA4698200272788 /* chat_message_back.png in Resources */,
 				5C1872061AA4698200272788 /* Chat_record_circle.png in Resources */,
@@ -770,11 +847,14 @@
 				5C1871FE1AA4698200272788 /* chat_animation_white1.png in Resources */,
 				5C1872011AA4698200272788 /* chat_animation1.png in Resources */,
 				5C1871FF1AA4698200272788 /* chat_animation_white2.png in Resources */,
+				5CB63F1E1B0DCF06001081EA /* Info.plist in Resources */,
 				5CDB0A8B1AA7179E00F13A1F /* default_avatar_mal.png in Resources */,
 				5C1872071AA4698200272788 /* chat_send_message.png in Resources */,
+				5CB63F221B0DCF06001081EA /* bg_2@2x.png in Resources */,
 				5C5441B91AC375E20023360D /* openchat@2x.png in Resources */,
 				5C1872001AA4698200272788 /* chat_animation_white3.png in Resources */,
 				5C2956DD1A80BED400BF1E9C /* Images.xcassets in Resources */,
+				5CB63F211B0DCF06001081EA /* bg_1@2x.png in Resources */,
 				5C18720A1AA4698200272788 /* chatfrom_bg_normal.png in Resources */,
 				5C5441BC1AC377970023360D /* Contacts@2x.png in Resources */,
 			);
@@ -801,7 +881,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# 上传符号表的脚本，具体可以参见：https://leancloud.cn/docs/ios_crashreporting_guide.html\n# 这是 LeanCloud 最新的 crash reporting framework 提供的功能，可以在崩溃发生的时候，dump 出详细、准确的堆栈信息\n# 如果您不想使用这个功能，注释掉下面所有的语句即可。\nleancloud upload_symbol \\\n-f \"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}\" \\\n-i \"xqbqp3jr39p1mfptkswia72icqkk6i2ic3vi4q1tbpu7ce8b\" \\\n-k \"cfs0hpk9ai3f8kiwua7atnri8hrleodvipjy0dofj70ebbno\"";
+			shellScript = "# /bin/sh\n# 上传符号表的脚本，具体可以参见：https://leancloud.cn/docs/ios_crashreporting_guide.html\n# 这是 LeanCloud 最新的 crash reporting framework 提供的功能，可以在崩溃发生的时候，dump 出详细、准确的堆栈信息\n# 如果您不想使用这个功能，注释掉下面所有的语句即可。\n#leancloud upload_symbol \\\n#-f \"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}\" \\\n#-i \"xqbqp3jr39p1mfptkswia72icqkk6i2ic3vi4q1tbpu7ce8b\" \\\n#-k \"cfs0hpk9ai3f8kiwua7atnri8hrleodvipjy0dofj70ebbno\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -812,7 +892,10 @@
 			files = (
 				5C1871EB1AA466B800272788 /* UIWebView+AFNetworking.m in Sources */,
 				5C1871CB1AA466A700272788 /* AFHTTPRequestOperationManager.m in Sources */,
+				5CB63F191B0DCF06001081EA /* LCUserFeedback.m in Sources */,
+				5CB63F1D1B0DCF06001081EA /* LCUserFeedbackLeftCell.m in Sources */,
 				5C2956D81A80BED400BF1E9C /* ContactsViewController.m in Sources */,
+				5CB63F1B1B0DCF06001081EA /* LCUserFeedbackThread.m in Sources */,
 				5C1871E41AA466B800272788 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				5C1872171AA46A2700272788 /* AVUserStore.m in Sources */,
 				5C18721E1AA46A3D00272788 /* MessageDisplayer.m in Sources */,
@@ -849,9 +932,12 @@
 				5C1871AB1AA4651E00272788 /* UUAVAudioPlayer.m in Sources */,
 				5CA95AEC1AAE8D97004BCDFB /* MJRefreshHeaderView.m in Sources */,
 				5C1871E61AA466B800272788 /* UIAlertView+AFNetworking.m in Sources */,
+				5CB63F181B0DCF06001081EA /* LCUserFeedbackViewController.m in Sources */,
+				5CB63F1A1B0DCF06001081EA /* LCUserFeedbackAgent.m in Sources */,
 				5C1871AF1AA4651E00272788 /* UUMessageContentButton.m in Sources */,
 				5C1871AA1AA4651E00272788 /* UUInputFunctionView.m in Sources */,
 				5C1872361AA5840300272788 /* FCMessageCell.m in Sources */,
+				5CB63F1F1B0DCF06001081EA /* LCUtils.m in Sources */,
 				5C1872241AA46A7200272788 /* ConversationMemberGroupView.m in Sources */,
 				5C1871AE1AA4651E00272788 /* UUMessageCell.m in Sources */,
 				5C1871CD1AA466A700272788 /* AFNetworkReachabilityManager.m in Sources */,
@@ -865,6 +951,7 @@
 				5C1871CF1AA466A700272788 /* AFURLConnectionOperation.m in Sources */,
 				5C1871B11AA4651E00272788 /* UUProgressHUD.m in Sources */,
 				5C29571F1A811B6D00BF1E9C /* SignupViewController.m in Sources */,
+				5CB63F171B0DCF06001081EA /* LCHttpClient.m in Sources */,
 				5C2957241A811F9F00BF1E9C /* ChatViewController.m in Sources */,
 				5CDB0A811AA6178100F13A1F /* SQLiteMessagePersister.m in Sources */,
 				5CC31D861AA994CD001DBA7A /* ConversationUtils.m in Sources */,
@@ -873,6 +960,7 @@
 				5C2956CF1A80BED400BF1E9C /* main.m in Sources */,
 				5C1871CE1AA466A700272788 /* AFSecurityPolicy.m in Sources */,
 				5C60E4E11A8A65BA00EE61E0 /* Constrains.m in Sources */,
+				5CB63F1C1B0DCF06001081EA /* LCUserFeedbackRightCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

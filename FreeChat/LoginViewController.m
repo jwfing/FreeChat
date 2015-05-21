@@ -11,6 +11,8 @@
 #import "AVOSCloudIM/AVOSCloudIM.h"
 #import "MainViewController.h"
 #import "ConversationStore.h"
+#import <AVOSCloudSNS/AVOSCloudSNS.h>
+#import <AVOSCloudSNS/AVUser+SNS.h>
 
 @interface LoginViewController () {
     UITextField *_username;
@@ -45,6 +47,17 @@
     [self.view addSubview:_password];
     [self.view addSubview:signUp];
     [self.view addSubview:signIn];
+
+    UIButton *weiboLogin = [[UIButton alloc] initWithFrame:CGRectMake(20, 240, frameSize.width - 40, 40)];
+    [weiboLogin setTitle:@"新浪微博登录" forState:UIControlStateNormal];
+    [weiboLogin setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+    [weiboLogin addTarget:self action:@selector(loginWithWeibo) forControlEvents:UIControlEventTouchUpInside];
+    UIButton *qqLogin = [[UIButton alloc] initWithFrame:CGRectMake(20, 290, frameSize.width - 40, 40)];
+    [qqLogin setTitle:@"腾讯 qq 登录" forState:UIControlStateNormal];
+    [qqLogin setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+    [qqLogin addTarget:self action:@selector(loginWithQQ) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:weiboLogin];
+    [self.view addSubview:qqLogin];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -97,6 +110,42 @@
                                             [self pushToMainViewController];
                                         }
                                     }];
+}
+
+- (void)loginWithWeibo {
+    [AVOSCloudSNS loginWithCallback:^(id object, NSError *error) {
+        if (error) {
+            UIAlertView *view = [[UIAlertView alloc] initWithTitle:@"Error" message:[error description] delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            [view show];
+        } else {
+            [AVUser loginWithAuthData:object platform:AVOSCloudSNSPlatformWeiBo block:^(AVUser *user, NSError *error) {
+                if (error) {
+                    UIAlertView *view = [[UIAlertView alloc] initWithTitle:@"Error" message:[error description] delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+                    [view show];
+                } else {
+                    [self pushToMainViewController];
+                }
+            }];
+        }
+    } toPlatform:AVOSCloudSNSSinaWeibo];
+}
+
+- (void)loginWithQQ {
+    [AVOSCloudSNS loginWithCallback:^(id object, NSError *error) {
+        if (error) {
+            UIAlertView *view = [[UIAlertView alloc] initWithTitle:@"Error" message:[error description] delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            [view show];
+        } else {
+            [AVUser loginWithAuthData:object platform:AVOSCloudSNSPlatformQQ block:^(AVUser *user, NSError *error) {
+                if (error) {
+                    UIAlertView *view = [[UIAlertView alloc] initWithTitle:@"Error" message:[error description] delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+                    [view show];
+                } else {
+                    [self pushToMainViewController];
+                }
+            }];
+        }
+    } toPlatform:AVOSCloudSNSQQ];
 }
 
 - (IBAction)signupClicked:(id)sender {

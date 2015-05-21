@@ -12,6 +12,7 @@
 #import "AVOSCloud/AVOSCloud.h"
 #import "ConversationStore.h"
 #import <AVOSCloudCrashReporting/AVOSCloudCrashReporting.h>
+#import <AVOSCloudSNS/AVOSCloudSNS.h>
 
 #define SYSTEM_VERSION [[[UIDevice currentDevice] systemVersion] floatValue]
 
@@ -39,6 +40,10 @@
                       clientKey:@"cfs0hpk9ai3f8kiwua7atnri8hrleodvipjy0dofj70ebbno"];
     NSLog(@"use cn cluster");
 #endif
+
+    [AVOSCloudSNS setupPlatform:AVOSCloudSNSSinaWeibo withAppKey:@"2548122881" andAppSecret:@"ba37a6eb3018590b0d75da733c4998f8" andRedirectURI:@"http://wanpaiapp.com/oauth/callback/sina"];
+    [AVOSCloudSNS setupPlatform:AVOSCloudSNSQQ withAppKey:@"1104579343" andAppSecret:@"jKE8IigA9zgMgg4m" andRedirectURI:nil];
+
     [AVAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     
 #ifdef DEBUG
@@ -95,6 +100,10 @@
     if (application.applicationState != UIApplicationStateActive) {
         [AVAnalytics trackAppOpenedWithRemoteNotificationPayload:userInfo];
     }
+}
+
+-(BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url{
+    return [AVOSCloudSNS handleOpenURL:url];
 }
 
 @end

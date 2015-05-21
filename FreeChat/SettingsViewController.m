@@ -12,6 +12,7 @@
 #import "AVUser+Avatar.h"
 #import "UIImageView+AFNetworking.h"
 #import "MessageDisplayer.h"
+#import "LeanCloudFeedback.h"
 
 @interface SettingsViewController () <UIActionSheetDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>{
     UILabel *_username;
@@ -45,10 +46,16 @@
 //    [_logoutButton setBackgroundColor:[UIColor lightGrayColor]];
     [_logoutButton setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
     [_logoutButton addTarget:self action:@selector(logout:) forControlEvents:UIControlEventTouchUpInside];
+    
+    UIButton *feedbackBtn = [[UIButton alloc] initWithFrame:CGRectMake(20, frameSize.height - navSize.height - 104, frameSize.width - 40, 30)];
+    [feedbackBtn setTitle:@"提交反馈" forState:UIControlStateNormal];
+    [feedbackBtn setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+    [feedbackBtn addTarget:self action:@selector(pressedFeedback:) forControlEvents:UIControlEventTouchUpInside];
 
     [self.view addSubview:_username];
     [self.view addSubview:_avatarView];
     [self.view addSubview:_logoutButton];
+    [self.view addSubview:feedbackBtn];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -77,6 +84,11 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (void)pressedFeedback:(id)sender {
+    LCUserFeedbackAgent *agent = [LCUserFeedbackAgent sharedInstance];
+    [agent showConversations:self title:@"提点建议" contact:[AVUser currentUser].username];
+}
 
 - (void)logout:(id)sender {
     if (_avatarUpdating) {
