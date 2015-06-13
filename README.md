@@ -11,6 +11,10 @@ FreeChat 是基于 [LeanCloud](https://leancloud.cn) 实时[消息服务](https:
 ## 如何运行
 下载工程之后，直接在 Xcode 中打开 FreeChat.xcodeproj 即可。换成你自己的 appId／appKey 也可以直接运行（此时因为开放聊天室没有预先建立，所以开放聊天室页面下列表为空。要预先建立开放聊天室，可以参考 [LeanCloud 文档](https://leancloud.cn/docs/realtime_rest_api.html)）。
 
+>> 注意：
+>> FreeChat 使用了 LeanCloud 最新的 [CrashReporting Framework](https://leancloud.cn/docs/ios_crashreporting_guide.html)，所以编译前需要先安装 LeanCloud 用于上传符号表的客户端工具，具体方法如下：
+>> `gem install --no-wrappers leancloud`
+
 ## 功能
 
 FreeChat 的主要功能与微信类似。主要的模块分为三块：最新消息、联系人和设置，主界面如下图所示：
