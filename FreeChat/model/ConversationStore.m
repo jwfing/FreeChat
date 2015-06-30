@@ -7,7 +7,6 @@
 //
 
 #import "ConversationStore.h"
-#import "SQLiteMessagePersister.h"
 #import "RemoteMessagePersisiter.h"
 #import "AVUserStore.h"
 
@@ -42,73 +41,6 @@
         store = [[ConversationStore alloc] init];
     }
     return store;
-}
-
--(void)reviveFromLocal:(AVUser*)user {
-    [_conversations removeAllObjects];
-    [_conversationUnreadMsgMapping removeAllObjects];
-    
-    [[SQLiteMessagePersister sharedInstance] open:user];
-    
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
-    NSString *originArchiverPath = [[paths objectAtIndex:0] stringByAppendingPathComponent:[NSString stringWithFormat:@"%@_conversation.dat", user.objectId]];
-    NSData *encodedData = [[NSData alloc] initWithContentsOfFile:originArchiverPath];
-    if (!encodedData) {
-        return;
-    }
-    NSKeyedUnarchiver *unarchiver = [[NSKeyedUnarchiver alloc] initForReadingWithData:encodedData];
-    NSMutableArray *tmpConversationIds = [unarchiver decodeObjectForKey:kDecodeKey_Conversations];
-    _conversationUnreadMsgMapping = [unarchiver decodeObjectForKey:kDecodeKey_Conversation_UnreadMapping];
-    [unarchiver finishDecoding];
-    AVIMConversationQuery *query = [self.imClient conversationQuery];
-    [query whereKey:kAVIMKeyConversationId containedIn:tmpConversationIds];
-    [query findConversationsWithCallback:^(NSArray *objects, NSError *error) {
-        if (error || objects.count < 1) {
-            return;
-        } else {
-            AVIMConversation *tmp = nil;
-            for (int i = 0; i < objects.count; i++) {
-                tmp = [objects objectAtIndex:i];
-                if (![_conversations containsObject:tmp]) {
-                    [_conversations addObject:tmp];
-                    [[AVUserStore sharedInstance] fetchInfos:tmp.members callback:^(NSArray *objects, NSError *error) {
-                        ;
-                    }];
-                }
-            }
-        }
-    }];
-}
-
--(void)dump2Local:(AVUser*)user {
-    if (!user || [user.objectId length] <= 0) {
-        return;
-    }
-    [[SQLiteMessagePersister sharedInstance] close];
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
-    NSString *filePath = [[paths objectAtIndex:0] stringByAppendingPathComponent:[NSString stringWithFormat:@"%@_conversation.new.dat", user.objectId]];
-    NSString *originArchiverPath = [[paths objectAtIndex:0] stringByAppendingPathComponent:[NSString stringWithFormat:@"%@_conversation.dat", user.objectId]];
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-    BOOL result = [fileManager removeItemAtPath:filePath error:NULL];
-    
-    NSArray *conversations = [_conversations objectsAtIndexes:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, [_conversations count])]];
-    NSMutableArray *conversationIds = [[NSMutableArray alloc] initWithCapacity:conversations.count];
-    for (int i = 0; i < [_conversations count]; i++) {
-        [conversationIds addObject:((AVIMConversation*)conversations[i]).conversationId];
-    }
-    NSMutableData *data = [[NSMutableData alloc] init];
-    NSKeyedArchiver *archiver = [[NSKeyedArchiver alloc] initForWritingWithMutableData:data];
-    
-    [archiver encodeObject:conversationIds forKey:kDecodeKey_Conversations];
-    [archiver encodeObject:_conversationUnreadMsgMapping forKey:kDecodeKey_Conversation_UnreadMapping];
-    [archiver finishEncoding];
-    [data writeToFile:filePath atomically:YES];
-    
-    [fileManager removeItemAtPath:originArchiverPath error:NULL];
-    result = [fileManager moveItemAtPath:filePath toPath:originArchiverPath error:NULL];
-    if (!result) {
-        NSLog(@"failed to move conversation tmp file");
-    }
 }
 
 - (void)openConversation:(AVIMConversation*)conversation {
@@ -166,31 +98,8 @@
 };
 
 - (void)queryMoreMessages:(AVIMConversation*)conversation from:(NSString*)msgId timestamp:(int64_t)ts limit:(int)limit callback:(ArrayResultBlock)callback {
-    [[SQLiteMessagePersister sharedInstance] pullMessagesForConversation:conversation preceded:msgId timestamp:ts limit:limit callback:^(NSArray *objects, NSError *error) {
-        if ([objects count] < 1) {
-            [[RemoteMessagePersisiter sharedInstance] pullMessagesForConversation:conversation preceded:msgId timestamp:ts limit:limit callback:^(NSArray *objects, NSError *error) {
-                for (int i = 0; i < [objects count]; i++) {
-                    [[SQLiteMessagePersister sharedInstance] pushMessage:objects[i]];
-                }
-                [self fillWithUserInfo:objects invokeCallback:callback error:error];
-            }];
-        } else {
-            int lackNumber = limit - [objects count];
-            if (lackNumber > 0) {
-                Message *lastMessage = objects[0];
-                [[RemoteMessagePersisiter sharedInstance] pullMessagesForConversation:conversation preceded:lastMessage.imMessage.messageId timestamp:lastMessage.sentTimestamp limit:lackNumber callback:^(NSArray *newObjects, NSError *error) {
-                    int newResultCount = [newObjects count];
-                    for (int i = newResultCount - 1; i >= 0; i--) {
-                        [[SQLiteMessagePersister sharedInstance] pushMessage:newObjects[i]];
-                    }
-                    NSMutableArray *result = [[NSMutableArray alloc] initWithArray:newObjects];
-                    [result addObjectsFromArray:objects];
-                    [self fillWithUserInfo:result invokeCallback:callback error:nil];
-                }];
-            } else {
-                [self fillWithUserInfo:objects invokeCallback:callback error:error];
-            }
-        }
+    [[RemoteMessagePersisiter sharedInstance] pullMessagesForConversation:conversation preceded:msgId timestamp:ts limit:limit callback:^(NSArray *objects, NSError *error) {
+        [self fillWithUserInfo:objects invokeCallback:callback error:error];
     }];
 }
 
@@ -202,7 +111,6 @@
     newMessage.clients = nil;
     newMessage.byClient = [message clientId];
     newMessage.sentTimestamp = message.sendTimestamp;
-    [[SQLiteMessagePersister sharedInstance] pushMessage:newMessage];
 }
 
 - (void)newMessageArrived:(AVIMMessage*)message conversation:(AVIMConversation*)conv {
@@ -258,9 +166,6 @@
             unreadCount = [NSNumber numberWithInt:1];
         }
         [_conversationUnreadMsgMapping setObject:unreadCount forKey:conv.conversationId];
-        
-        SQLiteMessagePersister *persister = [SQLiteMessagePersister sharedInstance];
-        [persister pushMessage:message];
         
         NSMutableArray *observerChain = [_observerMapping objectForKey:@"*"];
         if (observerChain) {

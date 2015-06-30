@@ -18,6 +18,10 @@
     return _persister;
 }
 
+- (void)pushMessage:(Message*)message {
+    ;
+}
+
 - (void)pullMessagesForConversation:(AVIMConversation*)conversation preceded:(NSString*)lastMessageId timestamp:(int64_t)timestamp limit:(int)limit callback:(ArrayResultBlock)block {
     [conversation queryMessagesBeforeId:lastMessageId timestamp:timestamp limit:limit callback:^(NSArray *objects, NSError *error) {
         NSMutableArray *result = [[NSMutableArray alloc] initWithCapacity:[objects count]];

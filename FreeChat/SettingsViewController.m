@@ -94,9 +94,8 @@
     if (_avatarUpdating) {
         return;
     }
-    ConversationStore *store = [ConversationStore sharedInstance];
-    [store dump2Local:[AVUser currentUser]];
     [AVUser logOut];
+    ConversationStore *store = [ConversationStore sharedInstance];
     [store.imClient closeWithCallback:^(BOOL succeeded, NSError *error) {
         [self.navigationController popViewControllerAnimated:YES];
     }];

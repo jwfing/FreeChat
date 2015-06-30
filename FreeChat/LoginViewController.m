@@ -93,7 +93,6 @@
         } else {
             ConversationStore *store = [ConversationStore sharedInstance];
             store.imClient = imClient;
-            [store reviveFromLocal:currentUser];
             [self.navigationController pushViewController:mainView animated:YES];
         }
     }];

@@ -220,6 +220,7 @@ extern NSString *const kAVIMKeyConversationId;
 
 /*!
  查询服务器获取一个 AVIMConversation 对象数组
+ 如果未设置 limit，或 limit 非法，默认返回 10 个结果
  @param conversationId 查询使用的对话 id
  @param callback 查询结果回调
  */

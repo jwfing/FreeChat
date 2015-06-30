@@ -67,6 +67,11 @@ typedef enum AVLogLevel : NSUInteger {
  */
 @interface AVOSCloud : NSObject
 
+/*!
+ * Enable logs of all levels and domains.
+ */
++ (void)setAllLogsEnabled:(BOOL)enabled;
+
 /**
  *  设置SDK信息显示
  *  @param verbosePolicy SDK信息显示策略，kAVVerboseShow为显示，
@@ -149,6 +154,14 @@ typedef enum AVLogLevel : NSUInteger {
 #pragma mark Schedule work
 
 /**
+ * Register remote notification with types.
+ * @param types Notification types.
+ * @param categories A set of UIUserNotificationCategory objects that define the groups of actions a notification may include.
+ * NOTE: categories only supported by iOS 8 and later. If application run below iOS 8, categories will be ignored.
+ */
++ (void)registerForRemoteNotificationTypes:(NSUInteger)types categories:(NSSet *)categories;
+
+/**
  *  get the query cache expired days
  *
  *  @return the query cache expired days
@@ -214,6 +227,17 @@ typedef enum AVLogLevel : NSUInteger {
                             callback:(AVBooleanResultBlock)callback;
 
 /*!
+ * 请求语音短信验证码，需要开启手机短信验证 API 选项
+ * 发送语音短信到指定手机上
+ * @param phoneNumber 11 位电话号码
+ * @param IDD 号码的所在地国家代码，如果传 nil，默认为 "+86"
+ * @param callback 回调结果
+ */
++(void)requestVoiceCodeWithPhoneNumber:(NSString *)phoneNumber
+                                   IDD:(NSString *)IDD
+                              callback:(AVBooleanResultBlock)callback;
+
+/*!
  *  验证短信验证码，需要开启手机短信验证 API 选项。
  *  发送验证码给服务器进行验证。
  *  @param code 6位手机验证码
@@ -221,25 +245,5 @@ typedef enum AVLogLevel : NSUInteger {
  *  @param callback 回调结果
  */
 +(void)verifySmsCode:(NSString *)code mobilePhoneNumber:(NSString *)phoneNumber callback:(AVBooleanResultBlock)callback;
-
-
-typedef AVUser PFUser;
-typedef AVObject PFObject;
-typedef AVGeoPoint PFGeoPoint;
-typedef AVQuery PFQuery;
-typedef AVFile PFFile;
-typedef AVAnonymousUtils PFAnonymousUtils;
-typedef AVACL PFACL;
-typedef AVRole PFRole;
-typedef AVInstallation PFInstallation;
-typedef AVPush PFPush;
-typedef AVOSCloud Parse;
-typedef AVCloud PFCloud;
-
-typedef AVRelation PFRelation;
-
-#if defined(__IPHONE_OS_VERSION_MIN_REQUIRED)
-typedef AVAnalytics PFAnalytics;
-#endif
 
 @end

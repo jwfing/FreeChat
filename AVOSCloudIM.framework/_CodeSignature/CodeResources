@@ -10,19 +10,19 @@
 		</data>
 		<key>Headers/AVIMClient.h</key>
 		<data>
-		4Ufc0SaExmHUaWXRhdCvpc/AqfE=
+		aOO8SzkCsjJwW2CdMkXs28iZSmw=
 		</data>
 		<key>Headers/AVIMCommon.h</key>
 		<data>
-		njx4PccQu9mnl9LTU1FljuHDarM=
+		ohLswetQ+ucyirSwHCyBn1ct3+E=
 		</data>
 		<key>Headers/AVIMConversation.h</key>
 		<data>
-		RZ4bFRYUR8CqOi2nMTxvfo68xZ4=
+		BA9rGXigcYSl2LVXgVZ0qHNEFks=
 		</data>
 		<key>Headers/AVIMConversationQuery.h</key>
 		<data>
-		RVQJRzgndyXFg13dVGyyDVY/lHs=
+		BOQvhMTrrjKd4qTfxxioQ0KyFjw=
 		</data>
 		<key>Headers/AVIMConversationUpdateBuilder.h</key>
 		<data>
@@ -32,13 +32,17 @@
 		<data>
 		up1l2VzWLlohn6G0WevnN3c2ekw=
 		</data>
+		<key>Headers/AVIMKeyedConversation.h</key>
+		<data>
+		Jpd1qlSDGbfblu6vf22qSI6UPLY=
+		</data>
 		<key>Headers/AVIMLocationMessage.h</key>
 		<data>
 		7Dnlv8++ZJZoSHHklCTPcJTisgA=
 		</data>
 		<key>Headers/AVIMMessage.h</key>
 		<data>
-		sp9sAOzeCUmQkyYljYgEJoMySmA=
+		5QZ7AWJ3RZ9yffGjStH+HihYfsA=
 		</data>
 		<key>Headers/AVIMSignature.h</key>
 		<data>
@@ -58,7 +62,7 @@
 		</data>
 		<key>Headers/AVOSCloudIM.h</key>
 		<data>
-		2YRRHELLVynFgjApsoHGUD38OqY=
+		i9DZRWyMSJyxtwhjvvDO508Hr9A=
 		</data>
 		<key>Info.plist</key>
 		<data>
@@ -77,19 +81,19 @@
 		</data>
 		<key>Headers/AVIMClient.h</key>
 		<data>
-		4Ufc0SaExmHUaWXRhdCvpc/AqfE=
+		aOO8SzkCsjJwW2CdMkXs28iZSmw=
 		</data>
 		<key>Headers/AVIMCommon.h</key>
 		<data>
-		njx4PccQu9mnl9LTU1FljuHDarM=
+		ohLswetQ+ucyirSwHCyBn1ct3+E=
 		</data>
 		<key>Headers/AVIMConversation.h</key>
 		<data>
-		RZ4bFRYUR8CqOi2nMTxvfo68xZ4=
+		BA9rGXigcYSl2LVXgVZ0qHNEFks=
 		</data>
 		<key>Headers/AVIMConversationQuery.h</key>
 		<data>
-		RVQJRzgndyXFg13dVGyyDVY/lHs=
+		BOQvhMTrrjKd4qTfxxioQ0KyFjw=
 		</data>
 		<key>Headers/AVIMConversationUpdateBuilder.h</key>
 		<data>
@@ -99,13 +103,17 @@
 		<data>
 		up1l2VzWLlohn6G0WevnN3c2ekw=
 		</data>
+		<key>Headers/AVIMKeyedConversation.h</key>
+		<data>
+		Jpd1qlSDGbfblu6vf22qSI6UPLY=
+		</data>
 		<key>Headers/AVIMLocationMessage.h</key>
 		<data>
 		7Dnlv8++ZJZoSHHklCTPcJTisgA=
 		</data>
 		<key>Headers/AVIMMessage.h</key>
 		<data>
-		sp9sAOzeCUmQkyYljYgEJoMySmA=
+		5QZ7AWJ3RZ9yffGjStH+HihYfsA=
 		</data>
 		<key>Headers/AVIMSignature.h</key>
 		<data>
@@ -125,7 +133,7 @@
 		</data>
 		<key>Headers/AVOSCloudIM.h</key>
 		<data>
-		2YRRHELLVynFgjApsoHGUD38OqY=
+		i9DZRWyMSJyxtwhjvvDO508Hr9A=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>

@@ -75,12 +75,14 @@
 - (void)imClientPaused:(AVIMClient *)imClient {
     ConversationStore *store = [ConversationStore sharedInstance];
     store.networkAvailable = NO;
+    NSLog(@"imClientPaused.");
 }
 
 /*!
  当前聊天状态开始恢复，常见于网络断开后开始重新连接。
  */
 - (void)imClientResuming:(AVIMClient *)imClient {
+    NSLog(@"imClientResuming.");
 }
 /*!
  当前聊天状态已经恢复，常见于网络断开后重新连接上。
@@ -88,6 +90,7 @@
 - (void)imClientResumed:(AVIMClient *)imClient {
     ConversationStore *store = [ConversationStore sharedInstance];
     store.networkAvailable = YES;
+    NSLog(@"imClientResumed.");
 }
 
 /*!

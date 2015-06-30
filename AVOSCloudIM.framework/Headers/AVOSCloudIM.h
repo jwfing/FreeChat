@@ -19,6 +19,7 @@ FOUNDATION_EXPORT const unsigned char AVOSCloudIMVersionString[];
 #import "AVIMCommon.h"
 #import "AVIMClient.h"
 #import "AVIMConversation.h"
+#import "AVIMKeyedConversation.h"
 #import "AVIMConversationQuery.h"
 #import "AVIMConversationUpdateBuilder.h"
 #import "AVIMMessage.h"

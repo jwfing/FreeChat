@@ -24,6 +24,7 @@ extern NSInteger const kAVIMErrorTimeout;  //请求超时
 extern NSInteger const kAVIMErrorConnectionLost;  //连接断开
 extern NSInteger const kAVIMErrorInvalidData;  //非法数据
 extern NSInteger const kAVIMErrorMessageTooLong;  //消息内容太长
+extern NSInteger const kAVIMErrorClientNotOpen;  //client 没有打开
 
 typedef void (^AVIMBooleanResultBlock)(BOOL succeeded, NSError *error);
 typedef void (^AVIMIntegerResultBlock)(NSInteger number, NSError *error);

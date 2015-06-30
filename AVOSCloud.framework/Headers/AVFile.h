@@ -226,6 +226,33 @@ The name of the file.
                   withBlock:(AVFileResultBlock)block;
 
 /*!
+ Get a thumbnail URL for image saved on Qiniu.
+
+ @param scaleToFit Scale the thumbnail and keep aspect ratio.
+ @param width The thumbnail width.
+ @param height The thumbnail height.
+ @param quality The thumbnail image quality in 1 - 100.
+ @param format The thumbnail image format such as 'jpg', 'gif', 'png', 'tif' etc.
+ */
+- (NSString *)getThumbnailURLWithScaleToFit:(BOOL)scaleToFit
+                                      width:(int)width
+                                     height:(int)height
+                                    quality:(int)quality
+                                     format:(NSString *)format;
+
+/*!
+ Get a thumbnail URL for image saved on Qiniu.
+ @see -getThumbnailURLWithScaleToFit:width:height:quality:format
+
+ @param scaleToFit Scale the thumbnail and keep aspect ratio.
+ @param width The thumbnail width.
+ @param height The thumbnail height.
+ */
+- (NSString *)getThumbnailURLWithScaleToFit:(BOOL)scaleToFit
+                                      width:(int)width
+                                     height:(int)height;
+
+/*!
  Gets a thumbnail asynchronously and calls the given block with the result.
  
  @param scaleToFit Scale the thumbnail and keep aspect ratio.

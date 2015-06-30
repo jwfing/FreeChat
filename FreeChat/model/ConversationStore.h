@@ -39,9 +39,6 @@
 
 +(instancetype)sharedInstance;
 
--(void)reviveFromLocal:(AVUser*)user;
--(void)dump2Local:(AVUser*)user;
-
 // 打开了某对话
 - (void)openConversation:(AVIMConversation*)conversation;
 - (void)quitConversation:(AVIMConversation*)conversation;

@@ -124,7 +124,6 @@
 		5CDB0A7C1AA6162B00F13A1F /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CDB0A741AA6162B00F13A1F /* FMDatabasePool.m */; };
 		5CDB0A7D1AA6162B00F13A1F /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CDB0A761AA6162B00F13A1F /* FMDatabaseQueue.m */; };
 		5CDB0A7E1AA6162B00F13A1F /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CDB0A791AA6162B00F13A1F /* FMResultSet.m */; };
-		5CDB0A811AA6178100F13A1F /* SQLiteMessagePersister.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CDB0A801AA6178100F13A1F /* SQLiteMessagePersister.m */; };
 		5CDB0A851AA6D6DD00F13A1F /* RemoteMessagePersisiter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CDB0A841AA6D6DD00F13A1F /* RemoteMessagePersisiter.m */; };
 		5CDB0A8B1AA7179E00F13A1F /* default_avatar_mal.png in Resources */ = {isa = PBXBuildFile; fileRef = 5CDB0A891AA7179E00F13A1F /* default_avatar_mal.png */; };
 		5CDB0A8C1AA7179E00F13A1F /* add_member.png in Resources */ = {isa = PBXBuildFile; fileRef = 5CDB0A8A1AA7179E00F13A1F /* add_member.png */; };
@@ -338,8 +337,6 @@
 		5CDB0A771AA6162B00F13A1F /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMDB.h; path = "third-parties/fmdb/FMDB.h"; sourceTree = "<group>"; };
 		5CDB0A781AA6162B00F13A1F /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMResultSet.h; path = "third-parties/fmdb/FMResultSet.h"; sourceTree = "<group>"; };
 		5CDB0A791AA6162B00F13A1F /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FMResultSet.m; path = "third-parties/fmdb/FMResultSet.m"; sourceTree = "<group>"; };
-		5CDB0A7F1AA6178100F13A1F /* SQLiteMessagePersister.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLiteMessagePersister.h; sourceTree = "<group>"; };
-		5CDB0A801AA6178100F13A1F /* SQLiteMessagePersister.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLiteMessagePersister.m; sourceTree = "<group>"; };
 		5CDB0A831AA6D6DD00F13A1F /* RemoteMessagePersisiter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemoteMessagePersisiter.h; sourceTree = "<group>"; };
 		5CDB0A841AA6D6DD00F13A1F /* RemoteMessagePersisiter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemoteMessagePersisiter.m; sourceTree = "<group>"; };
 		5CDB0A861AA6DBD000F13A1F /* MessagePersister.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessagePersister.h; sourceTree = "<group>"; };
@@ -603,8 +600,6 @@
 				5C1872111AA46A2700272788 /* ConversationStore.h */,
 				5C1872141AA46A2700272788 /* ConversationStore.m */,
 				5CDB0A861AA6DBD000F13A1F /* MessagePersister.h */,
-				5CDB0A7F1AA6178100F13A1F /* SQLiteMessagePersister.h */,
-				5CDB0A801AA6178100F13A1F /* SQLiteMessagePersister.m */,
 				5CDB0A831AA6D6DD00F13A1F /* RemoteMessagePersisiter.h */,
 				5CDB0A841AA6D6DD00F13A1F /* RemoteMessagePersisiter.m */,
 			);
@@ -953,7 +948,6 @@
 				5C29571F1A811B6D00BF1E9C /* SignupViewController.m in Sources */,
 				5CB63F171B0DCF06001081EA /* LCHttpClient.m in Sources */,
 				5C2957241A811F9F00BF1E9C /* ChatViewController.m in Sources */,
-				5CDB0A811AA6178100F13A1F /* SQLiteMessagePersister.m in Sources */,
 				5CC31D861AA994CD001DBA7A /* ConversationUtils.m in Sources */,
 				5C1871AD1AA4651E00272788 /* UUMessage.m in Sources */,
 				5C1871E71AA466B800272788 /* UIButton+AFNetworking.m in Sources */,
@@ -1096,6 +1090,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/FreeChat/third-parties/voicelib",
 				);
+				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -1118,6 +1113,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/FreeChat/third-parties/voicelib",
 				);
+				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

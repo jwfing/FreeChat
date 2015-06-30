@@ -10,6 +10,7 @@
 #import "AVIMSignature.h"
 
 @class AVIMConversation;
+@class AVIMKeyedConversation;
 @class AVIMMessage;
 @class AVIMTypedMessage;
 @class AVIMConversationQuery;
@@ -36,6 +37,19 @@ enum : AVIMConversationOption {
 @property(nonatomic, weak)id<AVIMSignatureDataSource> signatureDataSource;
 @property(nonatomic, readonly)NSString *clientId;
 @property(nonatomic, readonly)AVIMClientStatus status;
+
+/*!
+ 默认 AVIMClient 实例
+ @return AVIMClient 实例
+ */
++ (instancetype)defaultClient;
+
+/*!
+ 重置默认 AVIMClient 实例
+ 置后再调用 +defaultClient 将返回新的实例
+ */
++ (void)resetDefaultClient;
+
 /*!
  开启某个账户的聊天
  @param clientId - 操作发起人的 id，以后使用该账户的所有聊天行为，都由此人发起。
@@ -81,6 +95,21 @@ enum : AVIMConversationOption {
                           callback:(AVIMConversationResultBlock)callback;
 
 /*!
+ 通过 conversationId 查找已激活会话。
+ 已激活会话是指通过查询、创建、或通过 KeyedConversation 所得到的会话。
+ @param conversationId Conversation 的 id。
+ @return 与 conversationId 匹配的会话，若找不到，返回 nil。
+ */
+- (AVIMConversation *)conversationForId:(NSString *)conversationId;
+
+/*!
+ 创建一个绑定到当前 client 的会话。
+ @param keyedConversation AVIMKeyedConversation 对象。
+ @return 已绑定到当前 client 的会话。
+ */
+- (AVIMConversation *)conversationWithKeyedConversation:(AVIMKeyedConversation *)keyedConversation;
+
+/*!
  构造一个对话查询对象
  @return 对话查询对象.
  */
@@ -90,14 +119,23 @@ enum : AVIMConversationOption {
 
 @protocol AVIMClientDelegate <NSObject>
 @optional
+
 /*!
  当前聊天状态被暂停，常见于网络断开时触发。
  */
 - (void)imClientPaused:(AVIMClient *)imClient;
+
+/*!
+ 当前聊天状态被暂停，常见于网络断开时触发，error 包含暂停的错误信息。
+ 注意：该回调会覆盖 imClientPaused: 方法。
+ */
+- (void)imClientPaused:(AVIMClient *)imClient error:(NSError *)error;
+
 /*!
  当前聊天状态开始恢复，常见于网络断开后开始重新连接。
  */
 - (void)imClientResuming:(AVIMClient *)imClient;
+
 /*!
  当前聊天状态已经恢复，常见于网络断开后重新连接上。
  */
