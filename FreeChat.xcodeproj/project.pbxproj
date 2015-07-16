@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		40F0F67F7FFE01B3D98E88EE /* libPods-FreeChat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C43495DAE172EDE697385C7 /* libPods-FreeChat.a */; };
 		5C0315651A8209200051E65C /* default_avatar.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C0315641A8209200051E65C /* default_avatar.png */; };
 		5C18718D1AA45B7C00272788 /* libmp3lame.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C18718C1AA45B7C00272788 /* libmp3lame.a */; };
 		5C1871981AA464FF00272788 /* Mp3Recorder.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C1871971AA464FF00272788 /* Mp3Recorder.m */; };
@@ -75,23 +76,12 @@
 		5C2957241A811F9F00BF1E9C /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C2957231A811F9F00BF1E9C /* ChatViewController.m */; };
 		5C2957271A811FFB00BF1E9C /* ConversationDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C2957261A811FFB00BF1E9C /* ConversationDetailViewController.m */; };
 		5C29572B1A81221200BF1E9C /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C29572A1A81221200BF1E9C /* MainViewController.m */; };
-		5C29574C1A81E3E200BF1E9C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C29574B1A81E3E200BF1E9C /* SystemConfiguration.framework */; };
-		5C29574E1A81E3EB00BF1E9C /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C29574D1A81E3EB00BF1E9C /* MobileCoreServices.framework */; };
-		5C2957501A81E3F300BF1E9C /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C29574F1A81E3F300BF1E9C /* CoreTelephony.framework */; };
-		5C2957521A81E3FF00BF1E9C /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C2957511A81E3FF00BF1E9C /* CoreLocation.framework */; };
-		5C2957541A81E40F00BF1E9C /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C2957531A81E40F00BF1E9C /* libicucore.dylib */; };
-		5C29575D1A81EFC200BF1E9C /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C29575C1A81EFC200BF1E9C /* libz.dylib */; };
-		5C29575F1A81EFCA00BF1E9C /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C29575E1A81EFCA00BF1E9C /* libsqlite3.dylib */; };
-		5C2957611A81EFDA00BF1E9C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C2957601A81EFDA00BF1E9C /* UIKit.framework */; };
 		5C5441B71AC373BC0023360D /* OpenConversationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C5441B61AC373BC0023360D /* OpenConversationViewController.m */; };
 		5C5441B91AC375E20023360D /* openchat@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C5441B81AC375E20023360D /* openchat@2x.png */; };
 		5C5441BC1AC377970023360D /* Contacts@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C5441BA1AC377970023360D /* Contacts@2x.png */; };
 		5C5441BD1AC377970023360D /* Recents@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C5441BB1AC377970023360D /* Recents@2x.png */; };
 		5C60E4E11A8A65BA00EE61E0 /* Constrains.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C60E4E01A8A65BA00EE61E0 /* Constrains.m */; };
 		5C60E4F11A8B2CF900EE61E0 /* group@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C60E4F01A8B2CF800EE61E0 /* group@2x.png */; };
-		5CA634641AB006E30094F784 /* AVOSCloud.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CA634611AB006E30094F784 /* AVOSCloud.framework */; };
-		5CA634651AB006E30094F784 /* AVOSCloudIM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CA634621AB006E30094F784 /* AVOSCloudIM.framework */; };
-		5CA634661AB006E30094F784 /* AVOSCloudSNS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CA634631AB006E30094F784 /* AVOSCloudSNS.framework */; };
 		5CA95ADC1AAE8B1D004BCDFB /* setting@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5CA95ADB1AAE8B1D004BCDFB /* setting@2x.png */; };
 		5CA95AE81AAE8D97004BCDFB /* MJRefresh.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5CA95ADE1AAE8D97004BCDFB /* MJRefresh.bundle */; };
 		5CA95AE91AAE8D97004BCDFB /* MJRefreshBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CA95AE11AAE8D97004BCDFB /* MJRefreshBaseView.m */; };
@@ -117,7 +107,6 @@
 		5CC31D861AA994CD001DBA7A /* ConversationUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CC31D851AA994CD001DBA7A /* ConversationUtils.m */; };
 		5CC31D891AA9A7C0001DBA7A /* ChangeNameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CC31D881AA9A7C0001DBA7A /* ChangeNameViewController.m */; };
 		5CC31D8D1AA9FB00001DBA7A /* ConversationListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CC31D8C1AA9FB00001DBA7A /* ConversationListViewController.m */; };
-		5CCAE1471B0B0B9E009276B9 /* AVOSCloudCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CCAE1461B0B0B9E009276B9 /* AVOSCloudCrashReporting.framework */; };
 		5CCAE14C1B0B0FC2009276B9 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CCAE14B1B0B0FC2009276B9 /* libc++.dylib */; };
 		5CDB0A7A1AA6162B00F13A1F /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CDB0A701AA6162B00F13A1F /* FMDatabase.m */; };
 		5CDB0A7B1AA6162B00F13A1F /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CDB0A721AA6162B00F13A1F /* FMDatabaseAdditions.m */; };
@@ -260,14 +249,6 @@
 		5C2957261A811FFB00BF1E9C /* ConversationDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConversationDetailViewController.m; sourceTree = "<group>"; };
 		5C2957291A81221200BF1E9C /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		5C29572A1A81221200BF1E9C /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
-		5C29574B1A81E3E200BF1E9C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		5C29574D1A81E3EB00BF1E9C /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
-		5C29574F1A81E3F300BF1E9C /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
-		5C2957511A81E3FF00BF1E9C /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		5C2957531A81E40F00BF1E9C /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
-		5C29575C1A81EFC200BF1E9C /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
-		5C29575E1A81EFCA00BF1E9C /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
-		5C2957601A81EFDA00BF1E9C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		5C5441B51AC373BC0023360D /* OpenConversationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenConversationViewController.h; sourceTree = "<group>"; };
 		5C5441B61AC373BC0023360D /* OpenConversationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenConversationViewController.m; sourceTree = "<group>"; };
 		5C5441B81AC375E20023360D /* openchat@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "openchat@2x.png"; path = "images/openchat@2x.png"; sourceTree = "<group>"; };
@@ -276,9 +257,6 @@
 		5C60E4DF1A8A65BA00EE61E0 /* Constrains.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constrains.h; sourceTree = "<group>"; };
 		5C60E4E01A8A65BA00EE61E0 /* Constrains.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constrains.m; sourceTree = "<group>"; };
 		5C60E4F01A8B2CF800EE61E0 /* group@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "group@2x.png"; path = "images/group@2x.png"; sourceTree = "<group>"; };
-		5CA634611AB006E30094F784 /* AVOSCloud.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AVOSCloud.framework; sourceTree = "<group>"; };
-		5CA634621AB006E30094F784 /* AVOSCloudIM.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AVOSCloudIM.framework; sourceTree = "<group>"; };
-		5CA634631AB006E30094F784 /* AVOSCloudSNS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AVOSCloudSNS.framework; sourceTree = "<group>"; };
 		5CA95ADB1AAE8B1D004BCDFB /* setting@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "setting@2x.png"; path = "images/setting@2x.png"; sourceTree = "<group>"; };
 		5CA95ADE1AAE8D97004BCDFB /* MJRefresh.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = MJRefresh.bundle; path = "third-parties/MJRefresh/MJRefresh.bundle"; sourceTree = "<group>"; };
 		5CA95ADF1AAE8D97004BCDFB /* MJRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MJRefresh.h; path = "third-parties/MJRefresh/MJRefresh.h"; sourceTree = "<group>"; };
@@ -323,7 +301,6 @@
 		5CC31D881AA9A7C0001DBA7A /* ChangeNameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangeNameViewController.m; sourceTree = "<group>"; };
 		5CC31D8B1AA9FB00001DBA7A /* ConversationListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConversationListViewController.h; sourceTree = "<group>"; };
 		5CC31D8C1AA9FB00001DBA7A /* ConversationListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConversationListViewController.m; sourceTree = "<group>"; };
-		5CCAE1461B0B0B9E009276B9 /* AVOSCloudCrashReporting.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AVOSCloudCrashReporting.framework; sourceTree = "<group>"; };
 		5CCAE1491B0B0CDE009276B9 /* libstdc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.dylib"; path = "usr/lib/libstdc++.dylib"; sourceTree = SDKROOT; };
 		5CCAE14B1B0B0FC2009276B9 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
 		5CDB0A6F1AA6162B00F13A1F /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMDatabase.h; path = "third-parties/fmdb/FMDatabase.h"; sourceTree = "<group>"; };
@@ -342,6 +319,9 @@
 		5CDB0A861AA6DBD000F13A1F /* MessagePersister.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessagePersister.h; sourceTree = "<group>"; };
 		5CDB0A891AA7179E00F13A1F /* default_avatar_mal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = default_avatar_mal.png; path = images/default_avatar_mal.png; sourceTree = "<group>"; };
 		5CDB0A8A1AA7179E00F13A1F /* add_member.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = add_member.png; path = images/add_member.png; sourceTree = "<group>"; };
+		9C43495DAE172EDE697385C7 /* libPods-FreeChat.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FreeChat.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA2B20945415477A0F9D8B75 /* Pods-FreeChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FreeChat.release.xcconfig"; path = "Pods/Target Support Files/Pods-FreeChat/Pods-FreeChat.release.xcconfig"; sourceTree = "<group>"; };
+		ECF7A2CC3214B350600E9DF0 /* Pods-FreeChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FreeChat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FreeChat/Pods-FreeChat.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -351,19 +331,8 @@
 			files = (
 				5CCAE14C1B0B0FC2009276B9 /* libc++.dylib in Frameworks */,
 				5C1871B31AA4656A00272788 /* CoreGraphics.framework in Frameworks */,
-				5C2957611A81EFDA00BF1E9C /* UIKit.framework in Frameworks */,
 				5C18718D1AA45B7C00272788 /* libmp3lame.a in Frameworks */,
-				5C29575F1A81EFCA00BF1E9C /* libsqlite3.dylib in Frameworks */,
-				5C29575D1A81EFC200BF1E9C /* libz.dylib in Frameworks */,
-				5C2957541A81E40F00BF1E9C /* libicucore.dylib in Frameworks */,
-				5CA634661AB006E30094F784 /* AVOSCloudSNS.framework in Frameworks */,
-				5CA634641AB006E30094F784 /* AVOSCloud.framework in Frameworks */,
-				5CCAE1471B0B0B9E009276B9 /* AVOSCloudCrashReporting.framework in Frameworks */,
-				5C2957521A81E3FF00BF1E9C /* CoreLocation.framework in Frameworks */,
-				5C2957501A81E3F300BF1E9C /* CoreTelephony.framework in Frameworks */,
-				5C29574E1A81E3EB00BF1E9C /* MobileCoreServices.framework in Frameworks */,
-				5C29574C1A81E3E200BF1E9C /* SystemConfiguration.framework in Frameworks */,
-				5CA634651AB006E30094F784 /* AVOSCloudIM.framework in Frameworks */,
+				40F0F67F7FFE01B3D98E88EE /* libPods-FreeChat.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -500,6 +469,8 @@
 				5C2956CB1A80BED400BF1E9C /* FreeChat */,
 				5C2956E81A80BED400BF1E9C /* FreeChatTests */,
 				5C2956CA1A80BED400BF1E9C /* Products */,
+				99BF47C443B7AE44744BD2E1 /* Pods */,
+				656F1012B404DFFB723CCDBC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -609,18 +580,6 @@
 		5C29575A1A81ECB800BF1E9C /* frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				5CCAE1461B0B0B9E009276B9 /* AVOSCloudCrashReporting.framework */,
-				5CA634611AB006E30094F784 /* AVOSCloud.framework */,
-				5CA634621AB006E30094F784 /* AVOSCloudIM.framework */,
-				5CA634631AB006E30094F784 /* AVOSCloudSNS.framework */,
-				5C29575E1A81EFCA00BF1E9C /* libsqlite3.dylib */,
-				5C29575C1A81EFC200BF1E9C /* libz.dylib */,
-				5C2957601A81EFDA00BF1E9C /* UIKit.framework */,
-				5C2957531A81E40F00BF1E9C /* libicucore.dylib */,
-				5C2957511A81E3FF00BF1E9C /* CoreLocation.framework */,
-				5C29574F1A81E3F300BF1E9C /* CoreTelephony.framework */,
-				5C29574D1A81E3EB00BF1E9C /* MobileCoreServices.framework */,
-				5C29574B1A81E3E200BF1E9C /* SystemConfiguration.framework */,
 			);
 			name = frameworks;
 			sourceTree = "<group>";
@@ -737,6 +696,23 @@
 			name = fmdb;
 			sourceTree = "<group>";
 		};
+		656F1012B404DFFB723CCDBC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9C43495DAE172EDE697385C7 /* libPods-FreeChat.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		99BF47C443B7AE44744BD2E1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				ECF7A2CC3214B350600E9DF0 /* Pods-FreeChat.debug.xcconfig */,
+				CA2B20945415477A0F9D8B75 /* Pods-FreeChat.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -744,10 +720,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5C2956EF1A80BED400BF1E9C /* Build configuration list for PBXNativeTarget "FreeChat" */;
 			buildPhases = (
+				68D0871FC0B76936EAB94A0E /* Check Pods Manifest.lock */,
 				5C2956C51A80BED400BF1E9C /* Sources */,
 				5C2956C61A80BED400BF1E9C /* Frameworks */,
 				5C2956C71A80BED400BF1E9C /* Resources */,
 				5CCAE1481B0B0C63009276B9 /* ShellScript */,
+				D1E2E4A16A2429F870C0AB6F /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -877,6 +855,36 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "# /bin/sh\n# 上传符号表的脚本，具体可以参见：https://leancloud.cn/docs/ios_crashreporting_guide.html\n# 这是 LeanCloud 最新的 crash reporting framework 提供的功能，可以在崩溃发生的时候，dump 出详细、准确的堆栈信息\n# 如果您不想使用这个功能，注释掉下面所有的语句即可。\n#leancloud upload_symbol \\\n#-f \"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}\" \\\n#-i \"xqbqp3jr39p1mfptkswia72icqkk6i2ic3vi4q1tbpu7ce8b\" \\\n#-k \"cfs0hpk9ai3f8kiwua7atnri8hrleodvipjy0dofj70ebbno\"";
+		};
+		68D0871FC0B76936EAB94A0E /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D1E2E4A16A2429F870C0AB6F /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FreeChat/Pods-FreeChat-resources.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1074,6 +1082,7 @@
 		};
 		5C2956F01A80BED400BF1E9C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ECF7A2CC3214B350600E9DF0 /* Pods-FreeChat.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -1090,13 +1099,14 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/FreeChat/third-parties/voicelib",
 				);
-				OTHER_LDFLAGS = "-all_load";
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
 		5C2956F11A80BED400BF1E9C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CA2B20945415477A0F9D8B75 /* Pods-FreeChat.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -1113,7 +1123,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/FreeChat/third-parties/voicelib",
 				);
-				OTHER_LDFLAGS = "-all_load";
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
