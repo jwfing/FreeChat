@@ -7,7 +7,7 @@
 //
 
 #import "LCHttpClient.h"
-#import <AVOSCloud/AVJSONRequestOperation.h>
+//#import <AVOSCloud/AVJSONRequestOperation.h>
 #import "LCUtils.h"
 
 @interface LCHttpClient ()
@@ -23,7 +23,7 @@
 
 @implementation LCHttpClient
 
-@synthesize clientImpl = _clientImpl;
+//@synthesize clientImpl = _clientImpl;
 @synthesize applicationId, applicationIdField, applicationKey, applicationKeyField, sessionTokenField;
 @synthesize baseURL, timeoutInterval;
 
@@ -43,20 +43,20 @@
     return sharedInstance;
 }
 
-- (AVHTTPClient *)clientImpl {
-    if (!_clientImpl) {
-        NSURL * url = [NSURL URLWithString:@"https://api.leancloud.cn/1.1"];
-        _clientImpl = [AVHTTPClient clientWithBaseURL:url];
-        
-        //最大并发请求数 4
-        _clientImpl.operationQueue.maxConcurrentOperationCount=4;
-        
-        [_clientImpl registerHTTPOperationClass:[AVJSONRequestOperation class]];
-        [_clientImpl setParameterEncoding:AVJSONParameterEncoding];
-    }
-    [self updateHeaders];
-    return _clientImpl;
-}
+//- (AVHTTPClient *)clientImpl {
+//    if (!_clientImpl) {
+//        NSURL * url = [NSURL URLWithString:@"https://api.leancloud.cn/1.1"];
+//        _clientImpl = [AVHTTPClient clientWithBaseURL:url];
+//        
+//        //最大并发请求数 4
+//        _clientImpl.operationQueue.maxConcurrentOperationCount=4;
+//        
+//        [_clientImpl registerHTTPOperationClass:[AVJSONRequestOperation class]];
+//        [_clientImpl setParameterEncoding:AVJSONParameterEncoding];
+//    }
+//    [self updateHeaders];
+//    return _clientImpl;
+//}
 
 -(void)updateHeaders {
     
@@ -64,10 +64,10 @@
     NSString *sign=[LCUtils calMD5:[NSString stringWithFormat:@"%@%@",timestamp,self.applicationKey]];
     NSString *headerValue=[NSString stringWithFormat:@"%@,%@",sign,timestamp];
     
-    [_clientImpl setDefaultHeader:@"x-avoscloud-request-sign" value:headerValue];
-    [_clientImpl setDefaultHeader:self.applicationIdField value:self.applicationId];
-    [_clientImpl setDefaultHeader:self.applicationKeyField value:self.applicationKey];
-    [_clientImpl setDefaultHeader:@"Accept" value:@"application/json"];
+//    [_clientImpl setDefaultHeader:@"x-avoscloud-request-sign" value:headerValue];
+//    [_clientImpl setDefaultHeader:self.applicationIdField value:self.applicationId];
+//    [_clientImpl setDefaultHeader:self.applicationKeyField value:self.applicationKey];
+//    [_clientImpl setDefaultHeader:@"Accept" value:@"application/json"];
 }
 
 - (dispatch_queue_t)completionQueue {
@@ -81,15 +81,16 @@
                                  path:(NSString *)path
                            parameters:(NSDictionary *)parameters
 {
-    NSMutableURLRequest *request = [self.clientImpl requestWithMethod:method path:path parameters:parameters];
-    [request setTimeoutInterval:self.timeoutInterval];
-    return request;
+    return nil;
+//    NSMutableURLRequest *request = [self.clientImpl requestWithMethod:method path:path parameters:parameters];
+//    [request setTimeoutInterval:self.timeoutInterval];
+//    return request;
 }
 
--(void)enqueueHTTPRequestOperation:(AVHTTPRequestOperation *)operation
-{
-    [self.clientImpl enqueueHTTPRequestOperation:operation];
-}
+//-(void)enqueueHTTPRequestOperation:(AVHTTPRequestOperation *)operation
+//{
+//    [self.clientImpl enqueueHTTPRequestOperation:operation];
+//}
 
 -(void)postObject:(NSString *)path
    withParameters:(NSDictionary *)parameters
@@ -101,21 +102,21 @@
 }
 
 - (void)goRequest:(NSURLRequest *)request saveResult:(BOOL)save block:(AVIdResultBlock)block retryTimes:(int)times {
-    AVJSONRequestOperation *operation = [[AVJSONRequestOperation alloc] initWithRequest:request];
-    operation.successCallbackQueue = self.completionQueue;
-    operation.failureCallbackQueue = self.completionQueue;
-    [operation setCompletionBlockWithSuccess:^(AVHTTPRequestOperation *operation, id responseObject) {
-        if (block && ![operation isCancelled]) {
-            block(responseObject, nil);
-        }
-    } failure:^(AVHTTPRequestOperation *operation, NSError *error) {
-        // if this operation isn't cancelled
-        if (![operation isCancelled]) {
-            block([(AVJSONRequestOperation *)operation responseJSON], error);
-        };
-    }];
+//    AVJSONRequestOperation *operation = [[AVJSONRequestOperation alloc] initWithRequest:request];
+//    operation.successCallbackQueue = self.completionQueue;
+//    operation.failureCallbackQueue = self.completionQueue;
+//    [operation setCompletionBlockWithSuccess:^(AVHTTPRequestOperation *operation, id responseObject) {
+//        if (block && ![operation isCancelled]) {
+//            block(responseObject, nil);
+//        }
+//    } failure:^(AVHTTPRequestOperation *operation, NSError *error) {
+//        // if this operation isn't cancelled
+//        if (![operation isCancelled]) {
+//            block([(AVJSONRequestOperation *)operation responseJSON], error);
+//        };
+//    }];
     
-    [self enqueueHTTPRequestOperation:operation];
+//    [self enqueueHTTPRequestOperation:operation];
 }
 
 -(void)getObject:(NSString *)path

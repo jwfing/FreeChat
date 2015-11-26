@@ -50,7 +50,7 @@
     
     // 2、计算头像位置
     CGFloat iconX = ChatMargin;
-    if (_message.imMessage.ioType == AVIMMessageIOTypeOut) {
+    if ([_message.imMessage.clientId compare:[AVUser currentUser].objectId] == NSOrderedSame) {
         iconX = screenW - ChatMargin - ChatIconWH;
     }
     CGFloat iconY = CGRectGetMaxY(_timeF) + ChatMargin;

@@ -7,10 +7,11 @@
 //
 
 #import "LCUtils.h"
-#import <AVOSCloud/AVGlobal.h>
+//#import <AVOSCloud/AVGlobal.h>
 
 #import <CommonCrypto/CommonDigest.h>
 
+#define dateFormat   @"yyyy'-'MM'-'dd'T'HH':'mm':'ss.SSS'Z'"
 
 @implementation LCUtils
 

@@ -297,7 +297,7 @@ UUInputFunctionViewDelegate, FCMessageCellDelegate, ConversationOperationDelegat
         NSFileManager *fileManager = [NSFileManager defaultManager];
         [fileManager removeItemAtPath:filePath error:NULL];
         [UIImageJPEGRepresentation(image, 0.6) writeToFile:filePath atomically:YES];
-        
+
         AVIMImageMessage *avMessage = [AVIMImageMessage messageWithText:nil attachedFilePath:filePath attributes:nil];
         [self.conversation sendMessage:avMessage callback:^(BOOL succeeded, NSError *error) {
             if (error) {

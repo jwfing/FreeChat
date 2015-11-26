@@ -55,7 +55,7 @@
     [self.view addSubview:_username];
     [self.view addSubview:_avatarView];
     [self.view addSubview:_logoutButton];
-    [self.view addSubview:feedbackBtn];
+//    [self.view addSubview:feedbackBtn];
 }
 
 - (void)didReceiveMemoryWarning {

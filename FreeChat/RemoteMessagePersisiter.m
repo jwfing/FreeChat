@@ -23,17 +23,31 @@
 }
 
 - (void)pullMessagesForConversation:(AVIMConversation*)conversation preceded:(NSString*)lastMessageId timestamp:(int64_t)timestamp limit:(int)limit callback:(ArrayResultBlock)block {
-    [conversation queryMessagesBeforeId:lastMessageId timestamp:timestamp limit:limit callback:^(NSArray *objects, NSError *error) {
-        NSMutableArray *result = [[NSMutableArray alloc] initWithCapacity:[objects count]];
-        int objectCount = [objects count];
-        for (int i = 0; i < objectCount; i++) {
-            Message *msg = [[Message alloc] initWithAVIMMessage:objects[i]];
-            [result addObject:msg];
-        }
-        if (block) {
-            block(result, error);
-        }
-    }];
+    if (!lastMessageId || lastMessageId.length < 1) {
+        [conversation queryMessagesFromServerWithLimit:limit callback:^(NSArray *objects, NSError *error) {
+            NSMutableArray *result = [[NSMutableArray alloc] initWithCapacity:[objects count]];
+            int objectCount = [objects count];
+            for (int i = 0; i < objectCount; i++) {
+                Message *msg = [[Message alloc] initWithAVIMMessage:objects[i]];
+                [result addObject:msg];
+            }
+            if (block) {
+                block(result, error);
+            }
+        }];
+    } else {
+        [conversation queryMessagesBeforeId:lastMessageId timestamp:timestamp limit:limit callback:^(NSArray *objects, NSError *error) {
+            NSMutableArray *result = [[NSMutableArray alloc] initWithCapacity:[objects count]];
+            int objectCount = [objects count];
+            for (int i = 0; i < objectCount; i++) {
+                Message *msg = [[Message alloc] initWithAVIMMessage:objects[i]];
+                [result addObject:msg];
+            }
+            if (block) {
+                block(result, error);
+            }
+        }];
+    }
 }
 
 @end

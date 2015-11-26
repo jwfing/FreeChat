@@ -195,8 +195,8 @@
     self.btnContent.backImageView.hidden = YES;
     
     self.btnContent.frame = messageFrame.contentF;
-    
-    if (message.ioType == AVIMMessageIOTypeOut) {
+    AVUser* currentUser = [AVUser currentUser];
+    if ([message.clientId compare:currentUser.objectId] == NSOrderedSame) {
         self.btnContent.isMyMessage = YES;
         [self.btnContent setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         self.btnContent.contentEdgeInsets = UIEdgeInsetsMake(ChatContentTop, ChatContentRight, ChatContentBottom, ChatContentLeft);
@@ -230,7 +230,7 @@
 
     //背景气泡图
     UIImage *normal;
-    if (message.ioType == AVIMMessageIOTypeOut) {
+    if ([message.clientId compare:currentUser.objectId] == NSOrderedSame) {
         normal = [UIImage imageNamed:@"chatto_bg_normal"];
         normal = [normal resizableImageWithCapInsets:UIEdgeInsetsMake(35, 10, 10, 22)];
     } else {
