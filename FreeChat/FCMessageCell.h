@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "UUMessageCell.h"
 #import "FCMessageFrame.h"
+#import "AVOSCloud.h"
 
 @class FCMessageCell;
 
