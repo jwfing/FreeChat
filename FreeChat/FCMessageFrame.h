@@ -10,6 +10,7 @@
 #import <CoreGraphics/CGGeometry.h>
 #import "UUMessageFrame.h"
 #import "Message.h"
+#import "AVOSCloud.h"
 
 @interface FCMessageFrame : NSObject
 

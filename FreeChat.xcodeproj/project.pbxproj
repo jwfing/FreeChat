@@ -116,6 +116,10 @@
 		5CDB0A851AA6D6DD00F13A1F /* RemoteMessagePersisiter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CDB0A841AA6D6DD00F13A1F /* RemoteMessagePersisiter.m */; };
 		5CDB0A8B1AA7179E00F13A1F /* default_avatar_mal.png in Resources */ = {isa = PBXBuildFile; fileRef = 5CDB0A891AA7179E00F13A1F /* default_avatar_mal.png */; };
 		5CDB0A8C1AA7179E00F13A1F /* add_member.png in Resources */ = {isa = PBXBuildFile; fileRef = 5CDB0A8A1AA7179E00F13A1F /* add_member.png */; };
+		9A85BAF81C3E497000923283 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A85BAF71C3E497000923283 /* SystemConfiguration.framework */; };
+		9A85BAFA1C3E497700923283 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A85BAF91C3E497700923283 /* MobileCoreServices.framework */; };
+		9A85BAFC1C3E497F00923283 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A85BAFB1C3E497F00923283 /* CoreTelephony.framework */; };
+		9A85BAFE1C3E498800923283 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A85BAFD1C3E498800923283 /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -319,6 +323,10 @@
 		5CDB0A861AA6DBD000F13A1F /* MessagePersister.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessagePersister.h; sourceTree = "<group>"; };
 		5CDB0A891AA7179E00F13A1F /* default_avatar_mal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = default_avatar_mal.png; path = images/default_avatar_mal.png; sourceTree = "<group>"; };
 		5CDB0A8A1AA7179E00F13A1F /* add_member.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = add_member.png; path = images/add_member.png; sourceTree = "<group>"; };
+		9A85BAF71C3E497000923283 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		9A85BAF91C3E497700923283 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		9A85BAFB1C3E497F00923283 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		9A85BAFD1C3E498800923283 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		9C43495DAE172EDE697385C7 /* libPods-FreeChat.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FreeChat.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA2B20945415477A0F9D8B75 /* Pods-FreeChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FreeChat.release.xcconfig"; path = "Pods/Target Support Files/Pods-FreeChat/Pods-FreeChat.release.xcconfig"; sourceTree = "<group>"; };
 		ECF7A2CC3214B350600E9DF0 /* Pods-FreeChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FreeChat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FreeChat/Pods-FreeChat.debug.xcconfig"; sourceTree = "<group>"; };
@@ -329,6 +337,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A85BAFE1C3E498800923283 /* CoreLocation.framework in Frameworks */,
+				9A85BAFC1C3E497F00923283 /* CoreTelephony.framework in Frameworks */,
+				9A85BAFA1C3E497700923283 /* MobileCoreServices.framework in Frameworks */,
+				9A85BAF81C3E497000923283 /* SystemConfiguration.framework in Frameworks */,
 				5CCAE14C1B0B0FC2009276B9 /* libc++.dylib in Frameworks */,
 				5C1871B31AA4656A00272788 /* CoreGraphics.framework in Frameworks */,
 				5C18718D1AA45B7C00272788 /* libmp3lame.a in Frameworks */,
@@ -699,6 +711,10 @@
 		656F1012B404DFFB723CCDBC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9A85BAFD1C3E498800923283 /* CoreLocation.framework */,
+				9A85BAFB1C3E497F00923283 /* CoreTelephony.framework */,
+				9A85BAF91C3E497700923283 /* MobileCoreServices.framework */,
+				9A85BAF71C3E497000923283 /* SystemConfiguration.framework */,
 				9C43495DAE172EDE697385C7 /* libPods-FreeChat.a */,
 			);
 			name = Frameworks;
@@ -726,6 +742,7 @@
 				5C2956C71A80BED400BF1E9C /* Resources */,
 				5CCAE1481B0B0C63009276B9 /* ShellScript */,
 				D1E2E4A16A2429F870C0AB6F /* Copy Pods Resources */,
+				3A22FBFED79BCE15819B8BA6 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -843,6 +860,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		3A22FBFED79BCE15819B8BA6 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FreeChat/Pods-FreeChat-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		5CCAE1481B0B0C63009276B9 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1086,6 +1118,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1099,7 +1132,14 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/FreeChat/third-parties/voicelib",
 				);
-				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-lsqlite3",
+					"-lc++",
+					"-ObjC",
+					"-licucore",
+					"-lz",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -1110,6 +1150,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1123,7 +1164,14 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/FreeChat/third-parties/voicelib",
 				);
-				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-lsqlite3",
+					"-lc++",
+					"-ObjC",
+					"-licucore",
+					"-lz",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

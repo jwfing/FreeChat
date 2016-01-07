@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AVOSCloud.h"
 #import "AVOSCloudIM/AVOSCloudIM.h"
 #import "ConversationStore.h"
 
