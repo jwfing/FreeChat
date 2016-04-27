@@ -103,11 +103,24 @@ NSString *kExitCellIdentifier = @"ChatDetailExitCellIdentifier";
 }
 
 -(void)addMembers2Conversation{
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    ContactsViewController *contactsController = [storyboard instantiateViewControllerWithIdentifier:@"ContactsViewIdentifier"];
-    contactsController.action = AddNewMembers;
-    contactsController.delegate = self;
-    [self.navigationController pushViewController:contactsController animated:YES];
+    [self.conversation fetchWithCallback:^(BOOL succeeded, NSError *error) {
+        if (!succeeded) {
+            NSLog(@"failed to fetch conversation");
+            return;
+        }
+        AVIMConversationUpdateBuilder* updater = [self.conversation newUpdateBuilder];
+        [updater setObject:@"just-for-test" forKey:@"micUser"];
+        [self.conversation update:[updater dictionary] callback:^(BOOL succeeded, NSError *error) {
+            if (!succeeded) {
+                NSLog(@"failed to update conversation");
+            }
+        }];
+    }];
+//    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//    ContactsViewController *contactsController = [storyboard instantiateViewControllerWithIdentifier:@"ContactsViewIdentifier"];
+//    contactsController.action = AddNewMembers;
+//    contactsController.delegate = self;
+//    [self.navigationController pushViewController:contactsController animated:YES];
 }
 
 -(BOOL)isMultiPartiesConversation{
