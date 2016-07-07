@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 23
-    buildToolsVersion "22.0.1"
+    buildToolsVersion "23"
 
     defaultConfig {
         applicationId "com.leancloud.freechat"
@@ -11,6 +11,16 @@ android {
         versionCode 1
         versionName "1.0"
     }
+
+    //为了解决部分第三方库重复打包了META-INF的问题
+    packagingOptions {
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+    }
+    lintOptions {
+        abortOnError false
+    }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -21,7 +31,16 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile project(':leancloudchatkit')
+
+    //avoscloud-sdk 为 LeanCloud基础包
+
+    //avoscloud-push 为推送与实时聊天需要的包compile ('cn.leancloud.android:avoscloud-push:v3.+@aar' ) {transitive = true}
+
     testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:23.+'
-    compile 'com.android.support:design:23.+'
+    compile 'com.android.support:appcompat-v7:23.4.0'
+    compile 'com.android.support:design:23.4.0'
+    compile 'cn.leancloud.android:avoscloud-sdk:v3.+'
+    compile 'com.android.support:support-v4:23.4.0'
+    compile 'com.android.support:recyclerview-v7:23.4.0'
 }

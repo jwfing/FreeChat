@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="lcim_bottom_bar_text_black">#3e3e39</color>
+    <color name="lcim_commom_read">#ff0000</color>
+    <color name="lcim_common_blue">#2c97e8</color>
+    <color name="lcim_common_gray">#898989</color>
+    <color name="lcim_divider_line_color">#afafaf</color>
+    <declare-styleable name="lcim_chat_play_button"><attr format="boolean" name="left"/></declare-styleable>
+    <dimen name="lcim_badge_padding">3dp</dimen>
+    <dimen name="lcim_badge_radius">5dp</dimen>
+    <dimen name="lcim_badge_stroke_width">1dp</dimen>
+    <dimen name="lcim_bottom_bar_action_layout_height">140dp</dimen>
+    <dimen name="lcim_bottom_bar_button_margin">5dp</dimen>
+    <dimen name="lcim_bottom_bar_button_size">30dp</dimen>
+    <dimen name="lcim_bottom_bar_height">50dp</dimen>
+    <dimen name="lcim_chat_horizontal_big_margin">40dp</dimen>
+    <dimen name="lcim_chat_horizontal_margin">15dp</dimen>
+    <dimen name="lcim_chat_imageview_width">150dp</dimen>
+    <dimen name="lcim_divider_line_height">1px</dimen>
+    <dimen name="lcim_setting_item_height">60dp</dimen>
+    <dimen name="lcim_textsize_large">20sp</dimen>
+    <dimen name="lcim_textsize_larger">22sp</dimen>
+    <dimen name="lcim_textsize_largest">24sp</dimen>
+    <dimen name="lcim_textsize_normal">18sp</dimen>
+    <dimen name="lcim_textsize_small">16sp</dimen>
+    <string name="lcim_chat_activity_select_picture">选择图片</string>
+    <string name="lcim_chat_bottom_camera">拍摄</string>
+    <string name="lcim_chat_bottom_location">位置</string>
+    <string name="lcim_chat_bottom_picture">照片</string>
+    <string name="lcim_chat_bottom_record_layout_pressToRecord">按住录音</string>
+    <string name="lcim_chat_cancelRecord">取消录音</string>
+    <string name="lcim_chat_record_button_pleaseSayMore">多说点吧～</string>
+    <string name="lcim_chat_record_button_releaseToCancel">松开手指，取消录音</string>
+    <string name="lcim_chat_record_button_slideUpToCancel">手指上滑，取消发送</string>
+    <string name="lcim_chat_sent">已发送</string>
+    <string name="lcim_chatkit_name">LeanCloudChatKit</string>
+    <string name="lcim_load_more_footer_hint_normal">查看更多</string>
+    <string name="lcim_message_is_null">消息不能为空</string>
+    <string name="lcim_message_shorthand_audio">[语音]</string>
+    <string name="lcim_message_shorthand_image">[图片]</string>
+    <string name="lcim_message_shorthand_location">[位置]</string>
+    <string name="lcim_message_shorthand_unknown">[未知]</string>
+    <string name="lcim_unspport_message_type">暂不支持此消息类型</string>
+    <style name="LCIMActionBarTheme" parent="ThemeOverlay.AppCompat.ActionBar">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textColorPrimary">@android:color/white</item>
+    </style>
+    <style name="LCIMActivity" parent="LCIMKitTheme"/>
+    <style name="LCIMActivity.NoActionBar">
+        <item name="colorPrimary">@color/lcim_common_blue</item>
+        <item name="colorPrimaryDark">@color/lcim_common_blue</item>
+        <item name="colorAccent">@color/lcim_common_blue</item>
+        <item name="android:textColorPrimary">@android:color/white</item>
+        <item name="android:editTextStyle">@style/LCIMEditText</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+    <style name="LCIMAvatar">
+        <item name="android:layout_width">45dp</item>
+        <item name="android:layout_height">45dp</item>
+        <item name="android:scaleType">centerCrop</item>
+        <!--<item name="android:src">@drawable/chat_default_user_avatar</item>-->
+    </style>
+    <style name="LCIMAvatar.Large">
+        <item name="android:layout_width">50dp</item>
+        <item name="android:layout_height">50dp</item>
+    </style>
+    <style name="LCIMAvatar.Small">
+        <item name="android:layout_width">40dp</item>
+        <item name="android:layout_height">40dp</item>
+    </style>
+    <style name="LCIMDividerLine">
+        <item name="android:background">@color/lcim_divider_line_color</item>
+    </style>
+    <style name="LCIMDividerLine.Horizontal">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/lcim_divider_line_height</item>
+    </style>
+    <style name="LCIMDividerLine.Vertical">
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_width">@dimen/lcim_divider_line_height</item>
+    </style>
+    <style name="LCIMEditText" parent="Widget.AppCompat.EditText">
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textColorPrimary">@android:color/black</item>
+    </style>
+    <style name="LCIMKitTheme" parent="Theme.AppCompat.Light">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/lcim_common_blue</item>
+        <item name="colorPrimaryDark">@color/lcim_common_blue</item>
+        <item name="colorAccent">@color/lcim_common_blue</item>
+        <item name="actionBarTheme">@style/LCIMActionBarTheme</item>
+    </style>
+    <style name="LCIMTextAppearance"/>
+    <style name="LCIMTextAppearance.Large">
+        <item name="android:textSize">@dimen/lcim_textsize_large</item>
+    </style>
+    <style name="LCIMTextAppearance.Large.Gray">
+        <item name="android:textColor">@color/lcim_common_gray</item>
+    </style>
+    <style name="LCIMTextAppearance.Normal">
+        <item name="android:textSize">@dimen/lcim_textsize_normal</item>
+    </style>
+    <style name="LCIMTextAppearance.Normal.Bold">
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="LCIMTextAppearance.Normal.Gray">
+        <item name="android:textColor">@color/lcim_common_gray</item>
+    </style>
+    <style name="LCIMTextAppearance.Small"/>
+    <style name="lcim_input_bar_button_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:paddingRight">@dimen/lcim_bottom_bar_button_margin</item>
+        <item name="android:paddingLeft">@dimen/lcim_bottom_bar_button_margin</item>
+        <item name="android:background">@null</item>
+        <item name="android:scaleType">center</item>
+    </style>
+    <style name="lcim_input_bar_edittext_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minHeight">40dp</item>
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:layout_marginRight">10dp</item>
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="android:layout_marginBottom">5dp</item>
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:paddingRight">10dp</item>
+        <item name="android:paddingTop">5dp</item>
+        <item name="android:paddingBottom">5dp</item>
+        <item name="android:maxLines">4</item>
+        <item name="android:background">@drawable/lcim_textview_bg</item>
+        <item name="android:textSize">@dimen/lcim_textsize_normal</item>
+    </style>
+    <style name="lcim_input_bar_record_button_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:layout_marginRight">10dp</item>
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="android:layout_marginBottom">5dp</item>
+        <item name="android:text">@string/lcim_chat_bottom_record_layout_pressToRecord</item>
+    </style>
+    <style name="lcim_record_dialog_style">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowBackground">@drawable/lcim_chat_record_button_round_background</item>
+    </style>
+</resources>

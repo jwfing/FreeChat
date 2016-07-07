@@ -59,7 +59,8 @@
                     android:imeOptions="actionUnspecified"
                     android:inputType="textPassword"
                     android:maxLines="1"
-                    android:singleLine="true" />
+                    android:singleLine="true"
+                    android:editable="false" />
 
             </android.support.design.widget.TextInputLayout>
 
@@ -71,6 +72,16 @@
                 android:layout_marginTop="16dp"
                 android:text="@string/action_sign_in"
                 android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="@string/action_sign_up"
+                android:id="@+id/promot_sign_up"
+                android:layout_gravity="center_horizontal|right"
+                android:autoLink="web"
+                android:textColor="@color/colorPrimary" />
 
         </LinearLayout>
     </ScrollView>

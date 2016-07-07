@@ -1,0 +1,366 @@
+[
+    {
+        "merged": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_btn_rating_star_on_mtrl_alpha.png",
+        "source": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable-xhdpi-v4/abc_btn_rating_star_on_mtrl_alpha.png"
+    },
+    {
+        "merged": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_scrubber_control_to_pressed_mtrl_005.png",
+        "source": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable-xhdpi-v4/abc_scrubber_control_to_pressed_mtrl_005.png"
+    },
+    {
+        "merged": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/res/merged/debug/drawable-xhdpi-v4/lcim_bottom_bar_picture_button_pressed.png",
+        "source": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/src/main/res/drawable-xhdpi/lcim_bottom_bar_picture_button_pressed.png"
+    },
+    {
+        "merged": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_textfield_search_default_mtrl_alpha.9.png",
+        "source": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable-xhdpi-v4/abc_textfield_search_default_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_scrubber_track_mtrl_alpha.9.png",
+        "source": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable-xhdpi-v4/abc_scrubber_track_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_list_longpressed_holo.9.png",
+        "source": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable-xhdpi-v4/abc_list_longpressed_holo.9.png"
+    },
+    {
+        "merged": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/res/merged/debug/drawable-xhdpi-v4/lcim_bottom_bar_camera_button_pressed.png",
+        "source": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/src/main/res/drawable-xhdpi/lcim_bottom_bar_camera_button_pressed.png"
+    },
+    {
+        "merged": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/res/merged/debug/drawable-xhdpi-v4/lcim_chat_resend_normal.png",
+        "source": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/src/main/res/drawable-xhdpi/lcim_chat_resend_normal.png"
+    },
+    {
+        "merged": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_ic_go_search_api_mtrl_alpha.png",
+        "source": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable-xhdpi-v4/abc_ic_go_search_api_mtrl_alpha.png"
+    },
+    {
+        "merged": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_ic_menu_cut_mtrl_alpha.png",
+        "source": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable-xhdpi-v4/abc_ic_menu_cut_mtrl_alpha.png"
+    },
+    {
+        "merged": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_ic_menu_moreoverflow_mtrl_alpha.png",
+        "source": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable-xhdpi-v4/abc_ic_menu_moreoverflow_mtrl_alpha.png"
+    },
+    {
+        "merged": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/res/merged/debug/drawable-xhdpi-v4/lcim_record_icon_voice0.png",
+        "source": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/src/main/res/drawable-xhdpi/lcim_record_icon_voice0.png"
+    },
+    {
+        "merged": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_popup_background_mtrl_mult.9.png",
+        "source": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable-xhdpi-v4/abc_popup_background_mtrl_mult.9.png"
+    },
+    {
+        "merged": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_list_selector_disabled_holo_dark.9.png",
+        "source": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable-xhdpi-v4/abc_list_selector_disabled_holo_dark.9.png"
+    },
+    {
+        "merged": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/res/merged/debug/drawable-xhdpi-v4/lcim_bottom_bar_picture_button_normal.png",
+        "source": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/src/main/res/drawable-xhdpi/lcim_bottom_bar_picture_button_normal.png"
+    },
+    {
+        "merged": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/res/merged/debug/drawable-xhdpi-v4/lcim_chat_top_voice_bg.9.png",
+        "source": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/src/main/res/drawable-xhdpi/lcim_chat_top_voice_bg.9.png"
+    },
+    {
+        "merged": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_btn_switch_to_on_mtrl_00012.9.png",
+        "source": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable-xhdpi-v4/abc_btn_switch_to_on_mtrl_00012.9.png"
+    },
+    {
+        "merged": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_list_divider_mtrl_alpha.9.png",
+        "source": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable-xhdpi-v4/abc_list_divider_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_btn_radio_to_on_mtrl_000.png",
+        "source": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable-xhdpi-v4/abc_btn_radio_to_on_mtrl_000.png"
+    },
+    {
+        "merged": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/res/merged/debug/drawable-xhdpi-v4/lcim_bottom_bar_action_button_pressed.png",
+        "source": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/src/main/res/drawable-xhdpi/lcim_bottom_bar_action_button_pressed.png"
+    },
+    {
+        "merged": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/res/merged/debug/drawable-xhdpi-v4/lcim_chat_voice_right2.png",
+        "source": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/src/main/res/drawable-xhdpi/lcim_chat_voice_right2.png"
+    },
+    {
+        "merged": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/res/merged/debug/drawable-xhdpi-v4/lcim_record_icon_voice3.png",
+        "source": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/src/main/res/drawable-xhdpi/lcim_record_icon_voice3.png"
+    },
+    {
+        "merged": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_menu_hardkey_panel_mtrl_mult.9.png",
+        "source": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable-xhdpi-v4/abc_menu_hardkey_panel_mtrl_mult.9.png"
+    },
+    {
+        "merged": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_ic_ab_back_mtrl_am_alpha.png",
+        "source": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable-xhdpi-v4/abc_ic_ab_back_mtrl_am_alpha.png"
+    },
+    {
+        "merged": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/res/merged/debug/drawable-xhdpi-v4/lcim_chat_icon_voice0.png",
+        "source": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/src/main/res/drawable-xhdpi/lcim_chat_icon_voice0.png"
+    },
+    {
+        "merged": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/res/merged/debug/drawable-xhdpi-v4/lcim_bottom_bar_send_button_pressed.png",
+        "source": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/src/main/res/drawable-xhdpi/lcim_bottom_bar_send_button_pressed.png"
+    },
+    {
+        "merged": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/res/merged/debug/drawable-xhdpi-v4/lcim_chat_item_location_default.9.png",
+        "source": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/src/main/res/drawable-xhdpi/lcim_chat_item_location_default.9.png"
+    },
+    {
+        "merged": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/res/merged/debug/drawable-xhdpi-v4/lcim_chat_voice_right3.png",
+        "source": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/src/main/res/drawable-xhdpi/lcim_chat_voice_right3.png"
+    },
+    {
+        "merged": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_tab_indicator_mtrl_alpha.9.png",
+        "source": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable-xhdpi-v4/abc_tab_indicator_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_list_focused_holo.9.png",
+        "source": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable-xhdpi-v4/abc_list_focused_holo.9.png"
+    },
+    {
+        "merged": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/res/merged/debug/drawable-xhdpi-v4/lcim_chat_voice_right1.png",
+        "source": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/src/main/res/drawable-xhdpi/lcim_chat_voice_right1.png"
+    },
+    {
+        "merged": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/res/merged/debug/drawable-xhdpi-v4/lcim_chat_voice_left3.png",
+        "source": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/src/main/res/drawable-xhdpi/lcim_chat_voice_left3.png"
+    },
+    {
+        "merged": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/res/merged/debug/drawable-xhdpi-v4/lcim_chat_voice_bg_pressed.9.png",
+        "source": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/src/main/res/drawable-xhdpi/lcim_chat_voice_bg_pressed.9.png"
+    },
+    {
+        "merged": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_ic_commit_search_api_mtrl_alpha.png",
+        "source": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable-xhdpi-v4/abc_ic_commit_search_api_mtrl_alpha.png"
+    },
+    {
+        "merged": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_btn_check_to_on_mtrl_015.png",
+        "source": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable-xhdpi-v4/abc_btn_check_to_on_mtrl_015.png"
+    },
+    {
+        "merged": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_switch_track_mtrl_alpha.9.png",
+        "source": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable-xhdpi-v4/abc_switch_track_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/res/merged/debug/drawable-xhdpi-v4/lcim_chat_voice_right.png",
+        "source": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/src/main/res/drawable-xhdpi/lcim_chat_voice_right.png"
+    },
+    {
+        "merged": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/res/merged/debug/drawable-xhdpi-v4/lcim_bottom_bar_voice_button_pressed.png",
+        "source": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/src/main/res/drawable-xhdpi/lcim_bottom_bar_voice_button_pressed.png"
+    },
+    {
+        "merged": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_ic_menu_share_mtrl_alpha.png",
+        "source": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable-xhdpi-v4/abc_ic_menu_share_mtrl_alpha.png"
+    },
+    {
+        "merged": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_btn_check_to_on_mtrl_000.png",
+        "source": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable-xhdpi-v4/abc_btn_check_to_on_mtrl_000.png"
+    },
+    {
+        "merged": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_textfield_search_activated_mtrl_alpha.9.png",
+        "source": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable-xhdpi-v4/abc_textfield_search_activated_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_ic_star_half_black_16dp.png",
+        "source": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable-xhdpi-v4/abc_ic_star_half_black_16dp.png"
+    },
+    {
+        "merged": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/res/merged/debug/drawable-xhdpi-v4/lcim_chat_icon_voice5.png",
+        "source": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/src/main/res/drawable-xhdpi/lcim_chat_icon_voice5.png"
+    },
+    {
+        "merged": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_btn_switch_to_on_mtrl_00001.9.png",
+        "source": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable-xhdpi-v4/abc_btn_switch_to_on_mtrl_00001.9.png"
+    },
+    {
+        "merged": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/res/merged/debug/drawable-xhdpi-v4/lcim_record_icon_voice2.png",
+        "source": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/src/main/res/drawable-xhdpi/lcim_record_icon_voice2.png"
+    },
+    {
+        "merged": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_scrubber_primary_mtrl_alpha.9.png",
+        "source": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable-xhdpi-v4/abc_scrubber_primary_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/res/merged/debug/drawable-xhdpi-v4/lcim_bottom_bar_action_button_normal.png",
+        "source": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/src/main/res/drawable-xhdpi/lcim_bottom_bar_action_button_normal.png"
+    },
+    {
+        "merged": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_cab_background_top_mtrl_alpha.9.png",
+        "source": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable-xhdpi-v4/abc_cab_background_top_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/res/merged/debug/drawable-xhdpi-v4/lcim_chat_icon_voice3.png",
+        "source": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/src/main/res/drawable-xhdpi/lcim_chat_icon_voice3.png"
+    },
+    {
+        "merged": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_ic_star_black_16dp.png",
+        "source": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable-xhdpi-v4/abc_ic_star_black_16dp.png"
+    },
+    {
+        "merged": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/res/merged/debug/drawable-xhdpi-v4/lcim_default_avatar_icon.png",
+        "source": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/src/main/res/drawable-xhdpi/lcim_default_avatar_icon.png"
+    },
+    {
+        "merged": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/res/merged/debug/drawable-xhdpi-v4/lcim_chat_icon_voice1.png",
+        "source": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/src/main/res/drawable-xhdpi/lcim_chat_icon_voice1.png"
+    },
+    {
+        "merged": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/res/merged/debug/drawable-xhdpi-v4/lcim_record_icon_voice4.png",
+        "source": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/src/main/res/drawable-xhdpi/lcim_record_icon_voice4.png"
+    },
+    {
+        "merged": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_spinner_mtrl_am_alpha.9.png",
+        "source": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable-xhdpi-v4/abc_spinner_mtrl_am_alpha.9.png"
+    },
+    {
+        "merged": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/res/merged/debug/drawable-xhdpi-v4/lcim_chat_icon_voice4.png",
+        "source": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/src/main/res/drawable-xhdpi/lcim_chat_icon_voice4.png"
+    },
+    {
+        "merged": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/res/merged/debug/drawable-xhdpi-v4/lcim_bottom_bar_location_button_normal.png",
+        "source": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/src/main/res/drawable-xhdpi/lcim_bottom_bar_location_button_normal.png"
+    },
+    {
+        "merged": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/res/merged/debug/drawable-xhdpi-v4/lcim_chat_voice_left1.png",
+        "source": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/src/main/res/drawable-xhdpi/lcim_chat_voice_left1.png"
+    },
+    {
+        "merged": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_ic_star_half_black_36dp.png",
+        "source": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable-xhdpi-v4/abc_ic_star_half_black_36dp.png"
+    },
+    {
+        "merged": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_textfield_default_mtrl_alpha.9.png",
+        "source": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable-xhdpi-v4/abc_textfield_default_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_list_selector_disabled_holo_light.9.png",
+        "source": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable-xhdpi-v4/abc_list_selector_disabled_holo_light.9.png"
+    },
+    {
+        "merged": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/res/merged/debug/drawable-xhdpi-v4/lcim_bottom_bar_keyboard_button_normal.png",
+        "source": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/src/main/res/drawable-xhdpi/lcim_bottom_bar_keyboard_button_normal.png"
+    },
+    {
+        "merged": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/res/merged/debug/drawable-xhdpi-v4/lcim_record_icon_voice1.png",
+        "source": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/src/main/res/drawable-xhdpi/lcim_record_icon_voice1.png"
+    },
+    {
+        "merged": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/res/merged/debug/drawable-xhdpi-v4/lcim_record_icon_voice5.png",
+        "source": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/src/main/res/drawable-xhdpi/lcim_record_icon_voice5.png"
+    },
+    {
+        "merged": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/res/merged/debug/drawable-xhdpi-v4/lcim_bottom_bar_location_button_pressed.png",
+        "source": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/src/main/res/drawable-xhdpi/lcim_bottom_bar_location_button_pressed.png"
+    },
+    {
+        "merged": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_list_pressed_holo_dark.9.png",
+        "source": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable-xhdpi-v4/abc_list_pressed_holo_dark.9.png"
+    },
+    {
+        "merged": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_ic_menu_selectall_mtrl_alpha.png",
+        "source": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable-xhdpi-v4/abc_ic_menu_selectall_mtrl_alpha.png"
+    },
+    {
+        "merged": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_ic_menu_copy_mtrl_am_alpha.png",
+        "source": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable-xhdpi-v4/abc_ic_menu_copy_mtrl_am_alpha.png"
+    },
+    {
+        "merged": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_ic_star_black_36dp.png",
+        "source": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable-xhdpi-v4/abc_ic_star_black_36dp.png"
+    },
+    {
+        "merged": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/res/merged/debug/drawable-xhdpi-v4/lcim_bottom_bar_voice_button_normal.png",
+        "source": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/src/main/res/drawable-xhdpi/lcim_bottom_bar_voice_button_normal.png"
+    },
+    {
+        "merged": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_ic_menu_paste_mtrl_am_alpha.png",
+        "source": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable-xhdpi-v4/abc_ic_menu_paste_mtrl_am_alpha.png"
+    },
+    {
+        "merged": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_ic_search_api_mtrl_alpha.png",
+        "source": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable-xhdpi-v4/abc_ic_search_api_mtrl_alpha.png"
+    },
+    {
+        "merged": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/res/merged/debug/drawable-xhdpi-v4/lcim_chat_icon_voice2.png",
+        "source": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/src/main/res/drawable-xhdpi/lcim_chat_icon_voice2.png"
+    },
+    {
+        "merged": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/res/merged/debug/drawable-xhdpi-v4/lcim_chat_resend_pressed.png",
+        "source": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/src/main/res/drawable-xhdpi/lcim_chat_resend_pressed.png"
+    },
+    {
+        "merged": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/res/merged/debug/drawable-xhdpi-v4/lcim_chat_item_left_bg.9.png",
+        "source": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/src/main/res/drawable-xhdpi/lcim_chat_item_left_bg.9.png"
+    },
+    {
+        "merged": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/res/merged/debug/drawable-xhdpi-v4/lcim_chat_voice_left2.png",
+        "source": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/src/main/res/drawable-xhdpi/lcim_chat_voice_left2.png"
+    },
+    {
+        "merged": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/res/merged/debug/drawable-xhdpi-v4/lcim_chat_voice_left.png",
+        "source": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/src/main/res/drawable-xhdpi/lcim_chat_voice_left.png"
+    },
+    {
+        "merged": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_btn_rating_star_off_mtrl_alpha.png",
+        "source": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable-xhdpi-v4/abc_btn_rating_star_off_mtrl_alpha.png"
+    },
+    {
+        "merged": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_scrubber_control_off_mtrl_alpha.png",
+        "source": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable-xhdpi-v4/abc_scrubber_control_off_mtrl_alpha.png"
+    },
+    {
+        "merged": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_ic_clear_mtrl_alpha.png",
+        "source": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable-xhdpi-v4/abc_ic_clear_mtrl_alpha.png"
+    },
+    {
+        "merged": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/res/merged/debug/drawable-xhdpi-v4/lcim_chat_voice_bg.9.png",
+        "source": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/src/main/res/drawable-xhdpi/lcim_chat_voice_bg.9.png"
+    },
+    {
+        "merged": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_ic_voice_search_api_mtrl_alpha.png",
+        "source": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable-xhdpi-v4/abc_ic_voice_search_api_mtrl_alpha.png"
+    },
+    {
+        "merged": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_btn_radio_to_on_mtrl_015.png",
+        "source": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable-xhdpi-v4/abc_btn_radio_to_on_mtrl_015.png"
+    },
+    {
+        "merged": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_list_pressed_holo_light.9.png",
+        "source": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable-xhdpi-v4/abc_list_pressed_holo_light.9.png"
+    },
+    {
+        "merged": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/res/merged/debug/drawable-xhdpi-v4/lcim_bottom_bar_keyboard_button_pressed.png",
+        "source": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/src/main/res/drawable-xhdpi/lcim_bottom_bar_keyboard_button_pressed.png"
+    },
+    {
+        "merged": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/res/merged/debug/drawable-xhdpi-v4/lcim_chat_item_right_bg.9.png",
+        "source": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/src/main/res/drawable-xhdpi/lcim_chat_item_right_bg.9.png"
+    },
+    {
+        "merged": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/res/merged/debug/drawable-xhdpi-v4/lcim_bottom_bar_camera_button_normal.png",
+        "source": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/src/main/res/drawable-xhdpi/lcim_bottom_bar_camera_button_normal.png"
+    },
+    {
+        "merged": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_ab_share_pack_mtrl_alpha.9.png",
+        "source": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable-xhdpi-v4/abc_ab_share_pack_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_scrubber_control_to_pressed_mtrl_000.png",
+        "source": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable-xhdpi-v4/abc_scrubber_control_to_pressed_mtrl_000.png"
+    },
+    {
+        "merged": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/res/merged/debug/drawable-xhdpi-v4/lcim_group_icon.png",
+        "source": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/src/main/res/drawable-xhdpi/lcim_group_icon.png"
+    },
+    {
+        "merged": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/res/merged/debug/drawable-xhdpi-v4/lcim_bottom_bar_send_button_normal.png",
+        "source": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/src/main/res/drawable-xhdpi/lcim_bottom_bar_send_button_normal.png"
+    },
+    {
+        "merged": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_textfield_activated_mtrl_alpha.9.png",
+        "source": "/Users/fengjunwen/Work/Private/FreeChat/Android/leancloudchatkit/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable-xhdpi-v4/abc_textfield_activated_mtrl_alpha.9.png"
+    }
+]
