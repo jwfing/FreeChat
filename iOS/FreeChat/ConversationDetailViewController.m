@@ -15,6 +15,11 @@
 #import "ContactsViewController.h"
 #import "ChangeNameViewController.h"
 
+#import "AVOSCloud/AVOSCloud.h"
+#import "AVUser+Avatar.h"
+
+#import <ChatKit/LCChatKit.h>
+
 NSString *kMemberCellIdentifier = @"ChatDetailMemberCellIdentifier";
 NSString *kMuteCellIdentifier = @"ChatDetailMuteCellIdentifier";
 NSString *kExitCellIdentifier = @"ChatDetailExitCellIdentifier";
@@ -161,7 +166,7 @@ NSString *kExitCellIdentifier = @"ChatDetailExitCellIdentifier";
             tmpUsernameLabel = usernameArray[i - index * 4];
             if (i < _memberProfiles.count) {
                 tmpProfile = _memberProfiles[i];
-                [tmpAvatarView setImageWithURL:[NSURL URLWithString:tmpProfile.avatarUrl] placeholderImage:[UIImage imageNamed:@"default_avatar"]];
+                [tmpAvatarView setImageWithURL:[NSURL URLWithString:tmpProfile.avatarUrlStr] placeholderImage:[UIImage imageNamed:@"default_avatar"]];
                 [tmpUsernameLabel setText:tmpProfile.nickname];
                 [tmpAvatarView setHidden:NO];
                 [tmpAvatarView setUserInteractionEnabled:NO];
@@ -277,7 +282,7 @@ NSString *kExitCellIdentifier = @"ChatDetailExitCellIdentifier";
         NSMutableArray *newClients = [[NSMutableArray alloc] initWithArray:self.conversation.members];
         [newClients addObjectsFromArray:clients];
 
-        [[ConversationStore sharedInstance].imClient createConversationWithName:nil
+        [[LCChatKit sharedInstance].client createConversationWithName:nil
                                    clientIds:newClients
                                   attributes:@{@"type":[NSNumber numberWithInt:kConversationType_Group]}
                                      options:AVIMConversationOptionNone

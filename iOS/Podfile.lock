@@ -1,22 +1,44 @@
 PODS:
-  - AVOSCloud (3.1.6.7)
-  - AVOSCloudCrashReporting (3.1.6.7):
+  - AVOSCloud (3.3.5)
+  - AVOSCloudCrashReporting (3.3.5):
     - AVOSCloud
-  - AVOSCloudIM (3.1.6.7):
+  - AVOSCloudIM (3.3.5):
     - AVOSCloud
   - AVOSCloudSNS (3.1.2.9):
     - AVOSCloud
+  - ChatKit (0.0.5):
+    - AVOSCloud
+    - AVOSCloudIM
+    - FMDB
+    - Masonry
+    - MJRefresh
+    - SDWebImage
+    - UITableView+FDTemplateLayoutCell
+  - FMDB (2.6.2):
+    - FMDB/standard (= 2.6.2)
+  - FMDB/standard (2.6.2)
+  - Masonry (1.0.1)
+  - MJRefresh (3.1.10)
+  - SDWebImage (3.8.1):
+    - SDWebImage/Core (= 3.8.1)
+  - SDWebImage/Core (3.8.1)
+  - UITableView+FDTemplateLayoutCell (1.4)
 
 DEPENDENCIES:
-  - AVOSCloud
   - AVOSCloudCrashReporting
-  - AVOSCloudIM
   - AVOSCloudSNS
+  - ChatKit
 
 SPEC CHECKSUMS:
-  AVOSCloud: 7af6267747894eadfd14560db08ea99a51b57fc0
-  AVOSCloudCrashReporting: dae5c2506d9ad2f6e2c7e2eace82a8c163159b6c
-  AVOSCloudIM: 0d907059ae770b50ff0e424a4d7cb8f01171b319
+  AVOSCloud: 1fe170768bee7e05bc3ea86e38d5bddb105cb957
+  AVOSCloudCrashReporting: 7ad087db785a25d6ef03cb54c2c0b460eb32dabb
+  AVOSCloudIM: dc307c48e951fcd861f4ae6db6d807e7b40639c8
   AVOSCloudSNS: 4f9f1df8663fc7bfa76b9b38578ac535d275ee8f
+  ChatKit: 07116b5ec4df1a05a3720108366c892e40011142
+  FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
+  Masonry: a1a931a0d08870ed8ae415a2ea5ea68ebcac77df
+  MJRefresh: bb72948c985914b0b5cecac573a2c69a8915fb02
+  SDWebImage: 35f9627a3e44b4f292a8a8ce6a531fa488239b91
+  UITableView+FDTemplateLayoutCell: 234e1582bcc4e18461af91155123bb96538ed030
 
 COCOAPODS: 0.37.2

@@ -13,6 +13,8 @@
 #import "ConversationStore.h"
 #import <AVOSCloudSNS/AVOSCloudSNS.h>
 #import <AVOSCloudSNS/AVUser+SNS.h>
+#import "ChatKit/ChatKitHeaders.h"
+#import <ChatKit/LCChatKit.h>
 
 @interface LoginViewController () {
     UITextField *_username;
@@ -83,19 +85,15 @@
     MainViewController *mainView = [storyboard instantiateViewControllerWithIdentifier:@"MainViewIdentifier"];
 
     AVUser* currentUser = [AVUser currentUser];
-    AVIMClient *imClient = [[AVIMClient alloc] init];
-    imClient.delegate = mainView;
-    NSLog(@"open AVIMClient");
-    [imClient openWithClientId:[currentUser objectId] callback:^(BOOL succeeded, NSError *error){
-        if (error) {
-            UIAlertView *view = [[UIAlertView alloc] initWithTitle:@"聊天不可用！" message:[error description] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-            [view show];
-        } else {
-            ConversationStore *store = [ConversationStore sharedInstance];
-            store.imClient = imClient;
-            [self.navigationController pushViewController:mainView animated:YES];
-        }
-    }];
+    [[LCChatKit sharedInstance] openWithClientId:[currentUser objectId]
+                                        callback:^(BOOL succeeded, NSError *error){
+                                            if (error) {
+                                                UIAlertView *view = [[UIAlertView alloc] initWithTitle:@"聊天不可用！" message:[error description] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+                                                [view show];
+                                            } else {
+                                                [self.navigationController pushViewController:mainView animated:YES];
+                                            }
+                                        }];
 }
 
 - (void)signinClicked:(id)sender {

@@ -50,12 +50,12 @@
             NSString *userId = [userIds objectAtIndex:i];
             UserProfile *profile = [_users objectForKey:userId];
             if (!profile) {
-                AVUser* targetUser = [AVUser objectWithoutDataWithClassName:kAVUserClassName objectId:userId];
+                AVUser* targetUser = [AVUser objectWithClassName:kAVUserClassName objectId:userId];
                 [targetUser fetch];
                 profile = [[UserProfile alloc] init];
                 profile.nickname = targetUser.username;
                 profile.objectId = targetUser.objectId;
-                profile.avatarUrl = targetUser.avatarUrl;
+                profile.avatarUrlStr = targetUser.avatarUrl;
                 [_users setObject:profile forKey:userId];
             }
             [result addObject:profile];

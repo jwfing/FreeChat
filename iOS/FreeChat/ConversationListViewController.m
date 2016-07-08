@@ -9,9 +9,10 @@
 #import "ConversationListViewController.h"
 #import "ConversationStore.h"
 #import "ConversationUtils.h"
-#import "ChatViewController.h"
 #import "ContactsViewController.h"
 #import "MessageDisplayer.h"
+#import <ChatKit/LCCKConversationViewController.h>
+#import <ChatKit/LCChatKit.h>
 
 #define kConversationCellIdentifier @"ConversationCellIdentifier"
 
@@ -34,7 +35,8 @@
     _tableView.dataSource = self;
     [_tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:kConversationCellIdentifier];
     [self.view addSubview:_tableView];
-    AVIMConversationQuery *query = [[ConversationStore sharedInstance].imClient conversationQuery];
+
+    AVIMConversationQuery *query = [[LCChatKit sharedInstance].client conversationQuery];
     [query whereKey:kAVIMKeyMember containedIn:@[[AVUser currentUser].objectId]];
     [query whereKey:AVIMAttr(@"type") equalTo:[NSNumber numberWithInt:kConversationType_Group]];
     [query findConversationsWithCallback:^(NSArray *objects, NSError *error) {
@@ -77,7 +79,7 @@
     if (![clients containsObject:currentUserId]) {
         [convMembers addObject:currentUserId];
     }
-    AVIMClient *imClient = [[ConversationStore sharedInstance] imClient];
+    AVIMClient *imClient = [LCChatKit sharedInstance].client;
     [imClient createConversationWithName:nil
                                clientIds:convMembers
                               attributes:@{@"type":[NSNumber numberWithInt:kConversationType_Group]}
@@ -132,9 +134,8 @@
 #pragma UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     AVIMConversation *conv = [_conversations objectAtIndex:[indexPath row]];
-    ChatViewController *chatViewController = [[ChatViewController alloc] init];
-    chatViewController.conversation = conv;
-    [self.navigationController pushViewController:chatViewController animated:YES];
+    LCCKConversationViewController *conversationVC = [[LCCKConversationViewController alloc] initWithConversationId:conv.conversationId];
+    [self.navigationController pushViewController:conversationVC animated:YES];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {

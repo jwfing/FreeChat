@@ -13,6 +13,7 @@
 #import "UIImageView+AFNetworking.h"
 #import "MessageDisplayer.h"
 #import "LeanCloudFeedback.h"
+#import <ChatKit/LCChatKit.h>
 
 @interface SettingsViewController () <UIActionSheetDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>{
     UILabel *_username;
@@ -95,11 +96,9 @@
         return;
     }
     [AVUser logOut];
-    ConversationStore *store = [ConversationStore sharedInstance];
-    [store.imClient closeWithCallback:^(BOOL succeeded, NSError *error) {
+    [[LCChatKit sharedInstance] closeWithCallback:^(BOOL succeeded, NSError *error) {
         [self.navigationController popViewControllerAnimated:YES];
     }];
-
 }
 
 - (void)changeUserAvatar {

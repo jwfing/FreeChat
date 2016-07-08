@@ -9,8 +9,9 @@
 #import "OpenConversationViewController.h"
 #import "AVOSCloudIM/AVOSCloudIM.h"
 #import "ConversationStore.h"
-#import "ChatViewController.h"
 #import "MJRefresh.h"
+#import <ChatKit/LCChatKit.h>
+#import <ChatKit/LCCKConversationViewController.h>
 
 NSString *kOpenConversationCellIdentifier = @"OpenConversationIdentifier";
 NSString *kConversationStatusFormat = @"%@(在线: %d 人)";
@@ -18,7 +19,7 @@ NSString *kConversationStatusFormat = @"%@(在线: %d 人)";
 @interface OpenConversationViewController () <UITableViewDataSource, UITableViewDelegate>{
     NSMutableArray *_conversations;
     NSMutableDictionary *_memberCountDict;
-    MJRefreshHeaderView *_refreshHead;
+    MJRefreshHeader *_refreshHead;
     NSTimer *_memberCounterTimer;
 }
 
@@ -68,7 +69,7 @@ NSString *kConversationStatusFormat = @"%@(在线: %d 人)";
 }
 
 - (void)refreshOpenConversations:(BOOL)dismissRefreshHeaderView {
-    AVIMConversationQuery *query = [[ConversationStore sharedInstance].imClient conversationQuery];
+    AVIMConversationQuery *query = [[LCChatKit sharedInstance].client conversationQuery];
     [query whereKey:AVIMAttr(@"type") equalTo:[NSNumber numberWithInt:2]];
     [query findConversationsWithCallback:^(NSArray *objects, NSError *error) {
         if (error || objects.count < 1) {
@@ -86,11 +87,9 @@ NSString *kConversationStatusFormat = @"%@(在线: %d 人)";
 
 - (void)addRefreshViews {
     __weak typeof(self) weakSelf = self;
-    _refreshHead = [MJRefreshHeaderView header];
-    _refreshHead.scrollView = _conversationTable;
-    _refreshHead.beginRefreshingBlock = ^(MJRefreshBaseView *refreshView) {
+    _refreshHead = [MJRefreshHeader headerWithRefreshingBlock:^{
         [weakSelf refreshOpenConversations:YES];
-    };
+    }];
 }
 
 - (void)refreshConversationMembers {
@@ -151,9 +150,8 @@ NSString *kConversationStatusFormat = @"%@(在线: %d 人)";
         return;
     }
     AVIMConversation *conv = [_conversations objectAtIndex:[indexPath row]];
-    ChatViewController *chatViewController = [[ChatViewController alloc] init];
-    chatViewController.conversation = conv;
-    [self.navigationController pushViewController:chatViewController animated:YES];
+    LCCKConversationViewController *conversationVC = [[LCCKConversationViewController alloc] initWithConversationId:conv.conversationId];
+    [self.navigationController pushViewController:conversationVC animated:YES];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 

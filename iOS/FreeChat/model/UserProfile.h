@@ -8,12 +8,13 @@
 
 #import <Foundation/Foundation.h>
 #import "Constrains.h"
+#import <ChatKit/LCChatKit.h>
 
 @interface UserProfile : NSObject
 
 @property (nonatomic, copy) NSString *objectId;
 @property (nonatomic, copy) NSString *nickname;
-@property (nonatomic, copy) NSString *avatarUrl;
+@property (nonatomic, copy) NSString *avatarUrlStr;
 
 @end
 

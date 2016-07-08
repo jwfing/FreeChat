@@ -10,10 +10,10 @@
 #import "AVOSCloud/AVOSCloud.h"
 #import "ConversationStore.h"
 #import "MessageDisplayer.h"
-#import "ChatViewController.h"
 #import "Constrains.h"
 #import "ConversationListViewController.h"
-#import "MJRefresh.h"
+#import "MJRefresh/MJRefresh.h"
+#import <ChatKit/LCChatKit.h>
 
 NSString * kContactCellIdentifier = @"ContactIdentifier";
 
@@ -21,12 +21,12 @@ NSString * kContactCellIdentifier = @"ContactIdentifier";
     UITableView *_tableView;
     NSMutableArray *_allUsers;
     NSMutableArray *_pickedUsers;
-    MJRefreshFooterView *_refreshFooter;
+    MJRefreshFooter *_refreshFooter;
 }
 
 @property (nonatomic, strong)NSMutableArray *allUsers;
 @property (nonatomic, strong)UITableView *tableView;
-@property (nonatomic, strong)MJRefreshFooterView *refreshFooter;
+@property (nonatomic, strong)MJRefreshFooter *refreshFooter;
 
 @end
 
@@ -63,21 +63,33 @@ NSString * kContactCellIdentifier = @"ContactIdentifier";
             [_allUsers addObjectsFromArray:objects];
             [_tableView reloadData];
         }];
-        _refreshFooter = [MJRefreshFooterView footer];
-        _refreshFooter.scrollView = _tableView;
-        __weak typeof(self) ws = self;
-        _refreshFooter.beginRefreshingBlock = ^(MJRefreshBaseView *refreshView) {
+        _refreshFooter = [MJRefreshFooter footerWithRefreshingBlock:^{
             AVQuery *query = [AVUser query];
             [query addAscendingOrder:@"username"];
             [query whereKey:@"objectId" notEqualTo:[AVUser currentUser].objectId];
             query.limit = 100;
-            query.skip = [ws.allUsers count];
+            query.skip = [self.allUsers count];
             [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-                [ws.allUsers addObjectsFromArray:objects];
-                [ws.tableView reloadData];
-                [ws.refreshFooter endRefreshing];
+                [self.allUsers addObjectsFromArray:objects];
+                [self.tableView reloadData];
+                [self.refreshFooter endRefreshing];
             }];
-        };
+            
+        }];
+//        _refreshFooter.scrollView = _tableView;
+//        __weak typeof(self) ws = self;
+//        _refreshFooter.refreshingBlock = ^(MJRefreshBaseView *refreshView) {
+//            AVQuery *query = [AVUser query];
+//            [query addAscendingOrder:@"username"];
+//            [query whereKey:@"objectId" notEqualTo:[AVUser currentUser].objectId];
+//            query.limit = 100;
+//            query.skip = [ws.allUsers count];
+//            [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+//                [ws.allUsers addObjectsFromArray:objects];
+//                [ws.tableView reloadData];
+//                [ws.refreshFooter endRefreshing];
+//            }];
+//        };
     }
     if (self.action != ActionNone) {
         self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"确定" style:UIBarButtonItemStylePlain target:self action:@selector(pressedButtonOK:)];
@@ -90,7 +102,7 @@ NSString * kContactCellIdentifier = @"ContactIdentifier";
 }
 
 - (void)dealloc {
-    [_refreshFooter free];
+//    [_refreshFooter free];
 }
 
 -(void)pressedButtonOK:(id)sender {
@@ -171,34 +183,12 @@ NSString * kContactCellIdentifier = @"ContactIdentifier";
         return;
     }
     AVUser *peerUser = [_allUsers objectAtIndex:[indexPath row]];
-    AVUser *currentUser = [AVUser currentUser];
-    NSArray *clientIds = [[NSArray alloc] initWithObjects:currentUser.objectId, peerUser.objectId, nil];
-    AVIMClient *imClient = [[ConversationStore sharedInstance] imClient];
-    AVIMConversationQuery *query = [imClient conversationQuery];
-    query.limit = 10;
-    query.skip = 0;
-    [query whereKey:kAVIMKeyMember containsAllObjectsInArray:clientIds];
-    [query whereKey:AVIMAttr(@"type") equalTo:[NSNumber numberWithInt:kConversationType_OneOne]];
-    [query findConversationsWithCallback:^(NSArray *objects, NSError *error) {
-        if (error) {
-            [MessageDisplayer displayError:error];
-        } else if (!objects || [objects count] < 1) {
-            [imClient createConversationWithName:nil
-                                       clientIds:clientIds
-                                      attributes:@{@"type":[NSNumber numberWithInt:kConversationType_OneOne]}
-                                         options:AVIMConversationOptionNone
-                                        callback:^(AVIMConversation *conversation, NSError *error) {
-                                            if (error) {
-                                                [MessageDisplayer displayError:error];
-                                            } else {
-                                                [self openConversation:conversation];
-                                            }
-                                        }];
-        } else {
-            AVIMConversation *conversation = [objects objectAtIndex:0];
-            [self openConversation:conversation];
-        }
+    LCCKConversationViewController *conversationVC = [[LCCKConversationViewController alloc] initWithPeerId:peerUser.objectId];
+    [conversationVC setConversationHandler:^(AVIMConversation *conversation, LCCKConversationViewController *conversationController) {
+        ;
     }];
+    [self.navigationController pushViewController:conversationVC animated:YES];
+
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
 }
 
@@ -207,12 +197,6 @@ NSString * kContactCellIdentifier = @"ContactIdentifier";
         AVUser *targetUser = [_allUsers objectAtIndex:[indexPath row]];
         [_pickedUsers removeObject:targetUser];
     }
-}
-
-- (void)openConversation:(AVIMConversation*)conversation {
-    ChatViewController *chatViewController = [[ChatViewController alloc] init];
-    chatViewController.conversation = conversation;
-    [self.navigationController pushViewController:chatViewController animated:YES];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
