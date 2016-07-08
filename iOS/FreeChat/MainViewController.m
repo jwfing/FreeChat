@@ -10,11 +10,11 @@
 #import "AVOSCloudIM/AVOSCloudIM.h"
 #import "ConversationStore.h"
 #import "AVOSCloud/AVOSCloud.h"
-#import "RecentConversationViewController.h"
 #import "ContactsViewController.h"
 #import "SettingsViewController.h"
 #import "OpenConversationViewController.h"
 #import "AVUserStore.h"
+#import <ChatKit/LCCKConversationViewController.h>
 
 @interface MainViewController () {
 }
@@ -56,7 +56,7 @@
 
 #pragma UITabBarControllerDelegate
 - (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController {
-    if ([viewController isKindOfClass:[RecentConversationViewController class]]) {
+    if ([viewController isKindOfClass:[LCCKConversationViewController class]]) {
         self.title = @"最新消息";
     } else if ([viewController isKindOfClass:[ContactsViewController class]]) {
         self.title = @"联系人";
