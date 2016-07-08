@@ -11,6 +11,7 @@
 #import "ConversationUtils.h"
 #import "ContactsViewController.h"
 #import "MessageDisplayer.h"
+#import "ConversationDetailViewController.h"
 #import <ChatKit/LCCKConversationViewController.h>
 #import <ChatKit/LCChatKit.h>
 
@@ -135,6 +136,12 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     AVIMConversation *conv = [_conversations objectAtIndex:[indexPath row]];
     LCCKConversationViewController *conversationVC = [[LCCKConversationViewController alloc] initWithConversationId:conv.conversationId];
+    [conversationVC setConversationHandler:^(AVIMConversation *conversation, LCCKConversationViewController *conversationController) {
+        ConversationDetailViewController *detailVC = [[ConversationDetailViewController alloc] init];
+        detailVC.conversation = conversation;
+        detailVC.delegate = [ConversationStore sharedInstance];
+        [conversationController.navigationController pushViewController:detailVC animated:YES];
+    }];
     [self.navigationController pushViewController:conversationVC animated:YES];
 }
 
