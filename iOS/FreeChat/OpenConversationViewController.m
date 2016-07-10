@@ -152,12 +152,12 @@ NSString *kConversationStatusFormat = @"%@(在线: %d 人)";
     }
     AVIMConversation *conv = [_conversations objectAtIndex:[indexPath row]];
     LCCKConversationViewController *conversationVC = [[LCCKConversationViewController alloc] initWithConversationId:conv.conversationId];
-    [conversationVC setConversationHandler:^(AVIMConversation *conversation, LCCKConversationViewController *conversationController) {
-        ConversationDetailViewController *detailVC = [[ConversationDetailViewController alloc] init];
-        detailVC.conversation = conversation;
-        detailVC.delegate = [ConversationStore sharedInstance];
-        [conversationController.navigationController pushViewController:detailVC animated:YES];
-    }];
+//    [conversationVC setConversationHandler:^(AVIMConversation *conversation, LCCKConversationViewController *conversationController) {
+//        ConversationDetailViewController *detailVC = [[ConversationDetailViewController alloc] init];
+//        detailVC.conversation = conversation;
+//        detailVC.delegate = [ConversationStore sharedInstance];
+//        [conversationController.navigationController pushViewController:detailVC animated:YES];
+//    }];
     [self.navigationController pushViewController:conversationVC animated:YES];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }

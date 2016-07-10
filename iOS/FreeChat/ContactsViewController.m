@@ -185,12 +185,12 @@ NSString * kContactCellIdentifier = @"ContactIdentifier";
     }
     AVUser *peerUser = [_allUsers objectAtIndex:[indexPath row]];
     LCCKConversationViewController *conversationVC = [[LCCKConversationViewController alloc] initWithPeerId:peerUser.objectId];
-    [conversationVC setConversationHandler:^(AVIMConversation *conversation, LCCKConversationViewController *conversationController) {
-        ConversationDetailViewController *detailVC = [[ConversationDetailViewController alloc] init];
-        detailVC.conversation = conversation;
-        detailVC.delegate = [ConversationStore sharedInstance];
-        [conversationController.navigationController pushViewController:detailVC animated:YES];
-    }];
+//    [conversationVC setConversationHandler:^(AVIMConversation *conversation, LCCKConversationViewController *conversationController) {
+//        ConversationDetailViewController *detailVC = [[ConversationDetailViewController alloc] init];
+//        detailVC.conversation = conversation;
+//        detailVC.delegate = [ConversationStore sharedInstance];
+//        [conversationController.navigationController pushViewController:detailVC animated:YES];
+//    }];
     [self.navigationController pushViewController:conversationVC animated:YES];
 
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
