@@ -10,6 +10,7 @@
 #import "AVOSCloudIM/AVOSCloudIM.h"
 #import "ConversationStore.h"
 #import "MJRefresh.h"
+#import "MessageDisplayer.h"
 #import "ConversationDetailViewController.h"
 #import <ChatKit/LCChatKit.h>
 #import <ChatKit/LCCKConversationViewController.h>
@@ -152,12 +153,18 @@ NSString *kConversationStatusFormat = @"%@(在线: %d 人)";
     }
     AVIMConversation *conv = [_conversations objectAtIndex:[indexPath row]];
     LCCKConversationViewController *conversationVC = [[LCCKConversationViewController alloc] initWithConversationId:conv.conversationId];
-//    [conversationVC setConversationHandler:^(AVIMConversation *conversation, LCCKConversationViewController *conversationController) {
-//        ConversationDetailViewController *detailVC = [[ConversationDetailViewController alloc] init];
-//        detailVC.conversation = conversation;
-//        detailVC.delegate = [ConversationStore sharedInstance];
-//        [conversationController.navigationController pushViewController:detailVC animated:YES];
-//    }];
+    [conversationVC setConversationHandler:^(AVIMConversation *conversation, LCCKConversationViewController *conversationController) {
+        if (!conversation) {
+            [MessageDisplayer displayError:[NSError errorWithDomain:@"LeanCloud Error" code:100 userInfo:@{@"message": @"failed to create/load conversation."}]];
+        } else {
+            [conversationController configureBarButtonItemStyle:LCCKBarButtonItemStyleGroupProfile action:^{
+                ConversationDetailViewController *detailVC = [[ConversationDetailViewController alloc] init];
+                detailVC.conversation = conversation;
+                detailVC.delegate = [ConversationStore sharedInstance];
+                [conversationController.navigationController pushViewController:detailVC animated:YES];
+            }];
+        }
+    }];
     [self.navigationController pushViewController:conversationVC animated:YES];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }

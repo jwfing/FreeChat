@@ -10,6 +10,8 @@
 //#import "RemoteMessagePersisiter.h"
 #import "AVUserStore.h"
 
+#import "MessageDisplayer.h"
+
 #import "ConversationDetailViewController.h"
 
 #import <ChatKit/LCChatKit.h>
@@ -85,12 +87,19 @@
 -(void)switch2NewConversation:(AVIMConversation*)conversation withNav:(UINavigationController*)controller {
     LCCKConversationViewController *conversationVC = [[LCCKConversationViewController alloc]
                                                       initWithConversationId:conversation.conversationId];
-//    [conversationVC setConversationHandler:^(AVIMConversation *conversation, LCCKConversationViewController *conversationController) {
-//        ConversationDetailViewController *detailVC = [[ConversationDetailViewController alloc] init];
-//        detailVC.conversation = conversation;
-//        detailVC.delegate = [ConversationStore sharedInstance];
-//        [conversationController.navigationController pushViewController:detailVC animated:YES];
-//    }];
+    [conversationVC setConversationHandler:^(AVIMConversation *conversation, LCCKConversationViewController *conversationController) {
+        if (!conversation) {
+            [MessageDisplayer displayError:[NSError errorWithDomain:@"LeanCloud Error" code:100 userInfo:@{@"message": @"failed to create/load conversation."}]];
+        } else {
+            [conversationController configureBarButtonItemStyle:LCCKBarButtonItemStyleGroupProfile action:^{
+                ConversationDetailViewController *detailVC = [[ConversationDetailViewController alloc] init];
+                detailVC.conversation = conversation;
+                detailVC.delegate = [ConversationStore sharedInstance];
+                [conversationController.navigationController pushViewController:detailVC animated:YES];
+            }];
+        }
+    }];
+
     [controller pushViewController:conversationVC animated:YES];
 }
 

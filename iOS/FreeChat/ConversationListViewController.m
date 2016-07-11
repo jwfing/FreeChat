@@ -136,12 +136,18 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     AVIMConversation *conv = [_conversations objectAtIndex:[indexPath row]];
     LCCKConversationViewController *conversationVC = [[LCCKConversationViewController alloc] initWithConversationId:conv.conversationId];
-//    [conversationVC setConversationHandler:^(AVIMConversation *conversation, LCCKConversationViewController *conversationController) {
-//        ConversationDetailViewController *detailVC = [[ConversationDetailViewController alloc] init];
-//        detailVC.conversation = conversation;
-//        detailVC.delegate = [ConversationStore sharedInstance];
-//        [conversationController.navigationController pushViewController:detailVC animated:YES];
-//    }];
+    [conversationVC setConversationHandler:^(AVIMConversation *conversation, LCCKConversationViewController *conversationController) {
+        if (!conversation) {
+            [MessageDisplayer displayError:[NSError errorWithDomain:@"LeanCloud Error" code:100 userInfo:@{@"message": @"failed to create/load conversation."}]];
+        } else {
+            [conversationController configureBarButtonItemStyle:LCCKBarButtonItemStyleGroupProfile action:^{
+                ConversationDetailViewController *detailVC = [[ConversationDetailViewController alloc] init];
+                detailVC.conversation = conversation;
+                detailVC.delegate = [ConversationStore sharedInstance];
+                [conversationController.navigationController pushViewController:detailVC animated:YES];
+            }];
+        }
+    }];
     [self.navigationController pushViewController:conversationVC animated:YES];
 }
 
