@@ -22,12 +22,10 @@ NSString * kContactCellIdentifier = @"ContactIdentifier";
     UITableView *_tableView;
     NSMutableArray *_allUsers;
     NSMutableArray *_pickedUsers;
-    MJRefreshFooter *_refreshFooter;
 }
 
 @property (nonatomic, strong)NSMutableArray *allUsers;
 @property (nonatomic, strong)UITableView *tableView;
-@property (nonatomic, strong)MJRefreshFooter *refreshFooter;
 
 @end
 
@@ -64,7 +62,7 @@ NSString * kContactCellIdentifier = @"ContactIdentifier";
             [_allUsers addObjectsFromArray:objects];
             [_tableView reloadData];
         }];
-        _refreshFooter = [MJRefreshFooter footerWithRefreshingBlock:^{
+        _tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
             AVQuery *query = [AVUser query];
             [query addAscendingOrder:@"username"];
             [query whereKey:@"objectId" notEqualTo:[AVUser currentUser].objectId];
@@ -73,7 +71,7 @@ NSString * kContactCellIdentifier = @"ContactIdentifier";
             [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
                 [self.allUsers addObjectsFromArray:objects];
                 [self.tableView reloadData];
-                [self.refreshFooter endRefreshing];
+                [self.tableView.mj_footer endRefreshing];
             }];
             
         }];

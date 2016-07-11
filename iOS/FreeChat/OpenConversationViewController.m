@@ -21,7 +21,6 @@ NSString *kConversationStatusFormat = @"%@(在线: %d 人)";
 @interface OpenConversationViewController () <UITableViewDataSource, UITableViewDelegate>{
     NSMutableArray *_conversations;
     NSMutableDictionary *_memberCountDict;
-    MJRefreshHeader *_refreshHead;
     NSTimer *_memberCounterTimer;
 }
 
@@ -82,14 +81,14 @@ NSString *kConversationStatusFormat = @"%@(在线: %d 人)";
             [self.conversationTable reloadData];
         }
         if (dismissRefreshHeaderView) {
-            [_refreshHead endRefreshing];
+            [_conversationTable.mj_header endRefreshing];
         }
     }];
 }
 
 - (void)addRefreshViews {
     __weak typeof(self) weakSelf = self;
-    _refreshHead = [MJRefreshHeader headerWithRefreshingBlock:^{
+    _conversationTable.mj_header = [MJRefreshHeader headerWithRefreshingBlock:^{
         [weakSelf refreshOpenConversations:YES];
     }];
 }
@@ -111,7 +110,7 @@ NSString *kConversationStatusFormat = @"%@(在线: %d 人)";
     }
     dispatch_group_notify(refreshGroup, dispatch_get_main_queue(), ^{
         NSLog(@"end refresh conversation member count.");
-        [_refreshHead endRefreshing];
+        [_conversationTable.mj_header endRefreshing];
         [self.conversationTable reloadData];
     });
 }
