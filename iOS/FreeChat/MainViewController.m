@@ -15,6 +15,7 @@
 #import "OpenConversationViewController.h"
 #import "AVUserStore.h"
 #import <ChatKit/LCCKConversationViewController.h>
+#import <ChatKit/LCChatKit.h>
 
 @interface MainViewController () {
 }
@@ -30,6 +31,11 @@
     self.navigationItem.hidesBackButton = YES;
     self.delegate = self;
     self.title = @"最新消息";
+    [[LCChatKit sharedInstance] setDidSelectItemBlock:^(NSIndexPath *indexPath, AVIMConversation *conversation, LCCKConversationListViewController *controller) {
+        NSLog(@"conversation selected");
+        LCCKConversationViewController *conversationVC = [[LCCKConversationViewController alloc] initWithConversationId:conversation.conversationId];
+        [controller.navigationController pushViewController:conversationVC animated:YES];
+    }];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
