@@ -185,7 +185,7 @@ NSString * kContactCellIdentifier = @"ContactIdentifier";
     LCCKConversationViewController *conversationVC = [[LCCKConversationViewController alloc] initWithPeerId:peerUser.objectId];
     [conversationVC setConversationHandler:^(AVIMConversation *conversation, LCCKConversationViewController *conversationController) {
         if (!conversation) {
-            [MessageDisplayer displayError:[NSError errorWithDomain:@"LeanCloud Error" code:100 userInfo:@{@"message": @"failed to create/load conversation."}]];
+            [conversationController alert:@"failed to create/load conversation."];
         } else {
             [conversationController configureBarButtonItemStyle:LCCKBarButtonItemStyleGroupProfile action:^{
                 ConversationDetailViewController *detailVC = [[ConversationDetailViewController alloc] init];
