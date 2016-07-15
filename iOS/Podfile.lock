@@ -6,14 +6,16 @@ PODS:
     - AVOSCloud
   - AVOSCloudSNS (3.1.2.9):
     - AVOSCloud
-  - ChatKit (0.0.5):
+  - ChatKit (0.1.0):
     - AVOSCloud
     - AVOSCloudIM
+    - FDStackView
     - FMDB
     - Masonry
     - MJRefresh
     - SDWebImage
     - UITableView+FDTemplateLayoutCell
+  - FDStackView (1.0)
   - FMDB (2.6.2):
     - FMDB/standard (= 2.6.2)
   - FMDB/standard (2.6.2)
@@ -34,7 +36,8 @@ SPEC CHECKSUMS:
   AVOSCloudCrashReporting: 7ad087db785a25d6ef03cb54c2c0b460eb32dabb
   AVOSCloudIM: dc307c48e951fcd861f4ae6db6d807e7b40639c8
   AVOSCloudSNS: 4f9f1df8663fc7bfa76b9b38578ac535d275ee8f
-  ChatKit: 07116b5ec4df1a05a3720108366c892e40011142
+  ChatKit: 47cc60af35d71556400c53613438eed83a7c562a
+  FDStackView: 3a4bbe0ce9c35e974246a585168b9da8c32213f1
   FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
   Masonry: a1a931a0d08870ed8ae415a2ea5ea68ebcac77df
   MJRefresh: bb72948c985914b0b5cecac573a2c69a8915fb02

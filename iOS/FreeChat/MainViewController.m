@@ -31,7 +31,7 @@
     self.navigationItem.hidesBackButton = YES;
     self.delegate = self;
     self.title = @"最新消息";
-    [[LCChatKit sharedInstance] setDidSelectItemBlock:^(NSIndexPath *indexPath, AVIMConversation *conversation, LCCKConversationListViewController *controller) {
+    [[LCChatKit sharedInstance] setDidSelectConversationsListCellBlock:^(NSIndexPath *indexPath, AVIMConversation *conversation, LCCKConversationListViewController *controller) {
         NSLog(@"conversation selected");
         LCCKConversationViewController *conversationVC = [[LCCKConversationViewController alloc] initWithConversationId:conversation.conversationId];
         [controller.navigationController pushViewController:conversationVC animated:YES];
