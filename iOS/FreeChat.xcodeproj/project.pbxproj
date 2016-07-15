@@ -599,6 +599,11 @@
 					5C2956C81A80BED400BF1E9C = {
 						CreatedOnToolsVersion = 6.1;
 						DevelopmentTeam = Y6X8P44TM5;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					5C2956E41A80BED400BF1E9C = {
 						CreatedOnToolsVersion = 6.1;
