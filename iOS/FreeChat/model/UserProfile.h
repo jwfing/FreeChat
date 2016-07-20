@@ -10,11 +10,28 @@
 #import "Constrains.h"
 #import <ChatKit/LCChatKit.h>
 
-@interface UserProfile : NSObject
+@interface UserProfile : NSObject<NSCopying, LCCKUserDelegate>
 
 @property (nonatomic, copy) NSString *objectId;
 @property (nonatomic, copy) NSString *nickname;
 @property (nonatomic, copy) NSString *avatarUrlStr;
+
+@property (nonatomic, copy, readonly) NSString *userId;
+
+/*!
+ * @brief The user's name
+ */
+@property (nonatomic, copy, readonly) NSString *name;
+
+/*!
+ * @brief User's avator URL
+ */
+@property (nonatomic, copy, readonly) NSURL *avatorURL;
+
+@property (nonatomic, copy, readwrite) NSString *clientId;
+
+- (instancetype)initWithUserId:(NSString *)userId name:(NSString *)name avatarURL:(NSURL *)avatarURL clientId:(NSString *)clientId;
++ (instancetype)userWithUserId:(NSString *)userId name:(NSString *)name avatarURL:(NSURL *)avatarURL clientId:(NSString *)clientId;
 
 @end
 
